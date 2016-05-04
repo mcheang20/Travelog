@@ -1,4 +1,4 @@
-class WikiPolicy
+class ApplicationPolicy
   attr_reader :user, :wiki
 
   def initialize(user, wiki)
@@ -8,6 +8,18 @@ class WikiPolicy
 
   def index?
     false
+  end
+
+  def user_admin?
+    user.has_role?('admin')
+  end
+
+  def user_standard?
+    user.has_role?('standard')
+  end
+
+  def user_premium?
+    user.has_role?('premium')
   end
 
   def show?
