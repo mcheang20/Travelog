@@ -1,25 +1,13 @@
 class ApplicationPolicy
-  attr_reader :user, :wiki
+  attr_reader :user, :record
 
-  def initialize(user, wiki)
+  def initialize(user, record)
     @user = user
-    @wiki = wiki
+    @record = record
   end
 
   def index?
     false
-  end
-
-  def user_admin?
-    user.has_role?('admin')
-  end
-
-  def user_standard?
-    user.has_role?('standard')
-  end
-
-  def user_premium?
-    user.has_role?('premium')
   end
 
   def show?

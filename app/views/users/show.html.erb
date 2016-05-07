@@ -1,0 +1,5 @@
+<div class="container">
+  <h1> <%= current_user.email %> </h1>
+  <p> <%= link_to "Upgrade to premium", new_charge_path %> </p>
+  <p> <%= link_to "Cancel subscription", charge_path, method: :delete %></p>
+</div>

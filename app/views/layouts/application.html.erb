@@ -9,11 +9,11 @@
 </head>
 <body>
     <div class="container">
-      <ul class="nav nav-tabs">
-        <li role="presentation" class="active"> <%= link_to "Home", welcome_index_path %></li>
+      <ul class="nav nav-pills navbar-inverse">
+        <li role="presentation"> <%= link_to "Home", welcome_index_path %></li>
         <li role="presentation"> <%= link_to "Wikis", wikis_path %></li>
         <% if user_signed_in? %>
-         Signed in as: <strong><%= current_user.email %></strong> |
+         Signed in as: <strong><%= link_to current_user.email, user_path(current_user) %></strong> |
         <li role="presentation"> <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>  <%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
        <% else %>
         <li role="presentation"> <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> </li>
