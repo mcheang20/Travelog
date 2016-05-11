@@ -35,6 +35,7 @@ class ChargesController < ApplicationController
      customer = Stripe::Customer.retrieve(current_user.stripe_id)
 
       current_user.update_attributes(role: "standard")
+      current_user.downgrade
       flash[:notice] = "You have cancelled your premium account."
       redirect_to root_path
     end

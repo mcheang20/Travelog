@@ -1,10 +1,17 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wiki.all
+    @wikis = Wiki.visible_to(current_user)
   end
 
   def show
      @wiki = Wiki.find(params[:id])
+     authorize @wiki
+     unless @wiki.public || current_user
+      flash[:alert] = "You must be signed in to view private wikis."
+      redirect_to root_path
+
+     authorize @wiki
+    end
   end
 
   def new
@@ -12,9 +19,7 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = Wiki.new
-    @wiki.title = params[:wiki][:title]
-    @wiki.body = params[:wiki][:body]
+    @wiki = current_user.wikis.new(wiki_params)
 
     if @wiki.save
       flash[:notice] = "Wiki was saved successfully."
@@ -32,8 +37,6 @@ class WikisController < ApplicationController
 
   def update
      @wiki = Wiki.find(params[:id])
-     @wiki.title = params[:wiki][:title]
-     @wiki.body = params[:wiki][:body]
 
      if @wiki.save
        flash[:notice] = "Wiki was updated successfully."
@@ -54,5 +57,11 @@ class WikisController < ApplicationController
       flash.now[:alert] = "There was an error deleting the wiki."
       render :show
     end
+  end
+
+  private
+
+  def wiki_params
+    params.require(:wiki).permit(:title, :body, :public)
   end
 end

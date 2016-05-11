@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def downgrade
+    wikis = self.wikis.where(public: false)
+    wikis.each do |wiki|
+      wiki.update_attribute(:public, true)
+    end
+  end
+
 end
