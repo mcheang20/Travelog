@@ -4,7 +4,6 @@ class ChargesController < ApplicationController
 
     customer = Stripe::Customer.create(
        email: current_user.email,
-       customer: customer.id,
        card: params[:stripeToken],
        plan: "premium"
      )
@@ -14,7 +13,7 @@ class ChargesController < ApplicationController
     #    description: "Blocipedia Premium Account Membership - #{current_user.email}",
     #    currency: 'usd'
     #  )
-     current_user.update_attributes(role: "premium")
+     current_user.update_attributes(stripe_id: customer.id, role: "premium")
      flash[:notice] = "Thank you for going premium, #{current_user.email}!"
      redirect_to root_path
 
