@@ -1,7 +1,7 @@
 module ApplicationHelper
   def markdown(text)
     options = {
-      filter_html: true,
+      filter_html: true
     }
     extensions = {
       underline:          true,
