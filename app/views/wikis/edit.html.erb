@@ -1,4 +1,12 @@
 <h1> Edit Wiki </h1>
-  <div class="col-md-8">
+  <div class="col-md-6">
     <%= render partial: 'wikis/form' %>
+    <h2>Add Collaborators</h2>
+      <%= render partial: 'collaborators/create', locals: {wiki: @wiki}%>
+    <h2>Collaborators</h2>
+      <% @wiki.collaborators.each do |collaborator| %>
+        <p>
+          <%= collaborator.user.email %>
+          <%= link_to "Remove", [@wiki, collaborator], method: :delete, class: 'btn btn-danger btn-xs' %>
+      <% end %>
   </div>
