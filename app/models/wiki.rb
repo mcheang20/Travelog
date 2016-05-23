@@ -1,5 +1,4 @@
 class Wiki < ActiveRecord::Base
-  belongs_to :user
-
-  scope :visible_to, -> (user) { user ? all : where(public: true) }
+  has_many :users, through: :collaborators
+  has_many :collaborators
 end

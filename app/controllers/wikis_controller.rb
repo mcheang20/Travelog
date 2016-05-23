@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   def index
-    @wikis = Wiki.visible_to(current_user)
+    @wikis =  policy_scope(Wiki)
   end
 
   def show
@@ -38,7 +38,7 @@ class WikisController < ApplicationController
   def update
      @wiki = Wiki.find(params[:id])
 
-     if @wiki.save
+     if @wiki.update_attributes(wiki_params)
        flash[:notice] = "Wiki was updated successfully."
        redirect_to @wiki
      else

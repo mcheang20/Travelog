@@ -1,0 +1,9 @@
+<div class="container">
+  <%= form_for [wiki, Collaborator.new] do |f| %>
+    <div class="form-group">
+      <%= label_tag :email %>
+      <%= text_field_tag :email  %>
+      <%= submit_tag "Add collaborator" %>
+    </div>
+    <% end %>
+</div>
