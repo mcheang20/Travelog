@@ -3,6 +3,7 @@ class CreateWikis < ActiveRecord::Migration
     create_table :wikis do |t|
       t.string :title
       t.text :body
+      t.text :description
       t.boolean :private
       t.boolean :public, default: true
       t.references :user, index: true, foreign_key: true

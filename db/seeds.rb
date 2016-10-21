@@ -14,7 +14,8 @@
 
     user: users.sample,
     title: Faker::Hipster.word,
-    body:  Faker::Lorem.paragraph(2)
+    body:  Faker::Lorem.paragraph(2),
+    description:  Faker::Lorem.paragraph(2)
   )
   end
 
