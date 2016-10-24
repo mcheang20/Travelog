@@ -1,9 +1,9 @@
 <div class="container">
   <%= form_for [wiki, Collaborator.new] do |f| %>
-    <div class="form-group">
+    <div class="collab">
       <%= label_tag :email %>
       <%= text_field_tag :email  %>
-      <%= submit_tag "Add collaborator" %>
+      <%= submit_tag "Add collaborator", :class=>"btn btn-primary" %>
     </div>
     <% end %>
 </div>

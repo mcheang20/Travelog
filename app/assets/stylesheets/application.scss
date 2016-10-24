@@ -30,6 +30,8 @@
 
 .navigation a {
   color: white;
+  font-size: 16px;
+  font-weight: 400;
 }
 
 .navbar-left {
@@ -67,4 +69,16 @@ text-align: center;
 
 .form-div .actions .btn {
   margin-top: 5px;
+}
+.collab input[type="text"]{
+  font-size: 16px;
+  height: auto;
+  padding: 3px 12px;
+  border-radius: 5px;
+  width: 372px;
+  margin-bottom: 20px;
+}
+
+.pull-right {
+  float: right !important;
 }

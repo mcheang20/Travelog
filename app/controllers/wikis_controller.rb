@@ -62,6 +62,6 @@ class WikisController < ApplicationController
   private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :description, :public)
+    params.require(:wiki).permit(:title, :body, :description, :image, :public)
   end
 end

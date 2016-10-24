@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020231233) do
+ActiveRecord::Schema.define(version: 20161021215620) do
 
   create_table "collaborators", force: :cascade do |t|
     t.integer  "wiki_id"
@@ -63,10 +63,14 @@ ActiveRecord::Schema.define(version: 20161020231233) do
     t.text     "body"
     t.text     "description"
     t.boolean  "private"
-    t.boolean  "public",      default: true
+    t.boolean  "public",             default: true
     t.integer  "user_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "wikis", ["user_id"], name: "index_wikis_on_user_id"

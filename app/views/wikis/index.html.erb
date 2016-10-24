@@ -1,17 +1,17 @@
 <div class="container">
   <h1 class="wiki-title"> Current Wikis</h1>
-  <div class="col-md-8">
+  <div class="container col-md-12">
     <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
   </div>
   <div class="row">
-    <div class="col-md-10">
       <% @wikis.each do |wiki| %>
-        <div class="media">
+        <div class="media col-md-4">
           <div class="wiki-style">
-            <h4 class="media-heading">
-              <%= link_to wiki.title, wiki %>
+              <%= image_tag(wiki.image.url(:medium)) %>
+            </br>
+              <a class="link"><%= link_to wiki.title, wiki %></a>
             </h4>
-            <p> About this Wiki: <%= wiki.description %> </p>          
+            <p> About this Wiki: <%= wiki.description %> </p>
             </div>
         </div>
       <% end %>

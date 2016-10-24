@@ -42,3 +42,5 @@ gem 'stripe'
 gem 'faker'
 
 gem 'redcarpet'
+
+gem "paperclip", "~> 5.0.0"
