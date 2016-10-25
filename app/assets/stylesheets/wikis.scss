@@ -8,19 +8,26 @@
 .wiki-title {
   border-bottom: 1px solid;
 }
-.media .wiki-style {
+.wiki-style {
   zoom: 1;
     overflow: hidden;
-    background-color: rgba(250, 250, 250, 1);
+    background-color: rgba(250, 250, 250, .7);
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    margin-top: 5px;
     padding-top: 15px;
-    max-width: 400px;
+    max-width: 350px;
     max-height: 290px;
     font-size: 16px;
+    margin-left: 29px;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
+
+.wiki-style img {
+  height: 180px;
+  width: 310px;
+}
 
 .media-heading .link a {
   color: white;
@@ -30,4 +37,22 @@
   width: 400px;
   padding-top: 30px;
   display: block;
+}
+
+.main {
+  background-color: rgba(168, 173, 175, .8);
+  border-radius: 5px;
+}
+
+.wiki-btn {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.media:first-child {
+  margin-top: 15px;
+}
+
+.new-wiki-form {
+  margin-left: 30px;
 }
