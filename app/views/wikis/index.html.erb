@@ -10,7 +10,8 @@
             </br>
               <a class="link"><%= link_to wiki.title, wiki %></a>
             </h4>
-            <p> About this Wiki: <%= wiki.description %> </p>
+            <p>Description:<%= wiki.description %> </p>
+            <p><%= wiki.user.username %></p>
             </div>
       <% end %>
     </div>

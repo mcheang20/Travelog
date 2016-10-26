@@ -1,0 +1,9 @@
+<div class="media">
+   <div class="media-body">
+    <%= image_tag current_user.avatar_url(40), class: "gravatar" %>
+    <p><%= comment.body %></p>
+     <small>
+       <%= comment.user.username %> commented <%= time_ago_in_words(comment.created_at) %> ago
+     </small>
+   </div>
+ </div>

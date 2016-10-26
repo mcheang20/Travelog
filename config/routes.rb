@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :views
+devise_for :views
 devise_for :users
 
 resources :wikis do
-  resources :collaborators, only: [:create, :destroy]
+ resources :comments, only: [:create, :destroy]
+ resources :collaborators, only: [:create, :destroy]
 end
 
 

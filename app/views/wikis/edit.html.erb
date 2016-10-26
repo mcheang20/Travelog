@@ -1,6 +1,8 @@
 <h1> Edit Wiki </h1>
-  <div class="col-md-6">
+  <div class="row col-md-8">
     <%= render partial: 'wikis/form' %>
+  </div>
+  <div class="row col-md-8"
     <h2>Add Collaborators</h2>
       <%= render partial: 'collaborators/create', locals: {wiki: @wiki}%>
     <h2>Collaborators</h2>
