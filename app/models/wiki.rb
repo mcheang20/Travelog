@@ -6,6 +6,7 @@ class Wiki < ActiveRecord::Base
   has_many :users, through: :collaborators
   has_many :comments, dependent: :destroy
   has_many :collaborators
+  has_many :pics
 
    validates :user, presence: true
 end

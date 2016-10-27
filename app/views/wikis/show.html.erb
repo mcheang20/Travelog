@@ -1,5 +1,6 @@
 <div class="container">
   <div class="image"><%= image_tag(@wiki.image.url(:medium)) %></div>
+  <%= render @wiki.pics %>
     <div class="row col-md-10 main">
         <h1><%= @wiki.title %></h1>
         <p><%= markdown(@wiki.body) %></p>
@@ -12,6 +13,10 @@
       <div class="row col-md-10 main" >
     <h3>Comments</h3>
     <%= render @wiki.comments %>
+  </div>
+    <div class="row col-md-10 main" >
+  <h3>Add Images</h3>
+  <%= render 'pics/form', pic: Pic.new, wiki: @wiki %>
   </div>
     <div class="row col-md-8">
       <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>

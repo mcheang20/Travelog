@@ -5,6 +5,7 @@ devise_for :users
 
 resources :wikis do
  resources :comments, only: [:create, :destroy]
+ resources :pics, only: [:create, :destroy]
  resources :collaborators, only: [:create, :destroy]
 end
 
