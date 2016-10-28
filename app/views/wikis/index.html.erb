@@ -6,7 +6,7 @@
   <div class="row main">
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-md-4">
-              <%= image_tag(wiki.image.url(:medium)) %>
+              <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
             </br>
               <a class="link"><%= link_to wiki.title, wiki %></a>
             </h4>
