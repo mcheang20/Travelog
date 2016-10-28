@@ -1,9 +1,13 @@
 <div class="media">
    <div class="media-body">
-    <%= image_tag current_user.avatar_url(40), class: "gravatar" %>
-    <p><%= comment.body %></p>
+    <p class="comment-img"><%= image_tag user.avatar_url(40), class: "gravatar" %></p>
+    <p class="comment-body"><%= comment.body %>
+      <% if user_is_authorized_for_comment?(comment) %>
+       <%= link_to "Delete", [comment.wiki, comment], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this comment?' } %>
+     <% end %>
+    </p>
      <small>
-       <%= comment.user.username %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <strong><%= comment.user.username %></strong> commented <%= time_ago_in_words(comment.created_at) %> ago
      </small>
    </div>
  </div>

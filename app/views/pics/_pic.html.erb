@@ -1,3 +1,4 @@
-<div>
-  <%= image_tag(pic.image.url(:medium)) %>
+<div class="wiki-style col-md-4">
+  <%= link_to image_tag(pic.image.url(:medium)), wiki_pic_path(@wiki, pic) %>
+  <%= pic.caption %>
 </div>

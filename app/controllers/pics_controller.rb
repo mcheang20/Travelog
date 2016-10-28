@@ -3,11 +3,15 @@ class PicsController < ApplicationController
 
   before_action :authorize_user, only: [:destroy]
 
+  def show
+     @pic = Pic.find(params[:id])
+  end
+
  def create
    @wiki = Wiki.find(params[:wiki_id])
-   pic = @wiki.pics.new(pic_params)
+   @pic = @wiki.pics.new(pic_params)
 
-   if pic.save
+   if @pic.save
      flash[:notice] = "Image saved successfully."
      redirect_to [@wiki]
    else
@@ -18,9 +22,9 @@ class PicsController < ApplicationController
 
  def destroy
   @wiki = Wiki.find(params[:wiki_id])
-  pic = @wiki.pics.find(params[:id])
+  @pic = @wiki.pics.find(params[:id])
 
-  if pic.destroy
+  if @pic.destroy
     flash[:notice] = "Image was deleted successfully."
     redirect_to [@wiki]
   else
@@ -35,11 +39,11 @@ private
    params.require(:pic).permit(:caption, :image)
  end
 
- def authorize_user
- pic = Pic.find(params[:id])
- unless current_user == wiki.user || current_user.admin?
-   flash[:alert] = "You do not have permission to delete a comment."
-   redirect_to [wiki]
- end
-end
+   def authorize_user
+     pic = Pic.find(params[:id])
+   unless current_user == pic.wiki.user || current_user.admin?
+     flash[:alert] = "You do not have permission to delete this image"
+     redirect_to [pic.wiki]
+   end
+  end
 end

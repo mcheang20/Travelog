@@ -1,0 +1,6 @@
+<div class="pic-show">
+  <%= image_tag(@pic.image.url(:medium)) %>
+</div>
+ <% if user_is_authorized_for_pic?(@pic) %>
+  <%= link_to "Delete Image", [@pic.wiki, @pic], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this image?' } %>
+<% end %>

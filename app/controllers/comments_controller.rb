@@ -6,10 +6,10 @@ class CommentsController < ApplicationController
 
    def create
      @wiki = Wiki.find(params[:wiki_id])
-     comment = @wiki.comments.new(comment_params)
-     comment.user = current_user
+     @comment = @wiki.comments.new(comment_params)
+     @comment.user = current_user
 
-     if comment.save
+     if @comment.save
        flash[:notice] = "Comment saved successfully."
        redirect_to [@wiki]
      else
@@ -20,9 +20,9 @@ class CommentsController < ApplicationController
 
    def destroy
     @wiki = Wiki.find(params[:wiki_id])
-    comment = @wiki.comments.find(params[:id])
+    @comment = @wiki.comments.find(params[:id])
 
-    if comment.destroy
+    if @comment.destroy
       flash[:notice] = "Comment was deleted successfully."
       redirect_to [@wiki]
     else
