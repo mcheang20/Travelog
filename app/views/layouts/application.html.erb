@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blocipedia</title>
+    <title>Travelog</title>
       <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
       <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
@@ -10,8 +10,8 @@
 <body>
     <div class="container-bar">
         <ul class="nav nav-pills navbar-inverse navigation">
-        <li class="presentation"> <%= link_to "Blocipedia", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
-        <li class="presentation"> <%= link_to "Wikis", wikis_path %></li>
+        <li class="presentation"> <%= link_to "Travelog", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
+        <li class="presentation"> <%= link_to "Explore", wikis_path %></li>
         <% if user_signed_in? %>
         <li class="presentation navbar-left pull-right avatar-btn"><%= image_tag current_user.avatar_url(36), class: "gravatar" %></li>
         <li class="presentation navbar-left pull-right"><%= link_to current_user.username, user_path(current_user) %></li>

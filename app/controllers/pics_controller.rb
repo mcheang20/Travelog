@@ -4,7 +4,8 @@ class PicsController < ApplicationController
   before_action :authorize_user, only: [:destroy]
 
   def show
-     @pic = Pic.find(params[:id])
+     @wiki = Wiki.find(params[:wiki_id])
+     @pic = @wiki.pics.all
   end
 
  def create

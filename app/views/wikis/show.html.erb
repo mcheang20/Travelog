@@ -1,8 +1,5 @@
 <div class="container">
-  <div class="row wiki-image-top"><%= image_tag(@wiki.image.url(:medium)) %></div>
-    <div class="row main">
-      <%= render @wiki.pics %>
-    </div>
+  <div class="row wiki-image-top"><%= image_tag(@wiki.image.url(:large))  %></div>
     <div class="row col-md-10 main">
         <h1><%= @wiki.title %></h1>
         <p><%= markdown(@wiki.body) %></p>

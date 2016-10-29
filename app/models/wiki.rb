@@ -1,6 +1,6 @@
 class Wiki < ActiveRecord::Base
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>", large: "1200x500#"}, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   belongs_to :user
   has_many :users, through: :collaborators
