@@ -1,5 +1,6 @@
 <div class="container">
-  <div class="row wiki-image-top"><%= image_tag(@wiki.image.url(:large))  %></div>
+  <div class="row wiki-image-top"><%= image_tag(@wiki.image.url(:large))%></div>
+  <div> <%= link_to "View All Images", wiki_pic_path(@wiki.pics, @wiki),class: 'btn btn-default' %></div>
     <div class="row col-md-10 main">
         <h1><%= @wiki.title %></h1>
         <p><%= markdown(@wiki.body) %></p>
