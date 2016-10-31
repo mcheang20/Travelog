@@ -1,7 +1,9 @@
 <div class="container">
   <h1 class="wiki-title">Travel the world</h1>
   <div class="container col-md-12 wiki-btn">
-    <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+    <% if user_signed_in? %>
+      <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
+    <% end %>
   </div>
   <div class="row main">
       <% @wikis.each do |wiki| %>
@@ -12,8 +14,8 @@
             </h4>
             <p>Description:<%= wiki.description %> </p>
             <p><%= wiki.user.username %></p>
+            <p><%= wiki.comments.count %> Comments</p>
             </div>
       <% end %>
     </div>
   </div>
-  

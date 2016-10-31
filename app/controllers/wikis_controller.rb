@@ -1,4 +1,6 @@
 class WikisController < ApplicationController
+
+  before_action :authorize_user, only: [:create, :destroy, :edit, :update]
   def index
     @wikis =  policy_scope(Wiki)
   end
@@ -64,4 +66,12 @@ class WikisController < ApplicationController
   def wiki_params
     params.require(:wiki).permit(:title, :body, :description, :image, :public)
   end
+
+  def authorize_user
+    wiki = Wiki.find(params[:id])
+  unless current_user == wiki.user || current_user.admin?
+    flash[:alert] = "You do not have acesss to do that"
+    redirect_to root_path
+  end
+ end
 end
