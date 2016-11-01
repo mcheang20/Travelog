@@ -7,6 +7,7 @@
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-md-4">
               <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+              <%= render partial: 'votes/like', locals: { wiki: wiki } %>
               </br>
               <a class="link"><%= link_to wiki.title, wiki %></a>
               <h5>Description:<%= wiki.description %> </h5>

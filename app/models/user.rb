@@ -3,9 +3,10 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   enum role: [:standard, :premium, :admin]
 
-  has_many :wikis
-  has_many :comments
+  has_many :wikis, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :collaborators
+  has_many :votes, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

@@ -6,7 +6,19 @@ class Wiki < ActiveRecord::Base
   has_many :users, through: :collaborators
   has_many :comments, dependent: :destroy
   has_many :collaborators
-  has_many :pics
+  has_many :pics, dependent: :destroy
+  has_many :votes, dependent: :destroy
+  validates :user, presence: true
 
-   validates :user, presence: true
+  def like_up
+   votes.where(value: 1).count
+ end
+
+ def like_down
+     votes.where(value: -1).count
+   end
+
+ def likes
+   votes.sum(:value)
+ end
 end
