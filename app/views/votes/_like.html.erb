@@ -1,4 +1,8 @@
 <div>
-  <div><%= link_to " ", wiki_like_up_path(wiki), class: 'glyphicon glyphicon-heart', method: :post %></div>
+<% if vote = current_user.like_for(wiki) %>
+  <div><%= link_to " ", wiki_like_down_path(wiki), class: 'glyphicon glyphicon-heart', method: :post %></div>
+  <% else %>
+    <div><%= link_to " ", wiki_like_up_path(wiki), class: 'glyphicon glyphicon-heart-empty', method: :post %></div>
+  <% end %>
   <div><strong><%= wiki.likes %></strong></div>
 </div>

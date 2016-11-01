@@ -10,13 +10,10 @@ class Wiki < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   validates :user, presence: true
 
-  def like_up
+  def likes_ups
    votes.where(value: 1).count
  end
 
- def like_down
-     votes.where(value: -1).count
-   end
 
  def likes
    votes.sum(:value)

@@ -17,6 +17,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def like_for(wiki)
+    votes.where(wiki_id: wiki.id).first
+  end
+
   def avatar_url(size)
     gravatar_id = Digest::MD5::hexdigest(self.email).downcase
     "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
