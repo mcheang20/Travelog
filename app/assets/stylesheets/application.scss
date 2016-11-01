@@ -85,7 +85,53 @@ text-align: center;
   float: right !important;
 }
 
-.avatar-btn img {
-  margin-top: 3.5px;
-  margin-right: 10px;
+  .avatar-btn img {
+    margin-top: 3.5px;
+    margin-right: 10px;
+  }
+  .home-circle {
+  text-align: center;
+  margin-top: 20px;
+  }
+.home-circle img {
+  width: 400px;
+  height: 350px;
+  margin: 30px;
+}
+
+.heading-one {
+  text-align: center;
+  border-top: 1px solid grey;
+}
+
+.captions {
+  display: -webkit-box;
+  position: absolute;
+  z-index: 100;
+  padding: 170px;
+  color: white;
+  font-weight: 500;
+  text-shadow: 1px 1px black;
+}
+
+.captions h2 {
+  padding-left: 200px;
+}
+
+.captions a {
+  color: white;
+}
+
+.captions a:hover{
+  text-decoration: none;
+}
+
+
+.captions h2:nth-child(2){
+  padding-right: 170px;
+}
+
+.captions h2:nth-child(1){
+  padding-left: 30px;
+  padding-right: 170px;
 }
