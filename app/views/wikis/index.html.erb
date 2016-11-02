@@ -1,16 +1,13 @@
 <div class="container">
   <h1 class="wiki-title">Travel the world</h1>
-<<<<<<< HEAD
   <div class="container col-md-12 wiki-btn">
     <% if user_signed_in? %>
       <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
     <% end %>
   </div>
-=======
   <!-- <div class="container col-md-12 wiki-btn">
    <%= link_to "New Post", new_wiki_path, class: 'btn btn-success' %>
  </div> -->
->>>>>>> post-likes
   <div class="row main">
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-md-4">
@@ -18,16 +15,13 @@
               <%= render partial: 'votes/like', locals: { wiki: wiki } %>
               </br>
               <a class="link"><%= link_to wiki.title, wiki %></a>
-<<<<<<< HEAD
             </h4>
             <p>Description:<%= wiki.description %> </p>
             <p><%= wiki.user.username %></p>
             <p><%= wiki.comments.count %> Comments</p>
-=======
               <h5>Description:<%= wiki.description %> </h5>
               <small><%=  wiki.user.username%></small>
               <small><%= wiki.comments.count %> Comments
->>>>>>> post-likes
             </div>
       <% end %>
     </div>
