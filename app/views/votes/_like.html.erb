@@ -1,0 +1,12 @@
+<div class="heart-like">
+  <% if vote = current_user.like_for(wiki) %>
+    <%= link_to [wiki, vote], method: :delete do %>
+      <i class="heart-glyph glyphicon glyphicon-heart"> </i>
+  <% end %>
+  <% else %>
+    <%= link_to [wiki, Vote.new], method: :post do %>
+      <i class="heart-glyph glyphicon glyphicon-heart-empty"> </i>
+    <% end %>
+ <% end %>
+</div>
+<%= wiki.likes %> Likes
