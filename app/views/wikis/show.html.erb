@@ -3,6 +3,7 @@
   <div> <%= link_to "View All Images", wiki_pic_path(@wiki.pics, @wiki),class: 'btn btn-default' %></div>
     <div class="row col-md-10 main">
         <h1><%= @wiki.title %></h1>
+        <%= @wiki.category.name %>
           <h3>
             <%= pluralize(@wiki.likes, 'like') %>
           </h3>

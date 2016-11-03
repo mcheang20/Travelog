@@ -1,16 +1,13 @@
-<div class="container">
-  <h1 class="wiki-title">Travel the world</h1>
-  <div class="container col-md-12 wiki-btn">
-    <% if user_signed_in? %>
-      <%= link_to "New Wiki", new_wiki_path, class: 'btn btn-success' %>
-    <% end %>
-  </div>
+<h1 class="wiki-title">Travel the world</h1>
   <!-- <div class="container col-md-12 wiki-btn">
    <%= link_to "New Post", new_wiki_path, class: 'btn btn-success' %>
  </div> -->
-  <div class="row main">
+ <% content_for(:sidebar) do %>
+  <%= render partial: 'layouts/sidebar' %>
+ <% end %>
+  <div class="main">
       <% @wikis.each do |wiki| %>
-          <div class="wiki-style col-md-4">
+          <div class="wiki-style col-sm-3">
               <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
               <%= render partial: 'votes/like', locals: { wiki: wiki } %>
               </br>
@@ -25,4 +22,4 @@
             </div>
       <% end %>
     </div>
-  </div>
+  

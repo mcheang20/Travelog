@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
 
-  before_action :authorize_user, only: [:create, :destroy, :edit, :update]
+  before_action :authorize_user, only: [:destroy, :edit, :update]
   def index
     @wikis =  policy_scope(Wiki)
   end
@@ -18,10 +18,12 @@ class WikisController < ApplicationController
 
   def new
     @wiki = Wiki.new
+    @categories = Category.all.map{|c| [c.name, c.id] }
   end
 
   def create
     @wiki = current_user.wikis.new(wiki_params)
+    @wiki.category_id = params[:category_id]
 
     if @wiki.save
       flash[:notice] = "Wiki was saved successfully."
@@ -35,10 +37,12 @@ class WikisController < ApplicationController
 
   def edit
     @wiki = Wiki.find(params[:id])
+    @categories = Category.all.map{|c| [c.name, c.id ] }
   end
 
   def update
      @wiki = Wiki.find(params[:id])
+     @wiki.category_id = params[:category_id]
 
      if @wiki.update_attributes(wiki_params)
        flash[:notice] = "Wiki was updated successfully."
@@ -64,7 +68,7 @@ class WikisController < ApplicationController
   private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :body, :description, :image, :public)
+    params.require(:wiki).permit(:title, :body, :description, :image, :category_id, :public)
   end
 
   def authorize_user

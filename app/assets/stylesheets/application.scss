@@ -17,6 +17,14 @@
  @import 'lightbox';
  @import "bootstrap-sprockets";
  @import "bootstrap";
+html {
+  height: 100%;
+}
+
+body {
+  position: relative;
+  min-height: 100%;
+}
 
 .bar {
     width: 100%;
@@ -134,4 +142,27 @@ text-align: center;
 .captions h2:nth-child(1){
   padding-left: 30px;
   padding-right: 170px;
+}
+
+.sidebar {
+  position: absolute;
+  background-color: grey;
+  opacity: .5;
+  padding: 15px;
+  border: 1px solid rgba(69, 63, 63, .5);
+  float: left;
+  height: 100%;
+  width: 12%;
+}
+
+.sidebar2 {
+  position: absolute;
+  background-color: grey;
+  opacity: .5;
+  padding: 15px;
+  border: 1px solid rgba(69, 63, 63, .5);
+  float: left;
+  height: 100%;
+  width: 12%;
+  margin-top: -70px;
 }
