@@ -9,6 +9,7 @@ class Wiki < ActiveRecord::Base
   has_many :collaborators
   has_many :pics, dependent: :destroy
   has_many :votes, dependent: :destroy
+  validates :category, presence: true
   validates :user, presence: true
 
   def likes_ups

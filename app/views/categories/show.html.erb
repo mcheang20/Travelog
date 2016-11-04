@@ -1,1 +1,4 @@
 <h1><%= @category.name %></h1>
+<% @category.wikis.each do |wiki| %>
+  <%= wiki.title %>
+<% end %>

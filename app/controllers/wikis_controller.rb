@@ -22,8 +22,10 @@ class WikisController < ApplicationController
   end
 
   def create
-    @wiki = current_user.wikis.new(wiki_params)
+    @wiki = Wiki.new(wiki_params)
     @wiki.category_id = params[:category_id]
+    @wiki.user = current_user
+
 
     if @wiki.save
       flash[:notice] = "Wiki was saved successfully."
@@ -33,7 +35,6 @@ class WikisController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @wiki = Wiki.find(params[:id])
