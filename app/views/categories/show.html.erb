@@ -1,4 +1,17 @@
-<h1><%= @category.name %></h1>
-<% @category.wikis.each do |wiki| %>
-  <%= wiki.title %>
-<% end %>
+<h1 class="wiki-title"><%= @category.name %></h1>
+  <%= render partial: 'layouts/sidebar2' %>
+    <div class="main">
+      <% @category.wikis.each do |wiki| %>
+        <div class="wiki-style col-sm-3">
+          <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+          <%= render partial: 'votes/like', locals: { wiki: wiki } %>
+          </br>
+          <a class="link"><%= link_to wiki.title, wiki %></a>
+          <p>Description:<%= wiki.description %> </p>
+          <p><%= wiki.user.username %></p>
+          <p><%= wiki.comments.count %> Comments</p>
+          <h5>Description:<%= wiki.description %> </h5>
+          <small><%=  wiki.user.username%></small>
+          <small><%= wiki.comments.count %> Comments
+        </div>
+      <% end %>

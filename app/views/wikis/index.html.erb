@@ -9,17 +9,13 @@
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-sm-3">
               <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
-              <%= render partial: 'votes/like', locals: { wiki: wiki } %>
-              </br>
-              <a class="link"><%= link_to wiki.title, wiki %></a>
-            </h4>
-            <p>Description:<%= wiki.description %> </p>
-            <p><%= wiki.user.username %></p>
-            <p><%= wiki.comments.count %> Comments</p>
-              <h5>Description:<%= wiki.description %> </h5>
-              <small><%=  wiki.user.username%></small>
-              <small><%= wiki.comments.count %> Comments
+              <h4 class="link"><%= link_to wiki.title, wiki %></h4>
+              <div class="wiki-details">
+                <h5>Description:<%= wiki.description %> </h5>
+                <small><%=  wiki.user.username%></small>
+                <small><%= render partial: 'votes/like', locals: { wiki: wiki } %></small>
+                <small><%= wiki.comments.count %> Comments</small>
+              </div>
             </div>
       <% end %>
     </div>
-  
