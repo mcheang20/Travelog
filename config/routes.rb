@@ -16,7 +16,7 @@ end
 resources :categories
 resources :charges, only: [:new, :create, :destroy]
 
-resources :users, only: [:create, :show]
+resources :users, only: [:create, :show, :edit, :update]
 
  get "welcome/index"
 

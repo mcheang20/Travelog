@@ -1,3 +1,35 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-page {
+  background-color: rgba(175, 170, 170, .3);
+  height: 100%;
+}
+
+.user-heading {
+  background-color: rgba(254, 254, 254, .5);
+  padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 10px;
+  display: -webkit-box;
+  border: 1px solid rgba(1, 0, 1, .1);
+}
+
+.profile-image {
+  width: 50px;
+}
+
+.profile-image img {
+  width: 200px;
+	height: 200px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+.user-data {
+  padding-left: 170px;
+}

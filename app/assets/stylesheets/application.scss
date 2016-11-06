@@ -109,7 +109,7 @@ text-align: center;
 
 .heading-one {
   text-align: center;
-  border-top: 1px solid grey;
+  border-top: 1px solid rgba(1, 0, 1, .2);
 }
 
 .captions {
@@ -185,4 +185,13 @@ text-align: center;
 
 .sidebar2-hold {
   margin-top: 30px;
+}
+
+.btn-avatar {
+  padding: 0px;
+  margin-top: 2px;
+}
+
+.avatar-button {
+  padding-right: 10px;
 }
