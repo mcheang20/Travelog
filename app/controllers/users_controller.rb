@@ -13,10 +13,10 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
 
       if @user.update_attributes(user_params)
-        flash[:notice] = "Wiki was updated successfully."
+        flash[:notice] = "Profile was updated successfully."
         redirect_to @user
       else
-        flash.now[:alert] = "There was an error saving the wiki. Please try again."
+        flash.now[:alert] = "There was an error updating your profile. Please try again."
       end
     end
 

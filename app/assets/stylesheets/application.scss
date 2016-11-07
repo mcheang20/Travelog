@@ -31,10 +31,10 @@ body {
 }
 .navigation {
   color: white;
-  background-color: rgba(49, 52, 52, .8);
+  background-color: rgba(49, 52, 52, .7);
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #e7e6e6;
 }
 
 .navigation a {
@@ -190,8 +190,20 @@ text-align: center;
 .btn-avatar {
   padding: 0px;
   margin-top: 2px;
+
+  img {
+    height: 30px;
+  }
 }
 
 .avatar-button {
   padding-right: 10px;
+}
+
+.registration {
+  margin-left: 30px;
+}
+
+.title-all {
+  border-bottom: 1px solid rgba(1, 0, 1, .2);
 }

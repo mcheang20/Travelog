@@ -3,24 +3,25 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
-
+<div class="registration">
   <div class="field">
-    <%= f.email_field :email, autofocus: true, placeholder: "Email"%>
+    <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: "Email"%>
   </div>
 
   <div class="field">
-    <%= f.text_field :username, autocomplete: "off", placeholder: "Username" %>
+    <%= f.text_field :username, class: 'form-control', autocomplete: "off", placeholder: "Username" %>
   </div>
 
   <div class="field">
-    <%= f.password_field :password, autocomplete: "off", placeholder: "Password (minimum 8 characters)"%>
+    <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: "Password (minimum 8 characters)"%>
   </div>
 
   <div class="field">
-    <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: "Password confirmation" %>
   </div>
 
   <div class="actions btn">
+</div>
     <%= f.submit "Sign up", :class=>'btn btn-success' %>
   </div>
 <% end %>

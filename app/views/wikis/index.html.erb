@@ -12,7 +12,7 @@
               <h4 class="link"><%= link_to wiki.title, wiki %></h4>
               <div class="wiki-details">
                 <h5>Description:<%= wiki.description %> </h5>
-                <small><%=  wiki.user.username%></small>
+                <small><%=  link_to wiki.user.username, user_path(wiki.user)%></small>
                 <small><%= render partial: 'votes/like', locals: { wiki: wiki } %></small>
                 <small><%= wiki.comments.count %> Comments</small>
               </div>

@@ -15,15 +15,16 @@
       <% if user_signed_in? %>
       <li class="presentation"> <%= link_to "Create", new_wiki_path %></li>
       <div class="avatar-button btn-group pull-right">
-        <button type="button" class="btn btn-default btn-avatar"><%=image_tag current_user.avatar_url(36), class: "gravatar"%></button>
+        <button type="button" class="btn btn-default btn-avatar">  <%= image_tag(current_user.image.url(:thumb)) %></button>
         <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
           <ul class="dropdown-menu">
             <li><a><%= link_to current_user.username, user_path(current_user) %></a></li>
-            <li><a><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> </a></li>
+            <%# <li><%= link_to 'Edit profile', edit_user_path, :class => 'navbar-link' %></li>
             <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+            <li> <%= link_to "Upgrade to premium", new_charge_path %> </li>
           <ul>
       </div>
      <% else %>
@@ -32,10 +33,6 @@
      <% end %>
    </ul>
  </div>
-
-
-
-
 
     <% if flash[:notice] %>
       <div class="alert alert-success">

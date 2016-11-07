@@ -3,24 +3,33 @@
     <div class="user-heading">
       <div class="profile-image">
         <%= image_tag(@user.image.url(:medium)) %>
-      <%= form_for @user, html: { multipart: true } do |f| %>
-      <div class="form-group">
-       <%= f.label "Edit Your Picture" %>
-       <%= f.file_field :image %>
-     </div>
-      <%= f.submit "Submit", class: 'btn btn-default' %>
-    <% end %>
-  </div>
-    <div class="user-data">
-      <h1> <%= current_user.username %> </h1>
-      <h4> Posts: <%= current_user.wikis.count %> </h4>
-      <h4> Likes: <%= current_user.votes.count %></h4>
-      <h4> Comments: <%= current_user.comments.count %></h4>
+      </div>
+      <div class="user-data">
+        <h1> <%= @user.username %> </h1>
+        <h4> Posts: <%= @user.wikis.count %> </h4>
+        <h4> Likes: <%= @user.votes.count %></h4>
+        <h4> Comments: <%= @user.comments.count %></h4>
+        <p> <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+      </div>
+      <div class="user-description">
+        <p> About Me: <%= @user.description %></p>
+      </div>
     </div>
-</div>
-</div>
-
-  <h1> <%= current_user.username %> </h1>
-  <p> <%= link_to "Upgrade to premium", new_charge_path %> </p>
-  <p> <%= link_to "Cancel subscription", charge_path, method: :delete %></p>
+    <div>
+      <h1>Posts</h1>
+      <div class="wiki-style">
+        <% @user.wikis.each do |wiki| %>
+         <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+        <% end %>
+      </div>
+    </div>
+    <div>
+      <h1>Likes</h1>
+      <div class="wiki-style">
+        <% @user.votes.each do |vote| %>
+         <%= image_tag(vote.wiki.image.url(:medium)) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

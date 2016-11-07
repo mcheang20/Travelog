@@ -16,7 +16,18 @@
 }
 
 .profile-image {
-  width: 50px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  border-right: 1px solid rgba(1, 0, 1, .2);
+}
+
+.profile-image-form {
+  text-align: center;
+  margin-left: 250px;
+}
+
+.profile-image-form input[type="file"] {
+  margin-left: 248px;
 }
 
 .profile-image img {
@@ -31,5 +42,22 @@
 }
 
 .user-data {
-  padding-left: 170px;
+  padding-left: 20px;
+}
+
+.user-edit {
+  border-bottom: 1px solid rgba(1, 0, 1, .2);
+}
+
+.edit-user-inputs {
+  width: 250px;
+}
+
+.edit-profile-form {
+  margin-left: 50px;
+}
+
+.user-description {
+  margin-left: 30px;
+  padding-top: 70px;
 }
