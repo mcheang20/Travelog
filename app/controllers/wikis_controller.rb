@@ -3,7 +3,6 @@ class WikisController < ApplicationController
   before_action :authorize_user, only: [:destroy, :edit, :update]
   def index
     @wikis =  policy_scope(Wiki)
-    
   end
 
   def show

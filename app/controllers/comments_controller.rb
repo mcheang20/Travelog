@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     before_action :require_sign_in
 
     before_action :authorize_user, only: [:destroy]
-
    def create
      @wiki = Wiki.find(params[:wiki_id])
      @comment = @wiki.comments.new(comment_params)
