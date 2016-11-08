@@ -13,7 +13,7 @@ resources :wikis do
 #  post '/like-down' => 'votes#like_down', as: :like_down
 end
 
-resources :categories
+resources :categories, only: [:index, :new, :create,:show]
 resources :charges, only: [:new, :create, :destroy]
 
 resources :users, only: [:create, :show, :edit, :update]

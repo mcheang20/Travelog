@@ -16,20 +16,32 @@
       </div>
     </div>
     <div>
-      <h1>Posts</h1>
-      <div class="wiki-style">
-        <% @user.wikis.each do |wiki| %>
-         <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
-        <% end %>
+      <h1 class="title-all">Posts</h1>
+      <div class="user-posts-slick">
+        <div class="scroller">
+          <% @user.wikis.each do |wiki| %>
+            <div><%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+            <p class="slick-caption"> <%= link_to wiki.title, wiki %> </p>
+            <p class="slick-caption-info"> <%= wiki.votes.count %> Likes </p>
+            <p class="slick-caption-info"> <%= wiki.comments.count %> Comments </p>
+          </div>
+          <% end %>
+        </div>
       </div>
     </div>
     <div>
-      <h1>Likes</h1>
-      <div class="wiki-style">
-        <% @user.votes.each do |vote| %>
-         <%= image_tag(vote.wiki.image.url(:medium)) %>
+      <h1 class="title-all">Likes</h1>
+      <div class="user-posts-slick">
+        <div class="scroller">
+          <% @user.votes.each do |vote| %>
+            <div><%= image_tag(vote.wiki.image.url(:medium)) %>
+              <p class="slick-caption"> <%= link_to vote.wiki.title, wiki_path(vote.wiki) %> </p>
+              <p class="slick-caption-info"> <%= vote.wiki.votes.count %> Likes</p>
+              <p class="slick-caption-info"> <%= vote.wiki.comments.count %> Comments</p>
+            </div>
         <% end %>
       </div>
     </div>
   </div>
+</div>
 </div>

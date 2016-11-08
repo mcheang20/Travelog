@@ -48,3 +48,7 @@ gem "paperclip", "~> 5.0.0"
 gem 'gravtastic'
 
 gem 'lightbox2-rails'
+
+gem 'jquery-slick-rails', '>= 1.6'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

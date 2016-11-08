@@ -61,3 +61,41 @@
   margin-left: 30px;
   padding-top: 70px;
 }
+
+.user-posts-slick {
+  zoom: 1;
+    overflow: hidden;
+    background-color: rgba(254, 254, 254, 0.5);
+    border-radius: 5px;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    min-width: 350px;
+    max-height: 290px;
+    font-size: 16px;
+    margin-left: 29px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(1, 0, 1, .1);
+    padding-left: 38px;
+}
+
+.user-posts-slick img {
+  height: 180px;
+  width: 310px;
+}
+
+.slick-caption {
+  float: left;
+  font-size: 16px;
+  clear: left;
+  margin-bottom: 0px;
+}
+
+.slick-caption-info {
+  font-size: 12px;
+  float: left;
+  clear: left;
+  margin-bottom: 0px;
+  font-weight: 600;
+}

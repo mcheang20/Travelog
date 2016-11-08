@@ -14,9 +14,12 @@
  *= require_self
  */
 
+ @import 'slick';
+ @import 'slick-theme';
  @import 'lightbox';
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
 html {
   height: 100%;
 }
@@ -146,13 +149,14 @@ text-align: center;
 
 .sidebar {
   position: absolute;
-  background-color: grey;
+  background-color: white;
   opacity: .5;
   padding: 15px;
   border: 1px solid rgba(69, 63, 63, .5);
   float: left;
   height: 100%;
   width: 12%;
+  margin-top: -1px;
 }
 
 .sidebar2 {
@@ -174,9 +178,10 @@ text-align: center;
 }
 
 .sidebar a {
-  color: white;
+  color: black;
   font-size: 20px;
   padding-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .sidebar-hold {
@@ -206,4 +211,27 @@ text-align: center;
 
 .title-all {
   border-bottom: 1px solid rgba(1, 0, 1, .2);
+}
+
+.scroller {
+  div {
+    text-align: center;
+    font-size: 30px;
+  }
+}
+
+.slick-prev::before, .slick-next::before {
+  color: #000;
+}
+
+.slick-next {
+  right: 5px;
+}
+
+.slick-prev {
+  left: -33px;
+}
+
+.scroller .slick-slider{
+  padding-left: 25px;
 }
