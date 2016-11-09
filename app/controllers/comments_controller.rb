@@ -10,13 +10,12 @@ class CommentsController < ApplicationController
      @comment.user = current_user
 
      if @comment.save
-        flash[:notice] = "Comment posted successfully"
+         Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @comment)
         redirect_to [@wiki]
       else
-        flash[:alert] = "Comment failed to save."
         redirect_to [@wiki]
+      end
     end
-  end
 
    def destroy
     @wiki = Wiki.find(params[:wiki_id])

@@ -8,6 +8,7 @@ class VotesController < ApplicationController
 
     if @vote.save
       @vote.update_attribute(:value, 1)
+         Notification.create(recipient: @wiki.user, actor: current_user, action: "Liked", notifiable: @vote)
     else
       @vote = current_user.votes.create(value: 1, wiki: @wiki)
     end

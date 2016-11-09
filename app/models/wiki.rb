@@ -4,15 +4,11 @@ class Wiki < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   belongs_to :user
   belongs_to :category
-  has_many :users, through: :collaborators
   has_many :comments, dependent: :destroy
   has_many :collaborators
   has_many :pics, dependent: :destroy
   has_many :votes, dependent: :destroy
-  has_many :notifications, dependent: :destroy
-
   validates :category, presence: true
-  validates :user, presence: true
 
   def likes_ups
    votes.where(value: 1).count
