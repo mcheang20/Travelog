@@ -3,19 +3,20 @@ class CommentsController < ApplicationController
     before_action :require_sign_in
 
     before_action :authorize_user, only: [:destroy]
+
    def create
      @wiki = Wiki.find(params[:wiki_id])
      @comment = @wiki.comments.new(comment_params)
      @comment.user = current_user
 
      if @comment.save
-       flash[:notice] = "Comment saved successfully."
-       redirect_to [@wiki]
-     else
-       flash[:alert] = "Comment failed to save."
-       redirect_to [@wiki]
-     end
-   end
+        flash[:notice] = "Comment posted successfully"
+        redirect_to [@wiki]
+      else
+        flash[:alert] = "Comment failed to save."
+        redirect_to [@wiki]
+    end
+  end
 
    def destroy
     @wiki = Wiki.find(params[:wiki_id])

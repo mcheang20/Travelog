@@ -50,6 +50,30 @@
   background-color: rgba(175, 170, 170, 0.3);
 }
 
+.wiki-body  {
+  padding-top: 20px;
+  margin-top: -10px;
+  margin-left: 171px;
+  padding-left: 35px;
+  display: inline-block;
+}
+
+.wiki-info {
+    border-bottom: 1px solid rgba(1, 0, 1, .2);
+    padding-bottom: 15px;
+}
+
+.wiki-info img {
+  float: right;
+  clear: right;
+  width: 100px;
+  -webkit-border-radius: 150px;
+  -moz-border-radius: 150px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
 .wiki-btn {
   margin-top: 5px;
   margin-bottom: 5px;
@@ -71,6 +95,10 @@
    }
 }
 
+.wiki-image-top img {
+  width: 1430px;
+}
+
 .wiki-details {
   margin-top: -10px;
 }
@@ -81,6 +109,6 @@
 
 .all-images-btn {
   position: absolute;
-  margin-top: 410px;
+  margin-top: 500px;
   margin-left: 30px;
 }
