@@ -3,8 +3,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Travelog</title>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
       <%= csrf_meta_tags %>
 </head>
 <body>
@@ -13,10 +13,23 @@
       <li class="presentation"> <%= link_to "Travelog", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
       <li class="presentation"> <%= link_to "Explore", wikis_path %></li>
       <% if user_signed_in? %>
+      <div class="btn-group glyphicon glyphicon-bell pull-right" data-behavior="notifications">
+        <span data-behavior="unread-count"></span>
+        <button type="button" class="dropdown-toggle glyphicon glyphicon-chevron-down" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-behavior="notifications-link">
+        </button>
+        <ul class="dropdown-menu" data-behavior="notification-items">
+          <!--
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        -->
+        </ul>
+      </div>
+
       <li class="presentation"> <%= link_to "Create", new_wiki_path %></li>
       <div class="avatar-button btn-group pull-right">
         <button type="button" class="btn btn-default btn-avatar">  <%= image_tag(current_user.image.url(:thumb)) %></button>
-        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-behavior="notifications-link">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
@@ -50,7 +63,7 @@
         <%= flash[:alert] %>
       </div>
     <% end %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
 <%= yield :sidebar %>
 <%= yield %>
 

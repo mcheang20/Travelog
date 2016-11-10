@@ -15,8 +15,13 @@ end
 
 resources :categories, only: [:index, :new, :create,:show]
 resources :charges, only: [:new, :create, :destroy]
-
 resources :users, only: [:create, :show, :edit, :update]
+resources :notifications do
+  collection do
+    post :mark_as_read
+  end
+end
+
 
  get "welcome/index"
 

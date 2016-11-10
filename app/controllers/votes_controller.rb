@@ -4,12 +4,13 @@ class VotesController < ApplicationController
 
   def create
     @wiki = Wiki.find(params[:wiki_id])
-    @vote = current_user.votes.build(wiki: @wiki)
+    @vote = @wiki.votes.new(wiki: @wiki)
+    @vote.user = current_user
 
     if @vote.save
-      @vote.update_attribute(:value, 1)
-         Notification.create(recipient: @wiki.user, actor: current_user, action: "Liked", notifiable: @vote)
+       @vote.update_attribute(:value, 1)
     else
+      Notification.create(recipient: @wiki.user, actor: current_user, action: "Liked", notifiable: @wiki )
       @vote = current_user.votes.create(value: 1, wiki: @wiki)
     end
     redirect_to :back
@@ -27,6 +28,11 @@ class VotesController < ApplicationController
       redirect_to :back
   end
 
+private
+
+  def vote_params
+    params.require(:vote).permit(:value)
+  end
 #private
 #def update_vote(new_value)
 #  @wiki = Wiki.find(params[:wiki_id])

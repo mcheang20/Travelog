@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :collaborators
   has_many :votes, dependent: :destroy
+  has_many :notifications, foreign_key: :recipient_id
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 

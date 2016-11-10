@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
      @comment.user = current_user
 
      if @comment.save
-         Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @comment)
+         Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @wiki)
         redirect_to [@wiki]
       else
         redirect_to [@wiki]
