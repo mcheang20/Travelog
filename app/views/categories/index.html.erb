@@ -1,12 +1,24 @@
 <div class="cat-index-view">
-<h1 class="cat-title"> Categories</h1>
-  <%= render partial: 'layouts/sidebar2' %>
+  <h1 class="cat-title"> Categories</h1>
+    <div class="sidebar2">
+      <div class="sidebar2-hold">
+        <span>  <%= link_to "Home", welcome_index_path, :class=>'glyphicon glyphicon-home' %></span></br>
+        <span> <%= link_to "Categories", categories_path, :class=>'glyphicon glyphicon-align-left' %></span>
+          <div>
+            <% @categories.each do |category| %>
+              <li><a><%= link_to category.name, category %>(<%= category.wikis.count %>)</a></li>
+            <% end %>
+          </div>
+        <span>  <%= link_to "MostRecent", wikis_path, :class=>'glyphicon glyphicon-hourglass' %></span></br>
+      </div>
+    </div>
+
     <div class="container">
-        <div class="cat-captions">
-    <% @categories.each do |category| %>
-      <p class="cat-text"><%= link_to category.name, category %></p>
-    <% end %>
-  </div>
+      <div class="cat-captions">
+        <% @categories.each do |category| %>
+          <p class="cat-text"><%= link_to category.name, category %></p>
+        <% end %>
+      </div>
     </div>
     <div class="container">
       <div class="cat-idx">

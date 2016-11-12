@@ -10,12 +10,15 @@
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-sm-3">
               <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
-              <h4 class="link"><%= link_to wiki.title, wiki %></h4>
+              <div>
+              <span class="link"><%= link_to wiki.title, wiki %></span>
+              <p class="desc-index"><%= wiki.description %> </p>
+              </div>
               <div class="wiki-details">
-                <h5><%= wiki.description %> </h5>
                 <small><%=  link_to wiki.user.username, user_path(wiki.user)%></small>
                 <small><%= render partial: 'votes/like', locals: { wiki: wiki } %></small>
-                <small><%= wiki.comments.count %> Comments</small>
+                <small><%= wiki.comments.count %> Comments,</small>
+                <small>Posted <%= time_ago_in_words(wiki.created_at) %> ago </small>
               </div>
             </div>
       <% end %>

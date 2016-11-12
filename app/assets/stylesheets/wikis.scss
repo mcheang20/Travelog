@@ -9,25 +9,24 @@
   border-bottom: 1px solid rgba(1, 0, 1, 0.2);
   padding-left: 190px;
   color: rgba(1, 0, 1, 0.6);
-  padding-bottom: 50px;
-  margin-top: 5px;
+  padding-bottom: 20px;
+  margin-top: 0px;
   font-weight: normal;
+  background-color: rgba(251, 132, 13, .8)
 }
 .wiki-style {
   zoom: 1;
-    overflow: hidden;
-    background-color: rgba(254, 254, 254, 0.5);
-    border-radius: 5px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    min-width: 350px;
-    max-height: 290px;
-    font-size: 16px;
-    margin-left: 29px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(1, 0, 1, .1);
-  }
+  background-color: white;
+  border-radius: 3px;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  min-width: 350px;
+  font-size: 14px;
+  margin-left: 29px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(1, 0, 1, .1);
+}
 
 .wiki-style img {
   height: 180px;
@@ -106,7 +105,7 @@
 }
 
 .wiki-details {
-  margin-top: -10px;
+  margin-top: 0px;
 }
 
 .wiki-details h5 {
@@ -130,4 +129,10 @@
 
 .small-text {
   color: rgba(84, 82, 82, .7)
+}
+
+.desc-index {
+  margin-bottom: 1px;
+  border-bottom: 1px solid rgba(1, 1, 1, .1);
+  margin-top: -4px;
 }
