@@ -21,7 +21,7 @@
       <h1 class="title-all">Posts</h1>
         <div class="user-posts-slick">
           <div class="scroller">
-            <% if user_votes_nil? %>
+            <% if user_posts_nil? %>
               <p> You havent posted anything. </p>
               <% else %>
                 <% @user.wikis.each do |wiki| %>
