@@ -40,14 +40,26 @@
      </a>
    </div>
 </div>
-<h1 class="container heading-one"> Take a Look</h1>
+<h1 class="container heading-one"> Recently Posted</h1>
+<%#
 <div class="container captions">
-  <h2><%=link_to "Explore", wikis_path%></h2>
-  <h2>Share</h2>
+  <h2><%=link_to "Explore", wikis_path%>
+<%#  <h2>Share</h2>
   <h2>Create</h2>
 </div>
 <div class="home-circle">
   <img src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/tokyo-mud-bath-bar-mudbath0716.jpg?itok=dJ8lDXJh" alt="..." class="img-circle circle">
   <img src="http://travelchannel.sndimg.com/content/dam/images/travel/fullset/2015/01/30/places-to-say-i-love-you/ponts-des-arts-love-bridge-paris-france.jpg.rend.tccom.1280.960.jpeg" alt="..." class="img-circle circle">
   <img src="http://www.byokids.com.au/wordpress/wp-content/uploads/2-London.jpg" alt="..." class="img-circle circle">
+</div>
+%>
+<div class="welcome-slick">
+  <div class="scroller">
+    <% @wikis.each do |wiki| %>
+      <div>
+        <%= image_tag(wiki.image.url(:medium)) %>
+        <p class="slick-caption"> <%= link_to wiki.title, wiki_path(wiki) %> </p>
+      </div>
+  <% end %>
+</div>
 </div>

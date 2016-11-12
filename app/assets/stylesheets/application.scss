@@ -33,14 +33,15 @@ body {
     width: 100%;
 }
 .navigation {
-  color: white;
-  background-color: rgba(49, 52, 52, .7);
+  color: rgba(1, 1, 1, .6);
+  background-color: white;
   font-size: 16px;
   font-weight: 500;
+  border-bottom: 1px solid rgba(1, 1, 1, .1);
 }
 
 .navigation a {
-  color: white;
+  color: rgba(1, 1, 1, .6);
   font-size: 16px;
   font-weight: 400;
   margin-right: -10px;
@@ -154,13 +155,14 @@ text-align: center;
   border: 1px solid rgba(69, 63, 63, .5);
   float: left;
   height: 100%;
-  width: 12%;
+  width: 171px;
   margin-top: -1px;
+  border-top: none;
 }
 
 .sidebar2 {
   position: absolute;
-  background-color: grey;
+  background-color: white;
   opacity: .5;
   padding: 15px;
   border: 1px solid rgba(69, 63, 63, .5);
@@ -168,12 +170,14 @@ text-align: center;
   height: 100%;
   width: 12%;
   margin-top: -71px;
+  border-top: none;
 }
 
 .sidebar2 a {
-  color: white;
+  color: black;
   font-size: 20px;
   padding-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 .sidebar a {
@@ -194,6 +198,8 @@ text-align: center;
 .btn-avatar {
   padding: 0px;
   margin-top: 2px;
+  border: none;
+  background: none;
 
   img {
     height: 30px;
@@ -202,6 +208,7 @@ text-align: center;
 
 .avatar-button {
   padding-right: 10px;
+  padding-top: 4px;
 }
 
 .registration {
@@ -233,4 +240,49 @@ text-align: center;
 
 .scroller .slick-slider{
   padding-left: 25px;
+}
+
+.alert-wrapper {
+    padding: 15px;
+    position: absolute;
+    z-index: 100;
+    background: rgba(11, 233, 203, .8);
+    border-radius: 3px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: .5px;
+}
+
+.notification-btn {
+  padding-right: 10px;
+  padding-top: 10px;
+  display: flex;
+  letter-spacing: 3px;
+}
+
+.glyphicon {
+  font-size: 20px;
+}
+
+.btn-avatar-notification {
+  border: none;
+  background: none;
+  display: flex;
+  padding: 3px;
+}
+
+.dropdown-menu {
+  letter-spacing: .5px;
+}
+
+.presentation {
+  border-right: 1px solid rgba(1, 1, 1, .1);
+  padding-right: 14px;
+}
+
+.nav-logo {
+  height: 42px;
 }

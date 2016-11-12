@@ -4,10 +4,10 @@
     <div class="row col-md-10 wiki-body">
       <div class="wiki-info">
         <%= image_tag(@wiki.user.image.url(:thumb)) %>
-        <h2><%= @wiki.user.username %></h2>
         <h1><%= @wiki.title %></h1>
-        <h4><%= @wiki.description %></h4>
-        <h4><%= @wiki.category.name %></h4>
+        <h4 class="small-text"><%= @wiki.description %></h4>
+        <h4 class="small-text"><%= @wiki.category.name %></h4>
+        <h4 class="wiki-user-username"><%= link_to @wiki.user.username, user_path(@wiki.user) %></h4>
       </div>
           <h3>
             <%= pluralize(@wiki.likes, 'like') %>

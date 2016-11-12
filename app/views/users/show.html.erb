@@ -9,7 +9,9 @@
         <h4> Posts: <%= @user.wikis.count %> </h4>
         <h4> Likes: <%= @user.votes.count %></h4>
         <h4> Comments: <%= @user.comments.count %></h4>
+        <% if user_is_authorized? %>
         <p> <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+        <% end %>
       </div>
       <div class="user-description">
         <p> About Me: <%= @user.description %></p>
@@ -17,31 +19,39 @@
     </div>
     <div>
       <h1 class="title-all">Posts</h1>
-      <div class="user-posts-slick">
-        <div class="scroller">
-          <% @user.wikis.each do |wiki| %>
-            <div><%= link_to image_tag(wiki.image.url(:medium)), wiki %>
-            <p class="slick-caption"> <%= link_to wiki.title, wiki %> </p>
-            <p class="slick-caption-info"> <%= wiki.votes.count %> Likes </p>
-            <p class="slick-caption-info"> <%= wiki.comments.count %> Comments </p>
+        <div class="user-posts-slick">
+          <div class="scroller">
+            <% if user_votes_nil? %>
+              <p> You havent posted anything. </p>
+              <% else %>
+                <% @user.wikis.each do |wiki| %>
+                  <div><%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+                    <p class="slick-caption"> <%= link_to wiki.title, wiki %> </p>
+                    <p class="slick-caption-info"> <%= wiki.votes.count %> Likes </p>
+                    <p class="slick-caption-info"> <%= wiki.comments.count %> Comments </p>
+                  </div>
+                <% end %>
+              <% end %>
           </div>
-          <% end %>
+        </div>
+      </div>
+    <div>
+      <h1 class="title-all">Likes</h1>
+        <div class="user-posts-slick">
+          <div class="scroller">
+            <% if user_votes_nil? %>
+              <p> You haven't liked anything yet.</p>
+              <% else %>
+                <% @user.votes.each do |vote| %>
+                  <div><%= image_tag(vote.wiki.image.url(:medium)) %>
+                    <p class="slick-caption"> <%= link_to vote.wiki.title, wiki_path(vote.wiki) %> </p>
+                    <p class="slick-caption-info"> <%= vote.wiki.votes.count %> Likes</p>
+                    <p class="slick-caption-info"> <%= vote.wiki.comments.count %> Comments</p>
+                  </div>
+                <% end %>
+            <%end %>
         </div>
       </div>
     </div>
-    <div>
-      <h1 class="title-all">Likes</h1>
-      <div class="user-posts-slick">
-        <div class="scroller">
-          <% @user.votes.each do |vote| %>
-            <div><%= image_tag(vote.wiki.image.url(:medium)) %>
-              <p class="slick-caption"> <%= link_to vote.wiki.title, wiki_path(vote.wiki) %> </p>
-              <p class="slick-caption-info"> <%= vote.wiki.votes.count %> Likes</p>
-              <p class="slick-caption-info"> <%= vote.wiki.comments.count %> Comments</p>
-            </div>
-        <% end %>
-      </div>
-    </div>
   </div>
-</div>
 </div>

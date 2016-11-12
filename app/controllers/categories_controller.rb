@@ -1,7 +1,6 @@
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all
-    @category = Category.where(id: params[:id])
   end
 
   def show

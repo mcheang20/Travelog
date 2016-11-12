@@ -1,24 +1,25 @@
-<div class="container new-wiki-form">
+<div class="new-wiki-form">
   <%= form_for @wiki, html: { multipart: true } do |f| %>
      <div class="form-group">
        <%= f.label :title %>
        <%= f.text_field :title, class: 'form-control', placeholder: "Enter Wiki Title"  %>
      </div>
      <div class="form-group">
-       <%= f.label :body %>
-       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Enter Wiki body" %>
+       <%= f.label "Share your experience" %>
+       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Where did you go? What did you do?" %>
      </div>
      <div class="form-group">
-       <%= f.label :description %>
-       <%= f.text_area :description, rows: 4, class: 'form-control', placeholder: "Enter Wiki description" %>
+       <%= f.label :location %>
+       <%= f.text_area :description, rows: 1, class: 'form-control', placeholder: "Ex. San Francsico, CA, USA." %>
      </div>
      <div class="form-group">
-       <%= f.label :image %>
+       <%= f.label "Add a thumbnail" %>
        <%= f.file_field :image %>
-       <div class="form-group">
-       <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
      </div>
-     </div>
+     <div class="form-group">
+     <%= f.label "Select a category" %>
+     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
+    </div>
      <% if current_user && (current_user.admin? ||  current_user.premium?) %>
        <div class="form-group">
          <%= f.label :private %>
