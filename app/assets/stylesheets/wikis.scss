@@ -181,4 +181,12 @@
 
 .side-images {
   position: absolute;
+  width: 30%;
+  margin-left: 943px;
+
+  img {
+    padding: 5px;
+    width: 90px;
+    background-color: white;
+  }
 }

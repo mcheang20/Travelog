@@ -13,6 +13,11 @@
         <h4 class="small-text"><%= @wiki.category.name %></h4>
         <h4 class="wiki-user-username"><%= link_to @wiki.user.username, user_path(@wiki.user) %></h4>
       </div>
+      <div class="side-images">
+      <% @wiki.pics.take(6).each do |pic| %>
+        <div class="row col-sm-6"><%= link_to (image_tag(pic.image.url(:thumb))), pic.image.url(:album), data: {lightbox: "eaxmple-set"}  %></div>
+        <% end %>
+      </div>
       <div class="wiki-icons">
         <p class="glyphicon glyphicon-heart"></p>
         <p class="glyphicon glyphicon-comment"></p>
@@ -26,11 +31,6 @@
       <div class="wiki-description">
         <h3>About:</h3>
         <p><%= markdown(@wiki.body) %></p>
-      </div>
-      <div class="side-images">
-      <% @wiki.pics.take(6).each do |pic| %>
-        <div class="row col-sm-6"><%= image_tag(pic.image.url(:thumb)) %></div>
-        <% end %>
       </div>
     <% if current_user %>
     <div class="comment-form-div">
