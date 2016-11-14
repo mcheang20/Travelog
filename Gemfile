@@ -51,3 +51,7 @@ gem 'lightbox2-rails'
 gem 'jquery-slick-rails', '>= 1.6'
 
 gem 'jbuilder'
+
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'impressionist'

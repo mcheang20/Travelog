@@ -1,10 +1,10 @@
 class WikisController < ApplicationController
 
   before_action :authorize_user, only: [:destroy, :edit, :update]
+  impressionist actions: [:show]
+
   def index
     @wikis =  policy_scope(Wiki)
-    most_popular = Wiki.first
-    @populars = Wiki.where(:criteria => most_popular)
   end
 
   def show

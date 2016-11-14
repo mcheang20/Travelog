@@ -12,7 +12,6 @@
   padding-bottom: 20px;
   margin-top: 0px;
   font-weight: normal;
-  background-color: rgba(251, 132, 13, .8)
 }
 .wiki-style {
   zoom: 1;
@@ -55,15 +54,17 @@
 
 .wiki-body  {
   padding-top: 20px;
-  margin-top: -10px;
+  margin-top: -25px;
   margin-left: 171px;
   padding-left: 35px;
   display: inline-block;
+  padding-right: 0px;
+  border-right: 1px solid rgba(1, 1, 1, .2);
 }
 
 .wiki-info {
     border-bottom: 1px solid rgba(1, 0, 1, .2);
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     margin-top: -5px;
 }
 
@@ -124,7 +125,8 @@
 
 .wiki-user-username {
   float: right;
-  padding-right: 31px;
+  padding-right: 28px;
+  margin-top: -5px
 }
 
 .small-text {
@@ -135,4 +137,48 @@
   margin-bottom: 1px;
   border-bottom: 1px solid rgba(1, 1, 1, .1);
   margin-top: -4px;
+}
+
+.wiki-icons {
+  letter-spacing: 100px;
+  margin-left: 30px;
+  padding-top: 5px;
+
+  .glyphicon {
+    font-size: 30px;
+  }
+}
+
+.wiki-icons-tag {
+  padding-right: 145px;
+  padding-left: 27px;
+}
+
+.wiki-icons-content {
+  border-bottom: 1px solid rgba(1, 1, 1, .2);
+  padding-bottom: 10px;
+}
+
+.wiki-show-body {
+  background-color: rgba(192, 192, 191, .2);
+}
+
+.wiki-description {
+  background-color: white;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.comment-form-div {
+  border-top: 1px solid  rgba(1, 1, 1, .2);
+  margin-top: 10px;
+}
+
+.user-action {
+  width: 200px;
+  float: right;
+}
+
+.side-images {
+  position: absolute;
 }

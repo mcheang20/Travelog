@@ -1,4 +1,5 @@
 class Wiki < ActiveRecord::Base
+  is_impressionable
 
   has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>", large: "1200x500#"}, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
@@ -13,7 +14,6 @@ class Wiki < ActiveRecord::Base
   def likes_ups
    votes.where(value: 1).count
  end
-
 
  def likes
    votes.sum(:value)

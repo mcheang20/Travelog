@@ -17,8 +17,8 @@
               <div class="wiki-details">
                 <small><%=  link_to wiki.user.username, user_path(wiki.user)%></small>
                 <small><%= render partial: 'votes/like', locals: { wiki: wiki } %></small>
-                <small><%= wiki.comments.count %> Comments,</small>
-                <small>Posted <%= time_ago_in_words(wiki.created_at) %> ago </small>
+                <small>Posted <%= time_ago_in_words(wiki.created_at) %> ago, </small>
+                <small><%= wiki.impressionist_count %> views</small>
               </div>
             </div>
       <% end %>

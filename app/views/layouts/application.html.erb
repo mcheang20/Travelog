@@ -16,16 +16,16 @@
       <li class="presentation"> <%= link_to "Share", new_wiki_path %></li>
       <div class="avatar-button btn-group pull-right">
         <button type="button" class="btn btn-default btn-avatar">  <%= image_tag(current_user.image.url(:thumb)) %></button>
-        <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-behavior="notifications-link">
+        <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
           <ul class="dropdown-menu">
             <li><a><%= link_to current_user.username, user_path(current_user) %></a></li>
-            <%# <li><%= link_to 'Edit profile', edit_user_path, :class => 'navbar-link' %></li>
+            <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
             <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
             <li> <%= link_to "Upgrade to premium", new_charge_path %> </li>
-          <ul>
+          </ul>
       </div>
       <div class="btn-group notification-btn pull-right" data-behavior="notifications">
         <div class="glyphicon glyphicon-bell"></div>
