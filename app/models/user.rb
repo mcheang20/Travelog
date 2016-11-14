@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
   has_many :collaborators
   has_many :votes, dependent: :destroy
   has_many :notifications, foreign_key: :recipient_id
+  has_many :follower_relationships, foreign_key: :following_id, class_name: 'Follow'
+  has_many :followers, through: :follower_relationships, source: :follower
+  has_many :following_relationships, foreign_key: :follower_id, class_name: 'Follow'
+  has_many :following, through: :following_relationships, source: :following
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
@@ -23,8 +27,11 @@ class User < ActiveRecord::Base
     votes.where(wiki_id: wiki.id).first
   end
 
-  def avatar_url(size)
-    gravatar_id = Digest::MD5::hexdigest(self.email).downcase
-    "http://gravatar.com/avatar/#{gravatar_id}.png?s=#{size}"
+  def follow(user_id)
+    following_relationships.create(following_id: user_id)
+  end
+
+  def unfollow(user_id)
+    following_relationships.find_by(following_id: user_id).destroy
   end
 end

@@ -9,9 +9,18 @@
         <h4> Posts: <%= @user.wikis.count %> </h4>
         <h4> Likes: <%= @user.votes.count %></h4>
         <h4> Comments: <%= @user.comments.count %></h4>
+        <h4> Followers: <%= @user.followers.count %></h4>
         <% if user_is_authorized? %>
-        <p> <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+          <p> <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+          <% else %>
+            <% if current_user_is_following(current_user.id, @user.id) %>
+              <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
+            <% else %>
+            <%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %>
+          <% end %>
         <% end %>
+
+
       </div>
       <div class="user-description">
         <p> About Me: <%= @user.description %></p>

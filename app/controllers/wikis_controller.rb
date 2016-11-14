@@ -30,10 +30,10 @@ class WikisController < ApplicationController
 
 
     if @wiki.save
-      flash[:notice] = "Wiki was saved successfully."
+      flash[:notice] = "Log was saved successfully."
       redirect_to @wiki
     else
-      flash.now[:alert] = "There was an error saving the wiki. Please try again."
+      flash.now[:alert] = "There was an error saving your log. Please try again."
       render :new
     end
   end
@@ -63,7 +63,7 @@ class WikisController < ApplicationController
       flash[:notice] = "\"#{@wiki.title}\" was deleted successfully."
       redirect_to wikis_path
     else
-      flash.now[:alert] = "There was an error deleting the wiki."
+      flash.now[:alert] = "There was an error deleting the log."
       render :show
     end
   end
