@@ -7,6 +7,7 @@
  <% end %>
   <div class="main">
     <h4>Most Recent</h4>
+    <a><%= link_to "Most Popular", wikis_path(:most_popular) %></a>
       <% @wikis.each do |wiki| %>
           <div class="wiki-style col-sm-3">
               <%= link_to image_tag(wiki.image.url(:medium)), wiki %>

@@ -5,6 +5,7 @@ class WikisController < ApplicationController
 
   def index
     @wikis =  policy_scope(Wiki)
+    @wikis = Wiki.where(params[:most_popular])
   end
 
   def show

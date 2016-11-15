@@ -18,4 +18,7 @@ class Wiki < ActiveRecord::Base
  def likes
    votes.sum(:value)
  end
+
+ scope :most_popular, ->  { Wiki.order('wikis.impressionist_count DESC') }
+
 end
