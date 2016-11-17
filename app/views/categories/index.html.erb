@@ -1,45 +1,32 @@
-<div class="cat-index-view">
-  <h1 class="cat-title"> Categories</h1>
-    <div class="sidebar2">
-      <div class="sidebar2-hold">
-        <span>  <%= link_to "Home", welcome_index_path, :class=>'glyphicon glyphicon-home' %></span></br>
-        <span> <%= link_to "Categories", categories_path, :class=>'glyphicon glyphicon-align-left' %></span>
-          <div>
-            <% @categories.each do |category| %>
-              <li><a><%= link_to category.name, category %>(<%= category.wikis.count %>)</a></li>
-            <% end %>
-          </div>
-        <span>  <%= link_to "MostRecent", wikis_path, :class=>'glyphicon glyphicon-hourglass' %></span></br>
-      </div>
-    </div>
-
-    <div class="container">
+  <div class="container">
       <div class="cat-captions">
         <% @categories.each do |category| %>
           <p class="cat-text"><%= link_to category.name, category %></p>
         <% end %>
       </div>
     </div>
-    <div class="container">
-      <div class="cat-idx">
+
+    <div class="container cat-index-view">
+        <h1 class="title-all"> Categories</h1>
+      <div class="cat-idx index-all">
         <img src="http://cdni.condenast.co.uk/646x430/g_j/giza_cnt_30mar10_iStock_b.jpg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="http://3.bp.blogspot.com/_9Zf_P9g6cuo/Scz1gJs0QaI/AAAAAAAADlc/wT3QKQQPYJE/s800/great+wall+of+china.jpg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="http://www.travelchannel.com/content/dam/images/travel/fullset/2013/12/04/7f/sydney-opera-house-2.rend.tccom.616.462.jpeg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="https://cache-graphicslib.viator.com/graphicslib/thumbs674x446/2050/SITours/paris-in-one-day-sightseeing-tour-in-paris-130592.jpg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="http://www.whitakercenter.org/media/images/JER-Film-Stills-Sunset-Dustin-Farrell.jpg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="https://artsemiotic123.files.wordpress.com/2014/08/times_square.jpg">
       </div>
-      <div class="cat-idx">
+      <div class="cat-idx index-all">
         <img src="http://serwer10477.lh.pl/wp-content/uploads/2015/11/Machu-Pichu-Peru.jpg">
       </div>
     </div>

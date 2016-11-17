@@ -1,4 +1,5 @@
-<% @wikis.each do |wiki| %>
+<% @wikis.take(3).each do |wiki| %>
+  <% if wiki.impressionist_count > 10 %>
     <div class="wiki-style col-sm-3">
         <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
         <div>
@@ -12,4 +13,5 @@
           <small><%= wiki.impressionist_count %> views</small>
         </div>
       </div>
+    <% end %>
 <% end %>

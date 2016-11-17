@@ -11,7 +11,6 @@ resources :wikis do
  resources :pics, only: [:show, :create, :destroy]
  resources :collaborators, only: [:create, :destroy]
  resources :votes, only: [:create, :destroy]
-
 #  post '/like-up' => 'votes#like_up', as: :like_up
 #  post '/like-down' => 'votes#like_down', as: :like_down
 end
@@ -25,7 +24,15 @@ resources :notifications do
   end
 end
 
+get "/most_popular" => 'wikis#most_popular', as: :most_popular
+get "/most_recent" => 'wikis#most_recent', as: :most_recent
+get "/your_likes" => 'wikis#your_likes', as: :likes
+get "/followed_users" => 'wikis#followed_users', as: :followed_users
+
  get "welcome/index"
+ get "welcome/about"
+ get "welcome/feature"
+ get "welcome/contact"
 
  root 'welcome#index'
 end

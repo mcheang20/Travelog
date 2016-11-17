@@ -43,6 +43,9 @@
      <% end %>
    </ul>
  </div>
+ <%= render 'layouts/navbar' %>
+
+
 
     <% if flash[:notice] %>
       <div class="alert-wrapper">
@@ -63,6 +66,7 @@
 
 <%= yield :sidebar %>
 <%= yield %>
+<%= render 'layouts/footer' %>
 
 </body>
 </html>

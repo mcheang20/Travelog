@@ -8,6 +8,7 @@
 
  h1, .top {
   font-size: 60px;
+  margin-bottom: 220px;
 }
 
 .welcome-slick {
@@ -25,4 +26,77 @@
   border: 1px solid rgba(1, 0, 1, 0.1);
   padding-left: 38px;
   width: 80%;
+}
+
+.info-one {
+  text-align: center;
+  padding-top: 50px;
+
+  img {
+    height: 500px;
+    width: 1000px;
+  }
+
+  h1 {
+    position: absolute;
+    padding-top: 50px;
+    color: white;
+    margin-left: 520px;
+  }
+
+  p {
+    position: absolute;
+    padding-top: 120px;
+    margin-left: 520px;
+    color: rgba(1,1,1,.5);
+    font-size: 16px;
+    }
+
+    a {
+      position: absolute;
+      margin-top: 160px;
+      margin-left: 300px;
+      text-decoration: none;
+      background-color: #287fb8;
+      border: #287fb8;
+      border-radius: 3px;
+      padding: 10px;
+      font-size: 16px;
+      padding-left: 20px;
+      padding-right: 20px;
+      color: white;
+    }
+}
+
+.info-two {
+  text-align: center;
+  padding-top: 50px;
+
+  img {
+    height: 500px;
+    width: 1000px;
+  }
+
+  h1 {
+    position: absolute;
+    padding-top: 50px;
+    color: white;
+    margin-left: 250px;
+  }
+
+  p {
+    position: absolute;
+    padding-top: 120px;
+    margin-left: 250px;
+    color: rgba(255,255,255,.5);
+    font-size: 16px;
+    }
+
+    a {
+      color: white;
+    }
+
+    .btn-primary {
+      position: absolute;
+    }
 }

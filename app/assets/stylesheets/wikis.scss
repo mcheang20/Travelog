@@ -43,13 +43,8 @@
 }
 
 .main {
-  padding-top: 20px;
-  margin-top: -10px;
-  margin-left: 171px;
-  padding-left: 35px;
-  display: inline-block;
   width: 100%;
-  background-color: rgba(175, 170, 170, 0.3);
+  background-color: rgba(175, 170, 170, 0.2);
 }
 
 .wiki-body  {
@@ -189,4 +184,14 @@
     width: 90px;
     background-color: white;
   }
+}
+
+.index-title {
+  border-bottom: 1px solid rgba(1, 1, 1, .2);
+  font-weight: 200;
+  color: rgba(1,1,1,.5);
+}
+
+.section-index {
+  border-bottom: 1px solid rgba(1,1,1, .2);
 }

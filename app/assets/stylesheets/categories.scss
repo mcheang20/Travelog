@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .cat-index-view{
-  background-color: rgba(175, 170, 170, .3);
-  margin-top: -20px;
+  background-color: rgba(1,1,1,.1);
 }
 
 .cat-title {
@@ -12,21 +11,19 @@
   color: rgba(1, 0, 1, 0.6);
   padding-bottom: 20px;
   font-weight: normal;
-  background-color: rgba(251, 132, 13, .8)
 }
 .cat-idx {
   margin-left: 115px;
   text-align: -webkit-center;
   margin-top: 10px;
   margin-bottom: 20px;
-  background-color: rgba(254, 254, 254, .5);
   border-radius: 5px;
   padding-left: 20px;
   display: flex;
   padding-bottom: 10px;
   padding-top: 10px;
   border: 1px solid rgba(1, 0, 1, .1);
-  background-color: white;
+  background-color: rgba(1,1,1,.1);
 }
 .cat-idx img{
   height: 250px;
@@ -57,4 +54,8 @@
 
 .cat-details {
   margin-left: 200px;
+}
+
+.index-all {
+  background-color: white;
 }

@@ -1,0 +1,17 @@
+<div class="container main">
+  <% @wikis.each do |vote| %>
+      <div class="wiki-style col-sm-3">
+          <%= link_to image_tag(vote.wiki.image.url(:medium)), vote.wiki %>
+          <div>
+          <span class="link"><%= link_to vote.wiki.title, vote.wiki %></span>
+          <p class="desc-index"><%= vote.wiki.description %> </p>
+          </div>
+          <div class="wiki-details">
+            <small><%=  link_to vote.wiki.user.username, user_path(vote.wiki.user)%></small>
+            <small><%= render partial: 'votes/like', locals: { wiki: vote.wiki } %></small>
+            <small>Posted <%= time_ago_in_words(vote.wiki.created_at) %> ago, </small>
+            <small><%= vote.wiki.impressionist_count %> views</small>
+          </div>
+        </div>
+  <% end %>
+</div>

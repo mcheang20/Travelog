@@ -5,7 +5,22 @@ class WikisController < ApplicationController
 
   def index
     @wikis =  policy_scope(Wiki)
-    @wikis = Wiki.where(params[:most_popular])
+  end
+
+  def most_popular
+    @wikis = Wiki.all
+  end
+
+  def most_recent
+   @wikis  = Wiki.all.order('created_at DESC')
+  end
+
+  def your_likes
+    @wikis = current_user.votes
+  end
+
+  def followed_users
+    @wikis = Wiki.followed_users(current_user.following).order('created_at DESC')
   end
 
   def show

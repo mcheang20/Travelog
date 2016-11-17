@@ -33,18 +33,18 @@ body {
     width: 100%;
 }
 .navigation {
-  color: rgba(1, 1, 1, .6);
+  color: rgba(1,1,1,.4);
   background-color: white;
   font-size: 16px;
   font-weight: 500;
-  border-bottom: 1px solid rgba(1, 1, 1, .1);
-}
+  border-bottom: 1px solid rgba(1, 1, 1, .2);
 
-.navigation a {
-  color: rgba(1, 1, 1, .6);
+  a {
+  color: rgba(1,1,1,.5);
   font-size: 16px;
   font-weight: 400;
   margin-right: -10px;
+  }
 }
 
 .navbar-left {
@@ -279,10 +279,54 @@ text-align: center;
 }
 
 .presentation {
-  border-right: 1px solid rgba(1, 1, 1, .1);
+  border-right: 1px solid rgba(1,1,1,.2);
   padding-right: 14px;
 }
 
 .nav-logo {
   height: 42px;
+}
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #777;
+  background-color: grey;
+  height: 200px;
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+.nav-index {
+  height: 50px;
+  text-align: center;
+  font-size: 16px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(1, 1, 1, .2);
+  width: 100%;
+  padding-right: 25px;
+
+    a {
+      color: rgba(1, 1, 1, .5);
+      margin-right: 40px;
+      border-bottom: 1px solid rgba(1,1,1,.1);
+      text-decoration: none;
+        &:hover {
+          color: #222;
+
+        }
+    }
 }

@@ -1,0 +1,11 @@
+<nav class="nav-index">
+  <ul>
+  <a><%= link_to "Most Popular", most_popular_path(@wikis) %></a>
+  <a><%= link_to "Most Recent", most_recent_path(@wikis) %></a>
+  <% if user_signed_in? %>
+  <a><%= link_to "Likes", likes_path(@wikis) %></a>
+  <a><%= link_to "Followed", followed_users_path(@wikis) %></a>
+  <% end %>
+  <a><%= link_to "Categories", categories_path %></a>
+</ul>
+</nav>

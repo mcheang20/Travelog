@@ -1,3 +1,4 @@
+<% if user_signed_in? %>
 <div class="heart-like">
   <% if vote = current_user.like_for(wiki) %>
     <%= link_to [wiki, vote], method: :delete do %>
@@ -10,3 +11,4 @@
  <% end %>
 </div>
 <%= wiki.likes %> Likes,
+<% end %>
