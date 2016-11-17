@@ -8,6 +8,7 @@ class Wiki < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :collaborators
   has_many :pics, dependent: :destroy
+  has_many :clips, dependent: :destroy
   has_many :votes, dependent: :destroy
   validates :category, presence: true
 

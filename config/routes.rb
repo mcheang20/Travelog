@@ -11,6 +11,7 @@ resources :wikis do
  resources :pics, only: [:show, :create, :destroy]
  resources :collaborators, only: [:create, :destroy]
  resources :votes, only: [:create, :destroy]
+ resources :clips, only: [:show, :create, :destroy]
 #  post '/like-up' => 'votes#like_up', as: :like_up
 #  post '/like-down' => 'votes#like_down', as: :like_down
 end

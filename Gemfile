@@ -55,3 +55,7 @@ gem 'jbuilder'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'impressionist'
+
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip-av-transcoder'
+gem "paperclip-ffmpeg", "~> 1.2.0"

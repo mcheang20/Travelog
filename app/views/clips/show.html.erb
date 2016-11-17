@@ -1,0 +1,11 @@
+<div class="pic-show col-md-4">
+  <% if @wiki.clips.empty? %>
+   <p> No Videos Posted<p>
+  <% else %>
+    <% @wiki.clips.each do |clip| %>
+      <div>
+        <%= video_tag clip.video.url(:medium), controls: true, style: "max-width: 100%;" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
