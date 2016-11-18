@@ -10,6 +10,8 @@
       <img src="https://healthintelasia.com/wp-content/uploads/2013/09/asia-1500-X-600-banner.jpg">
       <div class="carousel-caption">
        <h1 class="top">Welcome to Travelog</h1>
+       <%= link_to "Join", new_user_registration_path, class: 'btn btn-primary'  %>
+       <%= link_to "Log In", new_user_session_path, class: 'btn btn-default' %>
      </div>
    </div>
 
@@ -45,7 +47,7 @@
   <% if user_signed_in?%>
     <%= link_to "Share", new_wiki_path %>
   <% else %>
-    <%= link_to "Get Started", new_user_registration_path %>
+    <%= link_to "Get Started", new_user_registration_path, class: 'btn btn-primary' %>
   <% end %>
   <img src="http://www.e-zone.com.hk//channelnews/20160418200628.jpg">
 </div>
@@ -55,7 +57,8 @@
     <%= link_to "Discover", wikis_path, class: 'btn btn-primary'  %>
     <img src="https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg">
   </div>
-<h1 class="container heading-one"> Recent Logs</h1>
+  <div>
+    <h1 class="container heading-one"> Recent Logs</h1>
 <%#
 <div class="container captions">
   <h2><%=link_to "Explore", wikis_path%>
@@ -75,4 +78,5 @@
         <p class="slick-caption"> <%= link_to wiki.title, wiki_path(wiki) %> </p>
       </div>
   <% end %>
+</div>
 </div>

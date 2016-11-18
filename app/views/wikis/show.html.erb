@@ -16,16 +16,6 @@
         <h4 class="small-text"><%= @wiki.category.name %></h4>
         <h4 class="wiki-user-username"><%= link_to @wiki.user.username, user_path(@wiki.user) %></h4>
       </div>
-      <div class="side-images">
-        <% @wiki.pics.take(6).each do |pic| %>
-          <div class="row col-sm-6"><%= link_to (image_tag(pic.image.url(:thumb))), pic.image.url(:album), data: {lightbox: "eaxmple-set"}  %></div>
-        <% end %>
-      </div>
-      <div class="side-clips">
-        <% @wiki.clips.take(6).each do |clip| %>
-          <div class="row col-sm-6"><%= link_to video_tag(clip.video.url(:thumb)), wiki_clip_path(@wiki.clips, @wiki) %></div>
-        <% end %>
-      </div>
       <div class="wiki-icons">
         <p class="glyphicon glyphicon-heart"></p>
         <p class="glyphicon glyphicon-comment"></p>
@@ -35,6 +25,22 @@
           <span class="wiki-icons-tag"><%= pluralize(@wiki.likes, 'like') %></span>
           <span class="wiki-icons-tag"><%= pluralize(@wiki.comments.count, 'comment') %></span>
           <span class="wiki-icons-tag"><%= pluralize(@wiki.impressionist_count, 'view') %></span>
+      </div>
+      <div class="side-images">
+        <h4 class="side-images-top">Pictures</h4>
+        <% if @wiki.pics.empty? %>
+        <p>No pictures</p>
+        <% else %>
+        <% @wiki.pics.take(6).each do |pic| %>
+          <div class="row col-sm-6"><%= link_to (image_tag(pic.image.url(:thumb))), pic.image.url(:album), data: {lightbox: "eaxmple-set"}  %></div>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="side-videos">
+        <h4 class="side-images-top">Videos</h4>
+        <% @wiki.clips.take(6).each do |clip| %>
+          <div class="row col-sm-6"><%= link_to video_tag(clip.video.url(:thumb)), wiki_clip_path(@wiki.clips, @wiki)%></div>
+        <% end %>
       </div>
       <div class="wiki-description">
         <h3>About:</h3>

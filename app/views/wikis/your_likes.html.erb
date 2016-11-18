@@ -1,4 +1,5 @@
 <div class="container main">
+  <h1 class="title-all">Your Likes</h1>
   <% @wikis.each do |vote| %>
       <div class="wiki-style col-sm-3">
           <%= link_to image_tag(vote.wiki.image.url(:medium)), vote.wiki %>

@@ -192,6 +192,20 @@
   }
 }
 
+.side-videos {
+  position: absolute;
+  width: 30%;
+  margin-left: 943px;
+  margin-top: 200px;
+
+  img {
+    padding: 5px;
+    width: 90px;
+    background-color: white;
+  }
+}
+
+
 .index-title {
   border-bottom: 1px solid rgba(1, 1, 1, .2);
   font-weight: 200;
@@ -200,4 +214,10 @@
 
 .section-index {
   border-bottom: 1px solid rgba(1,1,1, .2);
+}
+
+.side-images-top {
+  border-bottom: 1px solid rgba(1,1,1,.2);
+  width: 200px;
+  padding-left: 60px;
 }

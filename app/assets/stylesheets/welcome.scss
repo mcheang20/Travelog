@@ -56,7 +56,6 @@
       position: absolute;
       margin-top: 160px;
       margin-left: 300px;
-      text-decoration: none;
       background-color: #287fb8;
       border: #287fb8;
       border-radius: 3px;
@@ -81,13 +80,13 @@
     position: absolute;
     padding-top: 50px;
     color: white;
-    margin-left: 250px;
+    margin-left: 300px;
   }
 
   p {
     position: absolute;
     padding-top: 120px;
-    margin-left: 250px;
+    margin-left: 300px;
     color: rgba(255,255,255,.5);
     font-size: 16px;
     }
@@ -98,5 +97,12 @@
 
     .btn-primary {
       position: absolute;
+      margin-top: 160px;
+      margin-left: 300px;
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-size: 16px;
     }
 }
