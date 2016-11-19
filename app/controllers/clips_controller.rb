@@ -13,10 +13,14 @@ class ClipsController < ApplicationController
    @clip = @wiki.clips.new(clip_params)
 
    if @clip.save
-     flash[:notice] = "Image saved successfully."
-     redirect_to [@wiki]
+     render :json => {
+        :status => :redirect,
+        :to => wiki_clips_path(@clip.id)
+      }.to_json
+
+     flash[:notice] = "Video uploaded successfully."
    else
-     flash[:alert] = "Image failed to save."
+     flash[:alert] = "Video failed to save."
      redirect_to [@wiki]
    end
  end
@@ -24,6 +28,7 @@ class ClipsController < ApplicationController
  def destroy
   @wiki = Wiki.find(params[:wiki_id])
   @clip = @wiki.clips.find(params[:id])
+  @clip.wiki = @wiki
 
   if @clip.destroy
     flash[:notice] = "Image was deleted successfully."

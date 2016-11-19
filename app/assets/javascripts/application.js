@@ -34,3 +34,25 @@ jQuery(document).ready(function(){
      })
    }, 3000);
 });
+
+$(document).ready(function() {
+ var uploadObj = $("#clip_video").uploadFile({
+    url: "/clips",
+    multiple: false,
+    fileName: "movie[video]",
+    autoSubmit: false,
+    formData: {
+      "clip[caption]": $('#clip_caption').text(),
+    },
+    onSuccess:function(files,data,xhr)
+    {
+      window.location.href = data.to;
+    }
+  });
+
+  $("#fileUpload").click(function(e) {
+    e.preventDefault();
+    $.rails.disableFormElements($($.rails.formSubmitSelector));
+    uploadObj.startUpload();
+  });
+});
