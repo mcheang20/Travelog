@@ -163,7 +163,7 @@ text-align: center;
   padding-top: 4px;
 
     button:nth-child(2) {
-      margin-top: 6px;
+      margin-top: 5.5px;
     }
 }
 
@@ -285,4 +285,13 @@ footer {
 
         }
     }
+}
+
+.message-btn {
+  margin-right: 29px;
+  margin-top: 10px;
+
+  .glyphicon {
+    font-size: 20px;
+  }
 }

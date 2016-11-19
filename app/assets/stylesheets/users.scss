@@ -61,7 +61,6 @@
   margin-left: 50px;
   margin-top: 25px;
   border: 1px solid rgba(1,1,1,.1);
-  background-color: white;
   max-width: 600px;
 }
 
@@ -119,10 +118,14 @@
   border-color: #66bd2b;
   background-color: #66bd2b;
   color: white;
-  margin-left: 20px;
   &:visited, &:focus, &:hover {
     border-color: #47821F;
     background-color: #47821F;
     color: white;
   }
+}
+
+.msg-btn {
+  float: right;
+  margin-left: 10px;
 }

@@ -25,6 +25,10 @@ resources :notifications do
   end
 end
 
+resources :conversations do
+  resources :messages
+ end
+
 get "/most_popular" => 'wikis#most_popular', as: :most_popular
 get "/most_recent" => 'wikis#most_recent', as: :most_recent
 get "/your_likes" => 'wikis#your_likes', as: :likes
