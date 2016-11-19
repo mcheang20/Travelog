@@ -5,6 +5,20 @@
   background-color: rgba(1,1,1,.1);
 }
 
+.wiki-title {
+  border-bottom: 1px solid rgba(1, 0, 1, 0.2);
+  padding-left: 100px;
+  color: rgba(1, 0, 1, 0.6);
+  padding-bottom: 10px;
+  margin-top: 5px;
+  font-weight: normal;
+}
+
+.cat-show-view {
+  background-color: rgba(1,1,1,.2);
+  height: 100vh;
+}
+
 .cat-title {
   border-bottom: 1px solid rgba(1, 0, 1, 0.2);
   padding-left: 190px;
@@ -58,4 +72,5 @@
 
 .index-all {
   background-color: white;
+  margin-right: 150px;
 }

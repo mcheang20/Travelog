@@ -106,3 +106,29 @@
       font-size: 16px;
     }
 }
+
+.recent-log-container {
+  background-color: rgba(1,1,1,.2);
+  margin-top: 40px;
+  height: 400px;
+}
+
+.logs-recent {
+  display: -webkit-box;
+  margin-left: 150px;
+}
+
+.logs-all{
+  padding: 10px;
+
+    img {
+      width: 350px;
+      height: 200px;
+    }
+}
+
+.recent-log-heading {
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}

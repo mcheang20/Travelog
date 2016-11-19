@@ -5,14 +5,7 @@
 .row:before, .row:after {
   display:table;
 }
-.wiki-title {
-  border-bottom: 1px solid rgba(1, 0, 1, 0.2);
-  padding-left: 190px;
-  color: rgba(1, 0, 1, 0.6);
-  padding-bottom: 20px;
-  margin-top: 0px;
-  font-weight: normal;
-}
+
 .wiki-style {
   zoom: 1;
   background-color: white;
@@ -186,9 +179,11 @@
   margin-left: 943px;
 
   img {
-    padding: 5px;
+    padding: 3px;
     width: 90px;
+    height: 60px;
     background-color: white;
+    margin: 2px;
   }
 }
 
