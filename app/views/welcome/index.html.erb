@@ -57,20 +57,25 @@
     <%= link_to "Discover", wikis_path, class: 'btn btn-primary'  %>
     <img src="https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg">
   </div>
+  <div class="how-info">
+    <h1>How It Works</h1>
+    <div class="info-row">
+      <article class="info-group">
+        <p class="how-img glyphicon glyphicon-camera"></p>
+        <p>Record</p>
+      </article>
+      <article class="info-group">
+        <p class="how-img glyphicon glyphicon-cloud-upload"></p>
+        <p>Share</p>
+      </article>
+      <article class="info-group">
+        <p class="how img glyphicon glyphicon-thumbs-up"></p>
+        <p>Interact</p
+      </article>
+    </div>
+  </div>
   <div class="recent-log-container">
     <h1 class="container recent-log-heading"> Recent Logs</h1>
-<%#
-<div class="container captions">
-  <h2><%=link_to "Explore", wikis_path%>
-<%#  <h2>Share</h2>
-  <h2>Create</h2>
-</div>
-<div class="home-circle">
-  <img src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/tokyo-mud-bath-bar-mudbath0716.jpg?itok=dJ8lDXJh" alt="..." class="img-circle circle">
-  <img src="http://travelchannel.sndimg.com/content/dam/images/travel/fullset/2015/01/30/places-to-say-i-love-you/ponts-des-arts-love-bridge-paris-france.jpg.rend.tccom.1280.960.jpeg" alt="..." class="img-circle circle">
-  <img src="http://www.byokids.com.au/wordpress/wp-content/uploads/2-London.jpg" alt="..." class="img-circle circle">
-</div>
-%>
   <div class="logs-recent">
       <% @wikis.take(3).each do |wiki| %>
         <div class="logs-all">

@@ -6,7 +6,7 @@
   <h4><%= link_to "Most Recent", most_recent_path(@wikis)%></h4>
     <%= render 'wikis/showrecent' %>
     <h4><%= link_to "Most Popular", most_popular_path(@wikis)%></h4>
-    <%= render 'wikis/showrecent' %>
+    <%= render 'wikis/showtop' %>
     <% if user_signed_in? %>
     <h4><%= link_to "Your Likes", likes_path(@wikis)%> </h4>
     <%= render 'wikis/showrecent'%>
