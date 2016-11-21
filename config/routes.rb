@@ -26,7 +26,7 @@ resources :notifications do
 end
 
 resources :conversations do
-  resources :messages
+  resources :messages, only: [:index, :create, :new]
  end
 
 get "/most_popular" => 'wikis#most_popular', as: :most_popular

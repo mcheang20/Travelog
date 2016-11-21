@@ -1,10 +1,9 @@
-<div>
-  <h1>Messages</h1>
-</div>
+<div class="container">
+  <h1 class="title-all">Messages</h1>
 <% if @over_ten %>
  <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
-<div class="ui-segment">
+<div class="ui segment">
  <% @messages.each do |message| %>
   <% if message.body %>
    <% user = User.find(message.user_id) %>
@@ -29,3 +28,4 @@
    <%= f.submit "Send Message", class: "btn btn-primary" %>
  </div>
 <% end %>
+</div>

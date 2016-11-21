@@ -48,10 +48,11 @@
       </div>
     <% if current_user %>
     <div class="comment-form-div">
-      <h3>Comments</h3>
+      <h4>New Comment</h4>
       <span><%= render 'comments/form', comment: Comment.new, wiki: @wiki %></span>
     </div>
         <div class="comments-list">
+          <h4 class="comment-title">Comments (<%= @wiki.comments.count %> comments)</h4>
           <%= render @wiki.comments %>
         </div>
     <% end %>

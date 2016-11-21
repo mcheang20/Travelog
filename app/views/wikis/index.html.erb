@@ -4,14 +4,35 @@
 <div class=" container main">
   <h1 class="index-title">Explore <%= @wikis.count %> adventures</h1>
   <h4><%= link_to "Most Recent", most_recent_path(@wikis)%></h4>
-    <%= render 'wikis/showrecent' %>
+    <div class="row wiki-show-index">
+      <%= render 'wikis/showrecent' %>
+    </div>
     <h4><%= link_to "Most Popular", most_popular_path(@wikis)%></h4>
-    <%= render 'wikis/showtop' %>
+      <div class="row wiki-show-index">
+        <%= render 'wikis/showtop' %>
+      </div>
     <% if user_signed_in? %>
     <h4><%= link_to "Your Likes", likes_path(@wikis)%> </h4>
-    <%= render 'wikis/showrecent'%>
-
-    <h4><%= link_to "Your Followers", followed_users_path(@wikis)%> </h4>
-    <%= render 'wikis/showrecent'%>
+      <div class="row wiki-show-index">
+        <%= render 'wikis/showrecent'%>
+      </div>
+      <h4><%= link_to "Your Followers", followed_users_path(@wikis)%> </h4>
+      <div class="row wiki-show-index">
+        <% current_user.following.take(3).each do |following| %>
+          <div class="wiki-style col-sm-3">
+              <%= link_to image_tag(following.wiki.image.url(:medium)), following.wiki %>
+              <div>
+                <span class="link"><%= link_to following.wiki.title, following.wiki %></span>
+                <p class="desc-index"><%= wiki.description %> </p>
+              </div>
+              <div class="wiki-details">
+                <small><%=  link_to following.wiki.user.username, user_path(following.wiki.user)%></small>
+                <small><%= render partial: 'votes/like', locals: { wiki: following.wiki } %></small>
+                <small>Posted <%= time_ago_in_words(following.wiki.created_at) %> ago, </small>
+                <small><%= following.wiki.impressionist_count %> views</small>
+              </div>
+            </div>
+          <% end %>
+      </div>
     <% end %>
   </div>

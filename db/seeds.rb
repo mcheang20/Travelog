@@ -1,3 +1,4 @@
+=begin
 10.times do
 
   User.create!(
@@ -22,3 +23,4 @@
 puts "Seed finished"
 puts "#{User.count} users created"
 puts "#{Wiki.count} wikis created"
+=end 
