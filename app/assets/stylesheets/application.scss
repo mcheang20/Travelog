@@ -299,24 +299,11 @@ footer {
   }
 }
 
-.how-info {
-  text-align: center;
-  height: 400px;
-  background-color: rgba(1,1,1,.2);
-}
+.form-all {
 
-.info-row {
-  display: -webkit-box;
-  margin-left: 143px;
-
-  .glyphicon {
-    font-size: 150px;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    }
-}
-
-.info-group {
-  margin-left: 140px;
+  label{
+    font-size: 20px;
+    font-weight: 200;
+    color: rgba(1,1,1,.6);
+  }
 }

@@ -7,11 +7,11 @@
         <%= image_tag(@wiki.user.image.url(:thumb)) %>
         <% if user_is_authorized_for_wiki?(@wiki)%>
         <div class="user-action">
-          <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-success' %>
+          <%= link_to "Edit", edit_wiki_path(@wiki), class: 'btn btn-primary' %>
           <%= link_to "Delete Log", @wiki, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this log?'} %>
         </div>
         <% end %>
-        <h1><%= @wiki.title %></h1>
+        <h1 id="show-title"><%= @wiki.title %></h1>
         <h4 class="small-text"><%= @wiki.description %></h4>
         <h4 class="small-text"><%= @wiki.category.name %></h4>
         <h4 class="wiki-user-username"><%= link_to @wiki.user.username, user_path(@wiki.user) %></h4>

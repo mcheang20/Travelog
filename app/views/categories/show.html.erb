@@ -1,5 +1,5 @@
 <div class="container cat-show-view">
-  <h1 class="wiki-title"><%= @category.name %> (<%= @category.wikis.count %> Logs)</h1>
+  <h1 class="title-all"><%= @category.name %> (<%= pluralize(@category.wikis.count, 'log') %> )</h1>
     <% @category.wikis.each do |wiki| %>
         <div class="wiki-style col-sm-3">
             <%= link_to image_tag(wiki.image.url(:medium)), wiki %>

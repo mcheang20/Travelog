@@ -4,34 +4,34 @@
     <div class="profile-image"><%= image_tag(@user.image.url(:medium)) %></div>
   </div>
     <%= form_for @user, html: { multipart: true } do |f| %>
-      <div class="form-group profile-image-form">
+      <div class="form-group profile-image-form form-all">
         <%= f.label "Edit Your profile picture" %>
         <%= f.file_field :image %>
       </div>
-      <div class="form-group">
+      <div class="form-all form-group">
         <%= f.label 'About You' %>
         <%= f.text_area :description, rows: 6, class: 'form-control', placeholder: "Tell us about yourself." %>
       </div>
       <div class="edit-user-inputs">
-        <div class="form-group">
+        <div class="form-all form-group">
           <%= f.label 'Current username' %><br />
           <%= f.text_field :username, class: 'form-control', autofocus: true %>
         </div>
-        <div class="form-group">
+        <div class="form-all form-group">
           <%= f.label 'Current Email'%><br />
           <%= f.email_field :email, class: 'form-control', autofocus: true %>
         </div>
-        <div class="form-group">
+        <div class="form-all form-group">
           <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
           <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-all form-group">
           <%= f.label :password_confirmation %><br />
           <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
         </div>
 
-        <div class="form-group">
+        <div class="form-all form-group">
           <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
           <%= f.password_field :current_password, class: 'form-control', autocomplete: "off" %>
         </div>

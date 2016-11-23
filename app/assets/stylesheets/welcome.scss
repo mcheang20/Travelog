@@ -38,6 +38,8 @@
   }
 
   h1 {
+    font-size: 45px;
+    font-weight: 100;
     position: absolute;
     padding-top: 50px;
     color: white;
@@ -77,6 +79,8 @@
   }
 
   h1 {
+    font-size: 45px;
+    font-weight: 100;
     position: absolute;
     padding-top: 50px;
     color: white;
@@ -131,4 +135,59 @@
   text-align: center;
   color: white;
   padding-top: 20px;
+}
+
+.how-info {
+  text-align: center;
+  height: 600px;
+  background-color: rgba(34, 189, 246, .8);
+}
+
+.how-title {
+  color: white;
+  padding-top: 50px;
+  font-weight: 100;
+  font-size: 50px;
+}
+
+.info-group {
+  margin-left: 140px;
+  max-width: 250px;
+  border: 5px solid rgba(255,255,255,.2);
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+
+.info-row {
+  display: -webkit-box;
+  margin-left: 56px;
+
+  .glyphicon {
+    font-size: 100px;
+    color: white;
+    padding: 15px;
+    margin: 10px;
+    }
+}
+
+.border-style {
+  border-bottom: 3px solid white;
+  width: 50px;
+  margin-left: 684px;
+}
+
+.how-text {
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  border-bottom: 3px solid;
+}
+
+.how-desc {
+  color: white;
+  font-weight: 100;
+  font-size: 16px;
+  letter-spacing: 1px;
 }

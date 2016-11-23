@@ -37,11 +37,13 @@
               <p> You havent posted anything. </p>
               <% else %>
                 <% @user.wikis.each do |wiki| %>
-                  <div><%= link_to image_tag(wiki.image.url(:medium)), wiki %>
-                    <p class="slick-caption"> <%= link_to wiki.title, wiki %> </p>
-                    <p class="slick-caption-info"> <%= wiki.votes.count %> Likes </p>
-                    <p class="slick-caption-info"> <%= wiki.comments.count %> Comments </p>
-                  </div>
+                  <section class="slick-index">
+                    <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
+                    <a> <%= link_to wiki.title, wiki %> </a>
+                    <p> <%= wiki.votes.count %> Likes </p>
+                    <p> <%= wiki.comments.count %> Comments </p>
+                    <p> <%= wiki.impressionist_count %> views </p>
+                  </section>
                 <% end %>
               <% end %>
           </div>
@@ -55,11 +57,13 @@
               <p> You haven't liked anything yet.</p>
               <% else %>
                 <% @user.votes.each do |vote| %>
-                  <div><%= image_tag(vote.wiki.image.url(:medium)) %>
-                    <p class="slick-caption"> <%= link_to vote.wiki.title, wiki_path(vote.wiki) %> </p>
-                    <p class="slick-caption-info"> <%= vote.wiki.votes.count %> Likes</p>
-                    <p class="slick-caption-info"> <%= vote.wiki.comments.count %> Comments</p>
-                  </div>
+                  <section class="slick-index">
+                    <%= image_tag(vote.wiki.image.url(:medium)) %>
+                    <h4> <%= link_to vote.wiki.title, wiki_path(vote.wiki) %> </h4>
+                    <p> <%= vote.wiki.votes.count %> Likes</p>
+                    <p> <%= vote.wiki.comments.count %> Comments</p>
+                    <p> <%= vote.wiki.impressionist_count %> views </p>
+                  </section>
                 <% end %>
             <%end %>
         </div>

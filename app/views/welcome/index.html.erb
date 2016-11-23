@@ -45,7 +45,7 @@
 <h1> A whole different way of sharing </h1>
   <p>Went on an awesome adventure? Share your photos and experience with the whole world.</p>
   <% if user_signed_in?%>
-    <%= link_to "Share", new_wiki_path %>
+    <%= link_to "Share", new_wiki_path , class: 'btn btn-primary'%>
   <% else %>
     <%= link_to "Get Started", new_user_registration_path, class: 'btn btn-primary' %>
   <% end %>
@@ -58,19 +58,23 @@
     <img src="https://images.trvl-media.com/media/content/expus/graphics/launch/home/tvly/150324_flights-hero-image_1330x742.jpg">
   </div>
   <div class="how-info">
-    <h1>How It Works</h1>
+    <h1 class="how-title">How It Works</h1>
+      <div class="border-style"></div>
     <div class="info-row">
       <article class="info-group">
         <p class="how-img glyphicon glyphicon-camera"></p>
-        <p>Record</p>
+        <p class="how-text">Record</p>
+        <p class="how-desc">Bacon ipsum dolor amet filet mignon meatball spare ribs fatback bacon shankle. fatback bacon shankle.<p>
       </article>
       <article class="info-group">
         <p class="how-img glyphicon glyphicon-cloud-upload"></p>
-        <p>Share</p>
+        <p class="how-text">Share</p>
+        <p class="how-desc">Bacon ipsum dolor amet filet mignon meatball spare ribs fatback bacon shankle. dffggdfgsdfgsdfgsdfgdsfg.<p>
       </article>
       <article class="info-group">
         <p class="how img glyphicon glyphicon-thumbs-up"></p>
-        <p>Interact</p
+        <p class="how-text">Interact</p>
+        <p class="how-desc">Bacon ipsum dolor amet filet mignon meatball spare ribs fatback bacon shankle.<p>
       </article>
     </div>
   </div>

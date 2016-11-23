@@ -2,12 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-page {
-  background-color: rgba(175, 170, 170, .3);
   height: 100%;
 }
 
 .user-heading {
-  background-color: rgba(254, 254, 254, .5);
+  background-image: url("http://thinkdrawart.witchy-ears.com/wp-content/uploads/2012/04/Fantasy-Sky-Step1.jpg");
   padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 10px;
@@ -17,8 +16,6 @@
 
 .profile-image {
   padding-bottom: 10px;
-  padding-right: 20px;
-  border-right: 1px solid rgba(1, 0, 1, .2);
 }
 
 .profile-image-form {
@@ -43,10 +40,19 @@
 
 .user-data {
   padding-left: 20px;
-}
+  margin-top: -10px;
+  border-left: 2px solid rgba(255,255,255,.5);
+  margin-left: 22px;
 
-.user-edit {
-  border-bottom: 1px solid rgba(1, 0, 1, .2);
+    h1 {
+      color: white;
+      font-weight: 200;
+      }
+
+    h4 {
+      color: white;
+      font-weight: 100;
+    }
 }
 
 .edit-user-inputs {
@@ -65,41 +71,34 @@
 }
 
 .user-posts-slick {
-  zoom: 1;
-    overflow: hidden;
-    background-color: rgba(254, 254, 254, 0.5);
-    border-radius: 5px;
+    background-color: rgba(1,1,1,.2);
     text-align: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    min-width: 350px;
-    max-height: 290px;
+    padding: 20px;
+    max-height: 320px;
     font-size: 16px;
-    margin-left: 29px;
-    margin-top: 10px;
+    padding-top: 10px;
     margin-bottom: 20px;
     border: 1px solid rgba(1, 0, 1, .1);
-    padding-left: 38px;
+
+    section{
+      background-color: white;
+      text-align: -webkit-center;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    button:nth-child(1) {
+      margin-left: 15px;
+    }
+
+    .slick-next {
+      margin-right: -23px;
+    }
 }
 
 .user-posts-slick img {
   height: 180px;
   width: 310px;
-}
-
-.slick-caption {
-  float: left;
-  font-size: 16px;
-  clear: left;
-  margin-bottom: 0px;
-}
-
-.slick-caption-info {
-  font-size: 12px;
-  float: left;
-  clear: left;
-  margin-bottom: 0px;
-  font-weight: 600;
 }
 
 .follow-button {
@@ -128,4 +127,27 @@
 .msg-btn {
   float: right;
   margin-left: 10px;
+}
+
+.slick-index {
+
+    a {
+      color: rgba(1,1,1,.6);
+      text-decoration: none;
+      float: left;
+      clear: left;
+      margin-bottom: 0px;
+      margin-left: 10px;
+      font-size: 22px;
+      font-weight: 300;
+      }
+
+   p {
+     font-size: 12px;
+     float: left;
+     clear: left;
+     margin-bottom: 0px;
+     font-weight: 400;
+     margin-left: 10px;
+   }
 }
