@@ -24,6 +24,10 @@ class Wiki < ActiveRecord::Base
    votes.likes > 1
  end
 
+ def self.search(search)
+    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%") 
+ end
+
  scope :followed_users, -> (following_users) { where user_id: following_users }
  scope :your_likes, -> (user) { where wiki_id: current_user.vote }
 end

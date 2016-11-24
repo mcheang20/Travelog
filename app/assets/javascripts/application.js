@@ -18,6 +18,7 @@
 //= require lightbox
 //= require_tree .
 
+
 jQuery(document).ready(function(){
   $('.scroller').slick({
     infinite: true,

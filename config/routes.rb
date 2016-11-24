@@ -33,6 +33,7 @@ get "/most_popular" => 'wikis#most_popular', as: :most_popular
 get "/most_recent" => 'wikis#most_recent', as: :most_recent
 get "/your_likes" => 'wikis#your_likes', as: :likes
 get "/followed_users" => 'wikis#followed_users', as: :followed_users
+get "/all_wikisr" => 'wikis#all_wikis', as: :all_wikis
 
  get "welcome/index"
  get "welcome/about"

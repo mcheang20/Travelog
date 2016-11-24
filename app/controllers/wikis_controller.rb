@@ -4,7 +4,12 @@ class WikisController < ApplicationController
   impressionist actions: [:show]
 
   def index
-    @wikis =  policy_scope(Wiki)
+    @wikis = Wiki.all
+    if params[:search]
+      @wikis = Wiki.search(params[:search]).order("created_at DESC")
+    else
+      @wikis = Wiki.all.order("created_at DESC")
+    end
   end
 
   def most_popular
@@ -21,6 +26,10 @@ class WikisController < ApplicationController
 
   def followed_users
     @wikis = Wiki.followed_users(current_user.following).order('created_at DESC')
+  end
+
+  def all_wikis
+    @wikis = Wiki.all
   end
 
   def show

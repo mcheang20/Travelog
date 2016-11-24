@@ -36,12 +36,6 @@
         <% end %>
         <% end %>
       </div>
-      <div class="side-videos">
-        <h4 class="side-images-top">Videos</h4>
-        <% @wiki.clips.take(6).each do |clip| %>
-          <div class="row col-sm-6"><%= link_to video_tag(clip.video.url(:thumb)), wiki_clip_path(@wiki.clips, @wiki)%></div>
-        <% end %>
-      </div>
       <div class="wiki-description">
         <h3>About:</h3>
         <p><%= markdown(@wiki.body) %></p>
