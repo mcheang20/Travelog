@@ -15,6 +15,7 @@
 //= require jquery.slick
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap/modal
 //= require lightbox
 //= require_tree .
 
@@ -33,7 +34,7 @@ jQuery(document).ready(function(){
      $('.alert-wrapper').fadeOut("slow", function(){
        $(this).remove();
      })
-   }, 3000);
+   }, 5000);
 });
 
 $(document).ready(function() {

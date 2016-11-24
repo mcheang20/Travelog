@@ -47,8 +47,10 @@
         <%= link_to "", conversations_path, class: 'glyphicon glyphicon-envelope' %>
       </div>
      <% else %>
-      <li class="presentation pull-right"> <%= link_to "Sign Up", new_user_registration_path, :class => 'navbar-link'  %> </li>
-      <li class="presentation pull-right"> <%= link_to "Log In", new_user_session_path, :class => 'navbar-link'  %> </li>
+     <div class="user-session">
+        <li class="pull-right"> <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'  %> </li>
+        <li class="pull-right"> <%= link_to "Log In", new_user_session_path, class: 'btn btn-default'  %> </li>
+     </div>
      <% end %>
    </ul>
  </div>

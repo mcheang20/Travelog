@@ -1,19 +1,19 @@
 <div class=" container main">
-  <h1 class="index-title">Explore <%= @wikis.count %> adventures</h1>
-  <h4><%= link_to "Most Recent", most_recent_path(@wikis)%></h4>
+  <h1 class="title-all">Explore <%= @wikis.count %> adventures</h1>
+  <p class="wiki-sub-title"> Most Recent <%= link_to "See All", most_recent_path(@wikis)%></p>
     <div class="row wiki-show-index">
       <%= render 'wikis/showrecent' %>
     </div>
-    <h4><%= link_to "Most Popular", most_popular_path(@wikis)%></h4>
+    <p class="wiki-sub-title"> Most Popular <%= link_to "See All", most_popular_path(@wikis)%></p>
       <div class="row wiki-show-index">
         <%= render 'wikis/showtop' %>
       </div>
     <% if user_signed_in? %>
-    <h4><%= link_to "Your Likes", likes_path(@wikis)%> </h4>
+    <p class="wiki-sub-title"> Your Likes <%= link_to "See All", likes_path(@wikis)%> </p>
       <div class="row wiki-show-index">
         <%= render 'wikis/showrecent'%>
       </div>
-      <h4><%= link_to "Your Followers", followed_users_path(@wikis)%> </h4>
+      <p class="wiki-sub-title"> Your Followers <%= link_to "See All", followed_users_path(@wikis)%> </p>
         <div class="row wiki-show-index">
         <%= render 'wikis/showfollowed' %>
       </div>

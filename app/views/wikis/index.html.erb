@@ -1,5 +1,8 @@
-<% if @wikis.present? %>
-  <%= render 'wikis/showall'%>
-<% else %>
-  <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
-<% end %>
+<div class="container">
+  <h1 class="title-all">Results</h1>
+  <% if @wikis.present? %>
+    <%= render 'wikis/showall'%>
+  <% else %>
+    <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
+  <% end %>
+</div>

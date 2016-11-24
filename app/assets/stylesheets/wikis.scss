@@ -166,6 +166,11 @@
 .comment-form-div {
   border-top: 1px solid  rgba(1, 1, 1, .2);
   margin-top: 10px;
+
+    h4 {
+      color: rgba(1,1,1,.6);
+      font-weight: 300;
+  }
 }
 
 .user-action {
@@ -198,13 +203,6 @@
     width: 90px;
     background-color: white;
   }
-}
-
-
-.index-title {
-  border-bottom: 1px solid rgba(1, 1, 1, .2);
-  font-weight: 200;
-  color: rgba(1,1,1,.5);
 }
 
 .section-index {
