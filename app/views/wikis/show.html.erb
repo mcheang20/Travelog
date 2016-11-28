@@ -51,12 +51,12 @@
         </div>
     <% end %>
     <% if user_is_authorized_for_wiki?(@wiki)%>
-    <div class="row col-md-10 " >
+    <div class="wiki-media row col-md-10">
       <h3>Add Images</h3>
-      <%= render 'pics/form', pic: Pic.new, wiki: @wiki %>
-      <%= render 'clips/form', clip: Clip.new, wiki: @wiki %>
+        <%= render 'pics/form', pic: Pic.new, wiki: @wiki %>
+      <h3>Add Videos</h3>
+        <%= render 'clips/form', clip: Clip.new, wiki: @wiki %>
     </div>
+    <% end %>
   </div>
-</div>
-  <% end %>
 </div>

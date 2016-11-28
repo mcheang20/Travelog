@@ -64,10 +64,20 @@
 }
 
 .user-description {
-  margin-left: 50px;
-  margin-top: 25px;
+  margin-top: 15px;
   border: 1px solid rgba(1,1,1,.1);
-  max-width: 600px;
+  padding: 10px;
+  background-color: rgba(1,1,1,.2);
+
+    p:nth-child(1) {
+      font-size: 26px;
+      font-weight: 200;
+      color: rgba(1,1,1,.6);
+    }
+
+    p:nth-child(2) {
+      color: rgba(1,1,1,.5);
+    }
 }
 
 .user-posts-slick {

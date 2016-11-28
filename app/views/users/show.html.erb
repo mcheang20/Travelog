@@ -22,12 +22,15 @@
         <div class="msg-btn">
           <%= link_to 'Message', conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: 'btn btn-primary' %>
         </div>
-
-
       </div>
-      <div class="user-description">
-        <p> About Me: <%= @user.description %></p>
-      </div>
+    </div>
+    <div class="user-description">
+      <p> About Me:</p>
+      <% if @user.description == nil %>
+      <p>No info posted</p>
+      <% else %>
+      <p> <%= @user.description %></p>
+      <% end %>
     </div>
     <div>
       <h1 class="title-all">Posts</h1>

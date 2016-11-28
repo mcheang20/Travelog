@@ -79,11 +79,14 @@
     </div>
   </div>
   <div class="recent-log-container">
-    <h1 class="container recent-log-heading"> Recent Logs</h1>
-  <div class="logs-recent">
-      <% @wikis.take(3).each do |wiki| %>
+    <p class="container recent-log-heading">Check out recent logs <%= link_to "See More", all_wikis_path %></p>
+      <div class="logs-recent">
+      <% recent.take(3).each do |wiki| %>
         <div class="logs-all">
           <%= link_to image_tag(wiki.image.url(:medium)), wiki_path(wiki) %>
+          <p>
+            <%= wiki.title %>
+          </p>
         </div>
     <% end %>
   </div>

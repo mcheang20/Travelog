@@ -3,6 +3,10 @@
   width: 800px;
 }
 
+.ui-list {
+  display: -webkit-box;
+}
+
 .header-msg {
 
   img {
@@ -21,11 +25,15 @@
 }
 
 .item {
-  background-color: rgba(1,1,1,.1);
   padding: 5px;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  margin: 5px;
+
+    p {
+      font-size: 22px;
+      font-weight: 200;
+    }
 }
+
 
 .list-msg {
   padding-left: 75px;

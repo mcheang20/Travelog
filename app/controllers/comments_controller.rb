@@ -10,12 +10,14 @@ class CommentsController < ApplicationController
      @comment.user = current_user
 
      if @comment.save
-         Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @wiki)
-        redirect_to [@wiki]
-      else
+       if @wiki.user == current_user
+         redirect_to [@wiki]
+       else
+        Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @wiki)
         redirect_to [@wiki]
       end
     end
+  end
 
    def destroy
     @wiki = Wiki.find(params[:wiki_id])

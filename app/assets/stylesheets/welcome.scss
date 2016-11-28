@@ -34,6 +34,7 @@
 
   img {
     width: 1000px;
+    height: 557px;
   }
 
   h1 {
@@ -110,29 +111,40 @@
 }
 
 .recent-log-container {
-  background-color: rgba(1,1,1,.2);
   margin-top: 40px;
   height: 400px;
+  margin-left: -50px;
 }
 
 .logs-recent {
   display: -webkit-box;
-  margin-left: 150px;
+  margin-left: 130px;
 }
 
 .logs-all{
   padding: 10px;
 
     img {
-      width: 350px;
-      height: 200px;
+      width: 400px;
+      height: 250px;
+    }
+
+    p {
+      margin-top: 5px;
+      font-size: 16px;
+      color: rgba(1,1,1,.7);
     }
 }
 
 .recent-log-heading {
-  text-align: center;
-  color: white;
+  color: rgba(1,1,1,.5);
+  font-size: 24px;
+  font-weight: 200;
   padding-top: 20px;
+
+    a{
+      font-size:16px;
+    }
 }
 
 .how-info {

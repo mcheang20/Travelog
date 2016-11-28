@@ -161,6 +161,10 @@
   background-color: white;
   margin-top: 10px;
   padding: 10px;
+
+    h3 {
+      font-weight: 200;
+    }
 }
 
 .comment-form-div {
@@ -228,4 +232,15 @@
 #show-title {
   font-size: 45px;
   font-weight: 100;
+}
+
+.wiki-media {
+  padding-bottom: 10px;
+
+    h3 {
+      font-weight: 200;
+      color: rgba(1,1,1,.5);
+    }
+
+
 }
