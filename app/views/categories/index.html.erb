@@ -1,7 +1,10 @@
   <div class="container">
       <div class="cat-captions">
         <% @categories.each do |category| %>
-          <p class="cat-text"><%= link_to category.name, category %></p>
+          <div class="cat-text"><%= link_to category.name, category %></div>
+          <div class="cat-count">
+            <p><%= category.wikis.count %> Logs</p>
+          </div>
         <% end %>
       </div>
     </div>
@@ -30,4 +33,3 @@
         <img src="http://serwer10477.lh.pl/wp-content/uploads/2015/11/Machu-Pichu-Peru.jpg">
       </div>
     </div>
-  </div>

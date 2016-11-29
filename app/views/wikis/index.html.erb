@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="title-all">Results</h1>
+  <h1 class="title-all"><%= @wikis.count %> Results</h1>
   <% if @wikis.present? %>
     <%= render 'wikis/showall'%>
   <% else %>

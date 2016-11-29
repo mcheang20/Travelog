@@ -6,7 +6,9 @@ json.array! @notifications do |notification|
   json.notifiable do #notification.notifiable
     if notification.action == "Liked"
     json.type "your #{notification.notifiable.class.to_s.underscore.humanize.downcase}"
-    else
+  elsif notification.action == "Message"
+    json.type "received a #{notification.action.class.to_s.underscore.humanize.downcase}"
+  else
     json.type "on your #{notification.notifiable.class.to_s.underscore.humanize.downcase} "
     end
   end

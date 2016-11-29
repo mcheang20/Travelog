@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.slick
 //= require turbolinks
+//= require jquery.turbolinks
 //= require bootstrap
 //= require bootstrap/modal
 //= require lightbox
@@ -57,4 +58,17 @@ $(document).ready(function() {
     $.rails.disableFormElements($($.rails.formSubmitSelector));
     uploadObj.startUpload();
   });
+});
+
+$('a[href*="#"]:not([href="#"])').click(function() {
+  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    if (target.length) {
+      $('html, body').animate({
+        scrollTop: target.offset().top
+      }, 1000);
+      return false;
+    }
+  }
 });

@@ -10,10 +10,14 @@ class VotesController < ApplicationController
     if @vote.save
        @vote.update_attribute(:value, 1)
     else
-      Notification.create(recipient: @wiki.user, actor: current_user, action: "Liked", notifiable: @wiki )
-      @vote = current_user.votes.create(value: 1, wiki: @wiki)
+      if @wiki.user = current_user
+          @vote = current_user.votes.create(value: 1, wiki: @wiki)
+          redirect_to :back
+      else
+        Notification.create(recipient: @wiki.user, actor: current_user, action: "Liked", notifiable: @wiki )
+        @vote = current_user.votes.create(value: 1, wiki: @wiki)
+      end
     end
-    redirect_to :back
   end
 
   def destroy

@@ -15,7 +15,7 @@ class ClipsController < ApplicationController
    if @clip.save
      render :json => {
         :status => :redirect,
-        :to => wiki_clips_path(@clip.id)
+        :to => wiki_path(@wiki)
       }.to_json
 
      flash[:notice] = "Video uploaded successfully."
