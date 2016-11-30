@@ -14,7 +14,7 @@ class ChargesController < ApplicationController
     #    currency: 'usd'
     #  )
      current_user.update_attributes(stripe_id: customer.id, role: "premium")
-     flash[:notice] = "Thank you for going premium, #{current_user.email}!"
+     flash[:notice] = "Thank you for going premium, #{current_user.username}!"
      redirect_to root_path
 
      rescue Stripe::CardError => e
@@ -26,7 +26,7 @@ class ChargesController < ApplicationController
      @amount = 500
      @stripe_btn_data = {
        key: "#{ Rails.configuration.stripe[:publishable_key] }",
-       description: "Blocipedia Premium - #{current_user.email}",
+       description: "Travelog Premium - #{current_user.email}",
        amount: @amount
      }
    end

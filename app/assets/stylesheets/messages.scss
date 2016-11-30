@@ -26,10 +26,14 @@
 
 .item {
   padding: 5px;
-  margin: 5px;
+  background-color: white;
+  width: 75%;
+  margin: 10px;
+  box-shadow: 2px 2px 1px rgba(1,1,1,.2);
+  border-radius: 10px;
 
     p {
-      font-size: 22px;
+      font-size: 26px;
       font-weight: 200;
     }
 }
@@ -37,6 +41,8 @@
 
 .list-msg {
   padding-left: 75px;
+  font-size: 20px;
+  color: rgba(1,1,1,.4);
 }
 
 .msg-area {
@@ -47,4 +53,8 @@
 .msg-send-btn {
   margin-left: 20px;
   margin-top: 10px;
+}
+
+.message-box {
+  background-color: rgba(1,1,1,.1);
 }

@@ -52,13 +52,14 @@ class WikisController < ApplicationController
     @wiki = Wiki.new(wiki_params)
     @wiki.category_id = params[:category_id]
     @wiki.user = current_user
+    @categories = Category.all.map{|c| [c.name, c.id] }
 
-
-    if @wiki.save
+    if current_user.wikis.today.count <= 2 || current_user.premium?
+      @wiki.save
       flash[:notice] = "Log was saved successfully."
       redirect_to @wiki
-    else
-      flash.now[:alert] = "There was an error saving your log. Please try again."
+    elsif current_user.wikis.today.count > 2
+      flash.now[:alert] = "Exceeded post limit for today. Upgrade to premium for unlimited sharing"
       render :new
     end
   end
@@ -106,4 +107,8 @@ class WikisController < ApplicationController
     redirect_to root_path
   end
  end
+
+ def today
+  where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))
+end
 end
