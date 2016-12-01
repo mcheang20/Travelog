@@ -2,7 +2,7 @@ class Clip < ActiveRecord::Base
   belongs_to :wiki
   has_attached_file :video, styles: {
         :medium => {
-          :geometry => "640x480",
+          :geometry => "1200x800",
           :format => 'mp4'
         },
         :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10}

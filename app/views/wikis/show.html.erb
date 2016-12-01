@@ -1,5 +1,5 @@
 <div class="all-images-btn"> <%= link_to "View All Images", wiki_pic_path(@wiki.pics, @wiki),class: 'btn btn-default' %></div>
-<div class="all-videos-btn"> <%= link_to "View All Videos", wiki_clip_path(@wiki.clips, @wiki),class: 'btn btn-default' %></div>
+<div class="all-videos-btn"> <%= link_to "View All Videos", wiki_clip_path(@wiki.clips, @wiki), class: 'btn btn-default' %></div>
   <div class="wiki-image-top"><%= image_tag(@wiki.image.url(:large))%></div>
   <div class="container wiki-show-body">
     <div class="row col-md-10 wiki-body">

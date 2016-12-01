@@ -13,12 +13,8 @@ class ClipsController < ApplicationController
    @clip = @wiki.clips.new(clip_params)
 
    if @clip.save
-     render :json => {
-        :status => :redirect,
-        :to => wiki_path(@wiki)
-      }.to_json
-
      flash[:notice] = "Video uploaded successfully."
+     redirect_to [@wiki]
    else
      flash[:alert] = "Video failed to save."
      redirect_to [@wiki]
