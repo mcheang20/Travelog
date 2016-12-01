@@ -8,7 +8,7 @@
  <% @messages.each do |message| %>
   <% if message.body %>
    <% user = User.find(message.user_id) %>
-   <div class="item">
+   <div class="msg-item">
     <div class="msg-content">
      <div class="header-msg"><%= image_tag(user.image.url(:thumb))%><strong><%= user.username %></strong> <small><%= message.message_time %></small></div>
       <div class="list-msg">
