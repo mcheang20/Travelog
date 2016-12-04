@@ -17,7 +17,7 @@
        <%= f.file_field :image %>
      </div>
      <div class="form-all form-group">
-     <%= f.label "Select a category" %>
+     <%= f.label "Select a region" %>
      <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
     </div>
      <% if current_user && (current_user.admin? ||  current_user.premium?) %>

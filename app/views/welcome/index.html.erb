@@ -7,25 +7,32 @@
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="item active">
-      <img src="https://healthintelasia.com/wp-content/uploads/2013/09/asia-1500-X-600-banner.jpg">
+      <img src="http://www.mindfulstudiomag.com/wp-content/uploads/2016/10/shutterstock_326725514-1web.jpg">
       <div class="carousel-caption">
-       <h1 class="top">Welcome to Travelog</h1>
-        <a class="how-info" href="#how">How It Works</a>
+        <div class="cap-one">
+         <h1>Welcome to Travelog</h1>
+         <p>Travel, Share, and Explore.</p>
+        </div>
      </div>
    </div>
 
    <div class="item">
-      <img src="http://www.moahawaii.org/wp-content/uploads/2013/02/s-nature-bg2-1500x600.jpg">
+      <img src="http://11337-presscdn-0-2.pagely.netdna-cdn.com/wp-content/uploads/2016/08/Take-better-photos-feature-7.jpg">
       <div class="carousel-caption">
-        <h1 class="top">Log Your Adventures</h1>
-        <!--<p class="cap">Upload and share your travel photos to the whole world</p> -->
+        <div class="cap-two">
+          <h1>Log Your Adventures</h1>
+          <p>Upload and share your travel photos to the whole world</p>
+        </div>
       </div>
     </div>
 
     <div class="item">
-       <img src="http://socahiking.com/wp-content/uploads/2015/01/Soca-valley-Čezsoča-1500x600.jpg">
+       <img src="http://www.moahawaii.org/wp-content/uploads/2013/02/s-nature-bg2-1500x600.jpg">
        <div class="carousel-caption">
-         <h1 class="top">Explore the World</h1>
+         <div class="cap-three">
+           <h1>Explore the World</h1>
+           <p>Find a new place you want to go.</p>
+         </div>
        </div>
      </div>
 
@@ -83,11 +90,9 @@
       <% recent.take(3).each do |wiki| %>
         <div class="logs-all">
           <%= link_to image_tag(wiki.image.url(:medium)), wiki_path(wiki) %>
-          <p>
-            <%= wiki.title %>
-          </p>
+          <p><%= wiki.title %></p>
         </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
 <%= render 'layouts/footer' %>

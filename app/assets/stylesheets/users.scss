@@ -162,3 +162,33 @@
      margin-left: 10px;
    }
 }
+
+.user-followers {
+  background-color: rgba(1,1,1,.1);
+}
+
+.follower-each {
+  text-align: center;
+  padding-top: 10px;
+  margin: 10px;
+  box-shadow: 1px 1px 8px rgba(1,1,1,.5);
+
+  img {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
+
+  a {
+    font-size: 16px;
+  }
+
+  p {
+    margin-bottom: -1px;
+  }
+}

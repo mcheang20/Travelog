@@ -72,5 +72,20 @@
         </div>
       </div>
     </div>
+    <h1 class="title-all">Followers</h1>
+    <% if user_followers_nil?  %>
+    <p> No followers. </p>
+    <% else %>
+    <div class="user-followers">
+      <% @user.followers.each do |follower| %>
+      <div class="follower-each col-sm-2">
+        <%= image_tag(follower.image.url(:medium)) %>
+        <p><%= link_to follower.username, user_path(follower) %></p>
+        <p><%= follower.wikis.count %> Posts </p>
+      </div>
+      <% end %>
+    <% end %>
+    </div>
   </div>
 </div>
+<%= render 'layouts/footer' %>

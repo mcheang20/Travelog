@@ -67,6 +67,11 @@ class WikisController < ApplicationController
   def edit
     @wiki = Wiki.find(params[:id])
     @categories = Category.all.map{|c| [c.name, c.id ] }
+
+    respond_to do |format|
+     format.html
+     format.js
+   end
   end
 
   def update
