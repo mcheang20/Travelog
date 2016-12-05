@@ -80,8 +80,19 @@ text-align: center;
   margin-bottom: 20px;
 }
 
-.form-div .actions .btn {
-  margin-top: 5px;
+ .sign-up-btn {
+
+   .btn {
+      padding: 10px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 20px;
+      background-color: white;
+      color: rgba(1,1,1,.6);
+      border: 2px solid rgba(1,1,1,.4);
+      font-size: 20px;
+      margin-right: 20px;
+   }
 }
 .collab input[type="text"]{
   font-size: 16px;
@@ -342,4 +353,16 @@ footer {
     a {
       font-size: 14px;
     }
+}
+
+.links-btn {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.home-titles {
+  font-size: 36px;
+  color: rgba(1,1,1,.6);
+  font-weight: 200;
+
 }

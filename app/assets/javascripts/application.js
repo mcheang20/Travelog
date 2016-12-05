@@ -39,9 +39,9 @@ jQuery(document).ready(function(){
 
 $(document).ready(function() {
  var uploadObj = $("#clip_video").uploadFile({
-    url: "/clips",
+    url: "/wikis",
     multiple: false,
-    fileName: "movie[video]",
+    fileName: "clip[video]",
     autoSubmit: false,
     formData: {
       "clip[caption]": $('#clip_caption').text(),
