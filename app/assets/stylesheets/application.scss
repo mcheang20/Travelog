@@ -17,6 +17,8 @@
  @import 'slick';
  @import 'slick-theme';
  @import 'lightbox';
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -250,8 +252,7 @@ text-align: center;
 }
 
 .presentation {
-  border-right: 1px solid rgba(1,1,1,.2);
-  padding-right: 14px;
+  padding-right: 5px;
 }
 
 .nav-logo {
@@ -364,5 +365,24 @@ footer {
   font-size: 36px;
   color: rgba(1,1,1,.6);
   font-weight: 200;
+}
 
+.icon {
+  position: absolute;
+  z-index: 100;
+  margin-top: 10px;
+}
+
+.icon-share {
+  position: absolute;
+  z-index: 100;
+  margin-top: 12px;
+}
+
+.share-btn {
+  padding-right: 15px;
+
+  a{
+    margin-left: 10px;
+  }
 }

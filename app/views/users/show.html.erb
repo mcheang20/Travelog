@@ -74,7 +74,7 @@
     </div>
     <h1 class="title-all">Followers</h1>
     <% if user_followers_nil?  %>
-    <p> No followers. </p>
+    <p class="user-followers"> No followers. </p>
     <% else %>
     <div class="user-followers">
       <% @user.followers.each do |follower| %>

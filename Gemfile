@@ -63,3 +63,5 @@ gem 'paperclip-av-transcoder'
 gem "paperclip-ffmpeg", "~> 1.2.0"
 
 gem 'jquery-turbolinks'
+
+gem 'font-awesome-sass', '~> 4.7.0'

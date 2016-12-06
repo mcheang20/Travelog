@@ -10,16 +10,16 @@
 <body>
   <div class="container-bar">
       <ul class="nav nav-pills navbar-inverse navigation">
-      <li class="presentation nav-logo"> <%= link_to "Travelog", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
-      <li class="presentation"> <%= link_to "Explore", all_wikis_path %></li>
-      <div class="search-bar">
-        <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
-          <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
-          <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
-        <% end %>
-      </div>
-      <% if user_signed_in? %>
-      <li class="presentation"> <%= link_to "Share", new_wiki_path %></li>
+        <li class="presentation nav-logo"> <%= link_to "Travelog", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
+        <li class="presentation"><i class="icon fa fa-map-pin fa-lg" aria-hidden="true"></i> <%= link_to "Explore", all_wikis_path %></li>
+        <div class="search-bar">
+          <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
+            <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
+            <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+          <% end %>
+        </div>
+        <% if user_signed_in? %>
+        <li class="presentation share-btn"><i class="icon-share fa fa-camera-retro fa-lg" aria-hidden="true"></i> <%= link_to "Share", new_wiki_path %></li>
       <div class="avatar-button btn-group pull-right">
         <button type="button" class="btn btn-default btn-avatar">  <%= image_tag(current_user.image.url(:thumb)) %></button>
         <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
