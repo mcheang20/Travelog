@@ -194,7 +194,8 @@
 
     button:nth-child(2) {
       color: rgb(230, 32, 32);
-      border: 2px solid rgb(230, 32, 32);
+      border: 2px solid tomato;
+      background-color: tomato;
     }
 
     a {
@@ -257,6 +258,7 @@
 .comment-title {
   border-bottom: 1px solid rgba(1,1,1,.2);
   color: rgba(1,1,1,.5);
+  padding-bottom: 6px;
 }
 
 .wiki-show-index {

@@ -45,7 +45,11 @@ body {
   color: rgba(1,1,1,.5);
   font-size: 16px;
   font-weight: 400;
-  margin-right: -10px;
+  font-family: serif;
+  }
+
+  li {
+    margin-left: 10px;
   }
 }
 
@@ -85,15 +89,11 @@ text-align: center;
  .sign-up-btn {
 
    .btn {
-      padding: 10px;
       padding-left: 20px;
       padding-right: 20px;
-      border-radius: 20px;
-      background-color: white;
-      color: rgba(1,1,1,.6);
-      border: 2px solid rgba(1,1,1,.4);
-      font-size: 20px;
-      margin-right: 20px;
+      font-size: 16px;
+      margin-right: 30px;
+      width: 300px;
    }
 }
 .collab input[type="text"]{
@@ -256,7 +256,7 @@ text-align: center;
 }
 
 .nav-logo {
-  height: 42px;
+  padding-top: 7px;
 }
 
 footer {
@@ -326,11 +326,17 @@ footer {
 .search-bar {
   position: absolute;
   margin-left: 500px;
-  margin-top: 7px;
+  margin-top: 4px;
 
     input[type="text"] {
       width: 300px;
       font-weight: 300;
+    }
+
+    .btn {
+      background-color: orange;
+      border: 1px solid orange;
+      color: white;
     }
 }
 
@@ -385,4 +391,17 @@ footer {
   a{
     margin-left: 10px;
   }
+}
+
+.actions {
+  .btn {
+    font-size: 16px;
+    width: 200px;
+  }
+}
+
+.dropdown-menu {
+  width: 200px;
+  font-size: 20px;
+  color: black;
 }

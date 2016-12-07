@@ -10,12 +10,12 @@
 <body>
   <div class="container-bar">
       <ul class="nav nav-pills navbar-inverse navigation">
-        <li class="presentation nav-logo"> <%= link_to "Travelog", welcome_index_path, :class=>'glyphicon glyphicon-globe' %></li>
+        <li class="presentation nav-logo"><i class="fa fa-grav fa-lg" aria-hidden="true"> <%= link_to "Travelog", welcome_index_path %></i></li>
         <li class="presentation"><i class="icon fa fa-map-pin fa-lg" aria-hidden="true"></i> <%= link_to "Explore", all_wikis_path %></li>
         <div class="search-bar">
           <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
-            <%= submit_tag "Search", :name => nil, class: 'btn btn-primary' %>
+            <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
           <% end %>
         </div>
         <% if user_signed_in? %>
@@ -27,10 +27,10 @@
           <span class="sr-only">Toggle Dropdown</span>
         </button>
           <ul class="dropdown-menu">
-            <li><a><%= link_to current_user.username, user_path(current_user) %></a></li>
-            <li><%= link_to 'Edit profile', edit_user_path(current_user) %></li>
-            <li> <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
-            <li> <%= link_to "Upgrade to premium", new_charge_path %> </li>
+            <li><i class="fa fa-user-circle-o" aria-hidden="true"> <%= link_to current_user.username, user_path(current_user) %></i></li>
+            <li><i class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to 'Edit profile', edit_user_path(current_user) %></i></li>
+            <li><i class="fa fa-sign-out" aria-hidden="true"> <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></i></li>
+            <li><i class="fa fa-user-plus" aria-hidden="true"> <%= link_to "Upgrade to premium", new_charge_path %></i></li>
           </ul>
       </div>
       <div class="btn-group notification-btn pull-right" data-behavior="notifications">
@@ -44,7 +44,7 @@
         </ul>
       </div>
       <div class="message-btn pull-right">
-        <%= link_to "", conversations_path, class: 'glyphicon glyphicon-envelope' %>
+        <a href="/conversations"><i class="fa fa-commenting fa-lg" aria-hidden="true"></i></a>
       </div>
      <% else %>
      <div class="user-session">

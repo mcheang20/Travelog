@@ -46,15 +46,15 @@
       <span><%= render 'comments/form', comment: Comment.new, wiki: @wiki %></span>
     </div>
         <div class="comments-list">
-          <h4 class="comment-title">Comments (<%= @wiki.comments.count %> comments)</h4>
+          <h4 class="comment-title"><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%= @wiki.comments.count %> comments)</h4>
           <%= render @wiki.comments %>
         </div>
     <% end %>
     <% if user_is_authorized_for_wiki?(@wiki)%>
     <div class="wiki-media row col-md-10">
-      <h3>Add Images</h3>
+      <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>
         <%= render 'pics/form', pic: Pic.new, wiki: @wiki %>
-      <h3>Add Videos</h3>
+      <h3><i class="fa fa-video-camera" aria-hidden="true"></i> Add Videos</h3>
         <%= render 'clips/form', clip: Clip.new, wiki: @wiki %>
     </div>
     <% end %>

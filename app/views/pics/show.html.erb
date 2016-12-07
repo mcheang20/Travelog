@@ -1,15 +1,16 @@
 <div class="pic-show">
+  <h1 class="container title-all">Images</h1>
   <% if @wiki.pics.empty? %>
    <p> No Images Posted<p>
   <% else %>
     <% @wiki.pics.each do |pic| %>
-      <div class="col-sm-3">
+      <div class="pic-each col-sm-3">
         <%=link_to (image_tag (pic.image.url(:album))), pic.image.url(:album), data: {lightbox: "eaxmple-set", title: pic.caption }%>
         <% if user_is_authorized_for_pic? %>
         <div class="pic-delete">
           <%= link_to "Delete", [pic.wiki, pic], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this image?'} %>
         </div>
-          <%= pic.caption %>
+          <p><%= pic.caption %></p>
         <% end %>
       </div>
     <% end %>
