@@ -1,6 +1,10 @@
-<div class="container">
+<div class="premium-page">
+  <img src="http://www.imemories.com/images/whyimemories/xwhyimemories_banner.jpg.pagespeed.ic.LweMbTL74f.jpg">
+  <h1 class="premium-heading"><i class="fa fa-grav fa-lg" aria-hidden="true">Travelog Premium</i></h1>
+  <h2>Enjoy unlimited sharing</h2>
+  <h3>Get Premium</h3>
   <%= form_tag charges_path do %>
-    <h4>Click to pay</h4>
     <script class='stripe-button' src="https://checkout.stripe.com/checkout.js" data-key="<%= @stripe_btn_data[:key] %>" data-amount=<%= @stripe_btn_data[:amount] %> data-description="<%= @stripe_btn_data[:description] %>" ></script>
   <% end %>
+  <p>$4.99/month</p>
 </div>

@@ -16,7 +16,6 @@
 
 .cat-show-view {
   background-color: rgba(1,1,1,.1);
-  height: 100vh;
 }
 
 .cat-title {
@@ -73,6 +72,7 @@
 .index-all {
   background-color: white;
   margin-right: 150px;
+  box-shadow: 0 0 1px rgba(1,1,1,.5);
 }
 
 .cat-count {
