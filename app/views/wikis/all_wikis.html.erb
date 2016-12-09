@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
     <p class="wiki-sub-title"> Your Likes <%= link_to "See All", likes_path(@wikis)%> </p>
       <div class="row wiki-show-index">
-        <%= render 'wikis/showrecent'%>
+        <%= render 'wikis/showlikes'%>
       </div>
       <p class="wiki-sub-title"> Your Followers <%= link_to "See All", followed_users_path(@wikis)%> </p>
         <div class="row wiki-show-index">

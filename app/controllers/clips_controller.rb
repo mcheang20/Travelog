@@ -26,14 +26,14 @@ class ClipsController < ApplicationController
   @clip = @wiki.clips.find(params[:id])
   @clip.wiki = @wiki
 
-  if @clip.destroy
-    flash[:notice] = "Image was deleted successfully."
-    redirect_to [@wiki]
-  else
-    flash[:alert] = "Image couldn't be deleted. Try again."
-    redirect_to [@wiki]
+    if @clip.destroy
+      flash[:notice] = "Image was deleted successfully."
+      redirect_to [@wiki]
+    else
+      flash[:alert] = "Image couldn't be deleted. Try again."
+      redirect_to [@wiki]
+    end
   end
-end
 
 private
 

@@ -1,7 +1,6 @@
 class ChargesController < ApplicationController
 
   def create
-
     customer = Stripe::Customer.create(
        email: current_user.email,
        card: params[:stripeToken],
@@ -32,7 +31,6 @@ class ChargesController < ApplicationController
    end
 
    def destroy
-
      customer = Stripe::Customer.retrieve(current_user.stripe_id)
 
       current_user.update_attributes(role: "standard")

@@ -33,7 +33,7 @@
       <% end %>
     </div>
     <div>
-      <h1 class="title-all">Posts</h1>
+      <h1 class="title-sub">Posts</h1>
         <div class="user-posts-slick">
           <div class="scroller">
             <% if user_posts_nil? %>
@@ -53,7 +53,7 @@
         </div>
       </div>
     <div>
-      <h1 class="title-all">Likes</h1>
+      <h1 class="title-sub">Likes</h1>
         <div class="user-posts-slick">
           <div class="scroller">
             <% if user_votes_nil? %>
@@ -72,7 +72,7 @@
         </div>
       </div>
     </div>
-    <h1 class="title-all">Followers</h1>
+    <h1 class="title-sub">Followers</h1>
     <% if user_followers_nil?  %>
     <p class="user-followers"> No followers. </p>
     <% else %>

@@ -14,7 +14,7 @@ class Wiki < ActiveRecord::Base
 
   def likes_ups
    votes.where(value: 1).count
- end
+  end
 
  def likes
    votes.sum(:value)

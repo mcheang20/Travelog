@@ -29,4 +29,8 @@ module ApplicationHelper
    def followed
       @wikis = Wiki.followed_users(current_user.following).order('created_at DESC')
    end
+
+   def likes
+     @wikis = current_user.votes.all
+   end
  end
