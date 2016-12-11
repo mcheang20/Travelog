@@ -9,9 +9,9 @@
 </head>
 <body>
   <div class="container-bar">
-      <ul class="nav nav-pills navbar-inverse navigation">
-        <li class="presentation nav-logo"><i class="fa fa-grav fa-lg" aria-hidden="true"> <%= link_to "Travelog", welcome_index_path %></i></li>
-        <li class="presentation"><i class="icon fa fa-map-pin fa-lg" aria-hidden="true"></i> <%= link_to "Explore", all_wikis_path %></li>
+    <ul class="nav nav-pills navbar-inverse navigation">
+      <li class="presentation nav-logo"><i class="fa fa-grav fa-lg" aria-hidden="true"> <%= link_to "Travelog", welcome_index_path %></i></li>
+      <li class="presentation"><i class="icon fa fa-map-pin fa-lg" aria-hidden="true"></i> <%= link_to "Explore", all_wikis_path %></li>
         <div class="search-bar">
           <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
             <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
@@ -40,8 +40,7 @@
           <span class="caret"></span>
           <span class="sr-only">Toggle Dropdown</span>
         </button>
-        <ul class="dropdown-menu" data-behavior="notification-items">
-        </ul>
+        <ul class="dropdown-menu" data-behavior="notification-items"></ul>
       </div>
       <div class="message-btn pull-right">
         <a href="/conversations"><i class="fa fa-commenting fa-lg" aria-hidden="true"></i></a>

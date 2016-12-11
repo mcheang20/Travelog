@@ -12,23 +12,22 @@ class Wiki < ActiveRecord::Base
   has_many :votes, dependent: :destroy
   validates :category, presence: true
 
-  def likes_ups
-   votes.where(value: 1).count
-  end
+    def likes_ups
+     votes.where(value: 1).count
+    end
 
- def likes
-   votes.sum(:value)
- end
+   def likes
+     votes.sum(:value)
+   end
 
- def most_popular
-   votes.likes > 1
- end
+   def most_popular
+     votes.likes > 1
+   end
 
- def self.search(search)
-    where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
- end
+   def self.search(search)
+      where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+   end
 
- scope :followed_users, -> (following_users) { where user_id: following_users }
- scope :your_likes, -> (user) { where wiki_id: current_user.vote }
-
+   scope :followed_users, -> (following_users) { where user_id: following_users }
+   scope :your_likes, -> (user) { where wiki_id: current_user.vote }
 end

@@ -23,4 +23,4 @@ Things you may want to cover:
 
 * ...
 
-Blocipedia: SaaS wiki collaboration tool 
+Travelog: Travel, Share, Explore. 

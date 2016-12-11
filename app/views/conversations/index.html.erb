@@ -10,7 +10,7 @@
       <% recipient = User.find(conversation.sender_id) %>
     <% end %>
       <p> Messages with <%= link_to recipient.username, conversation_messages_path(conversation)%></p>
-   <% end %>
+    <% end %>
   <% end %>
   </div>
  </div>

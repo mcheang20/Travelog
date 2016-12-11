@@ -5,20 +5,20 @@
  <%= link_to 'Show Previous', '?m=all' %>
 <% end %>
 <div class="ui segment">
- <% @messages.each do |message| %>
-  <% if message.body %>
-   <% user = User.find(message.user_id) %>
-   <div class="msg-item">
-    <div class="msg-content">
-     <div class="header-msg"><%= image_tag(user.image.url(:thumb))%><strong><%= user.username %></strong> <small><%= message.message_time %></small></div>
-      <div class="list-msg">
-        <i class="right triangle icon"></i>
-         <%= message.body %>
+  <% @messages.each do |message| %>
+    <% if message.body %>
+    <% user = User.find(message.user_id) %>
+    <div class="msg-item">
+      <div class="msg-content">
+        <div class="header-msg"><%= image_tag(user.image.url(:thumb))%><strong><%= user.username %></strong> <small><%= message.message_time %></small></div>
+        <div class="list-msg">
+          <i class="right triangle icon"></i>
+          <%= message.body %>
+        </div>
+      </div>
     </div>
-   </div>
- </div>
- <% end %>
-<% end %>
+    <% end %>
+  <% end %>
 </div>
 <%= form_for [@conversation, @message], html: {class: "ui reply form"} do |f| %>
  <div class="msg-area field">

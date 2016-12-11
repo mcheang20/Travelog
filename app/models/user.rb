@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
      where(:created_at => (Time.zone.now.beginning_of_day..Time.zone.now))
    end
   end
+  
   has_many :comments, dependent: :destroy
   has_many :collaborators
   has_many :votes, dependent: :destroy
