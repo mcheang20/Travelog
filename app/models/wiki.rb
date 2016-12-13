@@ -25,7 +25,7 @@ class Wiki < ActiveRecord::Base
    end
 
    def self.search(search)
-      where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
+      where("title ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
    end
 
    scope :followed_users, -> (following_users) { where user_id: following_users }
