@@ -12,6 +12,6 @@ rails s
 ```
 ##Credits
 
-Travelog uses [Devise](https://github.com/plataformatec/devise) for simple authentication.
-For image display [lightbox2-rails](https://github.com/gavinkflam/lightbox2-rails) was implemented.
-For image and video uploading [paperclip](https://github.com/thoughtbot/paperclip) was used.
+- Travelog uses [Devise](https://github.com/plataformatec/devise) for simple authentication.
+- For image display [lightbox2-rails](https://github.com/gavinkflam/lightbox2-rails) was implemented.
+- For image and video uploading [paperclip](https://github.com/thoughtbot/paperclip) was used.
