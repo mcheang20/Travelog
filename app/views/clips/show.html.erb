@@ -1,11 +1,14 @@
-<div class="pic-show col-md-4">
-  <% if @wiki.clips.empty? %>
-    <p> No Videos Posted<p>
-  <% else %>
-    <% @wiki.clips.each do |clip| %>
-      <div class="video-index">
-        <%= video_tag clip.video.url(:medium), controls: true, type: "video/mp4", style: "max-width: 100%;" %>
-      </div>
+<div class="container main pic-show">
+  <h1 class="container title-all"><%= @wiki.title %> Videos <%= link_to "back to log", wiki_path(@wiki), class: "pull-right" %></h1>
+  <div class="pic-show col-md-4">
+    <% if @wiki.clips.empty? %>
+      <p> No Videos Posted<p>
+    <% else %>
+      <% @wiki.clips.each do |clip| %>
+        <div class="video-index">
+          <%= video_tag clip.video.url(:medium), controls: true, type: "video/mp4", style: "max-width: 100%;" %>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>

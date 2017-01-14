@@ -27,10 +27,10 @@ class PicsController < ApplicationController
 
   if @pic.destroy
     flash[:notice] = "Image was deleted successfully."
-    redirect_to [@wiki]
+    redirect_to wiki_pic_path(@wiki.pics, @wiki)
   else
     flash[:alert] = "Image couldn't be deleted. Try again."
-    redirect_to [@wiki]
+    redirect_to wiki_pic_path(@wiki.pics, @wiki)
   end
 end
 

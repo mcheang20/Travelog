@@ -23,9 +23,10 @@ class Wiki < ActiveRecord::Base
    def most_popular
      votes.likes > 1
    end
-
+   # search method for development env use LIKE
+   # for production use ILIKE
    def self.search(search)
-      where("title ILIKE ? OR description ILIKE ?", "%#{search}%", "%#{search}%")
+      where("title LIKE ? OR description LIKE ?", "%#{search}%", "%#{search}%")
    end
 
    scope :followed_users, -> (following_users) { where user_id: following_users }

@@ -1,10 +1,10 @@
-<div class="pic-show">
-  <h1 class="container title-all">Images</h1>
+<div class="container main pic-show">
+  <h1 class="container title-all"><%= @wiki.title %> Posted Images <%= link_to "back to log", wiki_path(@wiki), class: "pull-right" %></h1>
   <% if @wiki.pics.empty? %>
    <p> No Images Posted<p>
   <% else %>
     <% @wiki.pics.each do |pic| %>
-      <div class="pic-each col-sm-3">
+      <div class="pic-each col-md-4">
         <%=link_to (image_tag (pic.image.url(:album))), pic.image.url(:album), data: {lightbox: "eaxmple-set", title: pic.caption }%>
         <% if user_is_authorized_for_pic? %>
         <div class="pic-delete">

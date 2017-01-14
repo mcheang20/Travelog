@@ -108,11 +108,11 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0221)
     mimemagic (0.3.2)
-    mini_portile2 (2.0.0)
+    mini_portile2 (2.1.0)
     minitest (5.8.4)
     multi_json (1.12.1)
-    nokogiri (1.6.7.2)
-      mini_portile2 (~> 2.0.0.rc2)
+    nokogiri (1.6.8.1)
+      mini_portile2 (~> 2.1.0)
     orm_adapter (0.5.0)
     paperclip (5.0.0)
       activemodel (>= 4.2.0)
@@ -231,6 +231,7 @@ DEPENDENCIES
   jquery-slick-rails (>= 1.6)
   jquery-turbolinks
   lightbox2-rails
+  nokogiri
   paperclip (~> 5.0.0)
   paperclip-av-transcoder
   paperclip-ffmpeg (~> 1.2.0)

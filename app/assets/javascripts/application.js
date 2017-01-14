@@ -13,8 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.slick
-//= require turbolinks
 //= require jquery.turbolinks
+//= require turbolinks
 //= require bootstrap
 //= require bootstrap/modal
 //= require lightbox

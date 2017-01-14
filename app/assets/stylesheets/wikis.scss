@@ -184,8 +184,7 @@
 
   button {
     padding: 10px;
-    border-radius: 15px;
-    border-style: none;
+    border-radius: 5px;
     background-color: white;
     border: 2px solid rgba(1,1,1,.2);
     text-decoration: none;
@@ -196,17 +195,16 @@
 
     button:nth-child(2) {
       color: rgb(230, 32, 32);
-      border: 2px solid tomato;
+      border: 2px solid rgba(1,1,1,.2);
       background-color: tomato;
+        &:hover {
+          background-color: white;
+        }
     }
 
     a {
       color: rgba(1,1,1,.5);
       font-weight: 500;
-        &:hover {
-          text-decoration: none;
-          color: rgba(1,1,1,.5);
-        }
     }
 
     a:nth-child(2) {

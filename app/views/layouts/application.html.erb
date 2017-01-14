@@ -10,7 +10,7 @@
 <body>
   <div class="container-bar">
     <ul class="nav nav-pills navbar-inverse navigation">
-      <li class="presentation nav-logo"><i class="fa fa-grav fa-lg" aria-hidden="true"> <%= link_to "Travelog", welcome_index_path %></i></li>
+      <li class="presentation nav-logo"> <%= link_to image_tag("travelog_logo.png"), welcome_index_path %></li>
       <li class="presentation explore-btn"><i class="icon-explore fa fa-map-pin fa-lg" aria-hidden="true"></i> <%= link_to "Explore", all_wikis_path %></li>
         <div class="search-bar">
           <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>

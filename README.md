@@ -10,6 +10,7 @@ git clone https://github.com/mcheang20/travelog.git
 cd travelog
 rails s
 ```
+
 ##Credits
 
 - Travelog uses [Devise](https://github.com/plataformatec/devise) for simple authentication.
