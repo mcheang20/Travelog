@@ -1,13 +1,13 @@
-<div class="edit-profile-form col-md-8">
+<div class="container edit-profile-form">
   <div class="profile-image-form">
     <h1><%= @user.username %></h1>
     <div class="profile-image"><%= image_tag(@user.image.url(:medium)) %></div>
-  </div>
     <%= form_for @user, html: { multipart: true } do |f| %>
-      <div class="form-group profile-image-form form-all">
+      <div class="form-group">
         <%= f.label "Edit Your profile picture" %>
         <%= f.file_field :image %>
       </div>
+  </div>
       <div class="form-all form-group">
         <%= f.label 'About You' %>
         <%= f.text_area :description, rows: 6, class: 'form-control', placeholder: "Tell us about yourself." %>
