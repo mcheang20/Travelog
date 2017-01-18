@@ -33,4 +33,8 @@ module ApplicationHelper
    def likes
      @wikis = current_user.votes.all
    end
+
+   def category
+     @categories = Category.all
+   end
  end

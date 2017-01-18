@@ -245,6 +245,44 @@
     p {
       font-size: 20px;
       float: left;
+    }
+}
 
+.about {
+  h1 {
+    font-size: 45px;
+    font-weight: 400;
+    border-bottom: 1px solid rgba(1,1,1,.1);
+  }
+
+  p{
+    font-size: 18px;
+    color: rgba(1,1,1,.4);
+  }
+}
+
+.guidelines {
+  height: 100vh;
+  background-color: rgba(1,1,1,.05);
+
+    h1 {
+      border-bottom: 1px solid rgba(1,1,1,.2);
+      font-weight: 400;
+      font-size: 45px;
+    }
+}
+
+.rules {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0 1px;
+
+    h4 {
+      color: rgba(1,1,1,.6);
+      font-weight: 400;
+    }
+
+    p {
+      color: rgba(1,1,1,.5);
     }
 }
