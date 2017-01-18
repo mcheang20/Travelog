@@ -1,28 +1,29 @@
 <div class="form-div">
-<h2 class="home-titles">Sign up</h2>
+  <h2 class="home-titles">Sign up</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-<div class="registration">
-  <div class="field">
-    <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: "Email"%>
-  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+  <div class="registration">
+    <div class="field">
+      <%= f.email_field :email, class: 'form-control', autofocus: true, placeholder: "Email"%>
+    </div>
 
-  <div class="field">
-    <%= f.text_field :username, class: 'form-control', autocomplete: "off", placeholder: "Username" %>
-  </div>
+    <div class="field">
+      <%= f.text_field :username, class: 'form-control', autocomplete: "off", placeholder: "Username" %>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: "Password (minimum 8 characters)"%>
-  </div>
+    <div class="field">
+      <%= f.password_field :password, class: 'form-control', autocomplete: "off", placeholder: "Password (minimum 8 characters)"%>
+    </div>
 
-  <div class="field">
-    <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: "Password confirmation" %>
-  </div>
+    <div class="field">
+      <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off", placeholder: "Password confirmation" %>
+    </div>
 
-  <div class="sign-up-btn">
-    <%= f.submit "Sign up", :class=>'btn btn-primary' %>
+    <div class="sign-up-btn">
+      <%= f.submit "Sign up", :class=>'btn btn-primary' %>
+    </div>
+  <% end %>
+  <%= render "devise/shared/links" %>
   </div>
-<% end %>
-<%= render "devise/shared/links" %>
 </div>
