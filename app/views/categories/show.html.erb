@@ -1,5 +1,8 @@
 <div class="container cat-show-view">
   <h1 class="title-all"><%= @category.name %> (<%= pluralize(@category.wikis.count, 'log') %> )</h1>
+   <% if @category.wikis.count == 0 %>
+    <p>No logs for this region yet</p>
+  <% else %>
     <% @category.wikis.each do |wiki| %>
         <div class="wiki-style col-sm-3">
             <%= link_to image_tag(wiki.image.url(:medium)), wiki %>
@@ -15,4 +18,5 @@
             </div>
           </div>
     <% end %>
-  </div>
+  <% end %>
+</div>
