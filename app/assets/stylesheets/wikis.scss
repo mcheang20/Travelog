@@ -75,9 +75,24 @@
   margin-top: 15px;
 }
 
+.wiki-new-page {
+  background-color: rgba(1,1,1,.1);
+}
+
 .new-wiki-form {
   margin-left: 100px;
   width: 65%;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  background-color: white;
+
+    p {
+      color: rgba(1,1,1,.7);
+      font-weight: 500;
+      font-size: 16px;
+    }
 }
 
 .wiki-image-top {
@@ -159,11 +174,20 @@
 .wiki-description {
   background-color: white;
   margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px;
   box-shadow: 2px 2px 2px rgba(1,1,1, .4);
 
     h3 {
       font-weight: 200;
+      font-size: 28px;
+      margin-top: -5px;
+    }
+
+    p {
+      font-size: 16px;
+      font-weight: 300;
+      color: grey;
     }
 }
 
@@ -215,7 +239,6 @@
         }
     }
 }
-
 
 .side-images {
   position: absolute;

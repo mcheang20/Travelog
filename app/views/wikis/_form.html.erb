@@ -1,11 +1,13 @@
 <div class="new-wiki-form">
+  <h1 class="title-sub">Log Your Adventure</h1>
+  <p>Record your most recent vacation, adventure, or event for memories or to share with others.</p>
   <%= form_for @wiki, html: { multipart: true } do |f| %>
      <div class="form-all form-group">
        <%= f.label :title %>
        <%= f.text_field :title, class: 'form-control', placeholder: "Log Title"  %>
      </div>
      <div class="form-all form-group">
-       <%= f.label "Share your experience" %>
+       <%= f.label "Tell your story" %>
        <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Where did you go? What did you do?" %>
      </div>
      <div class="form-all form-group">
@@ -30,5 +32,7 @@
        <%= f.submit "Save", class: 'btn btn-primary' %>
      </div>
     <% end %>
+    <small>Please make sure your post follows Travelog guidelines. <%= link_to "Learn more", welcome_guidelines_path %></small> </br>
+    <small>Want to increase posts limit? <%= link_to "Subscribe", new_charge_path %> to Travelog premium.</small>
   </div>
 </div>
