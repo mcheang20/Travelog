@@ -1,7 +1,7 @@
 class Wiki < ActiveRecord::Base
   is_impressionable
 
-  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>", index: "350x300#", large: "1200x800#"}, default_url: "/images/:style/missing.png"
+  has_attached_file :image, styles: { medium: "300x300>", thumb: "100x100>", index: "350x300#", large: "1500x650#"}, default_url: "/images/:style/missing.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
   belongs_to :user
   belongs_to :category

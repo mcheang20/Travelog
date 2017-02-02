@@ -61,7 +61,7 @@
         <%= render @wiki.comments %>
       </div>
     <% if user_is_authorized_for_wiki?(@wiki)%>
-    <div class="wiki-media row col-md-10">
+    <div class="wiki-attachments row col-md-10">
       <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>
         <%= render 'pics/form', pic: Pic.new, wiki: @wiki %>
       <h3><i class="fa fa-video-camera" aria-hidden="true"></i> Add Videos</h3>
