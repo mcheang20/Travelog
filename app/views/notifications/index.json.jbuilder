@@ -5,11 +5,11 @@ json.array! @notifications do |notification|
   json.action "a new #{notification.action}"
   json.notifiable do #notification.notifiable
     if notification.action == "like"
-    json.type "on your #{notification.notifiable.class.to_s.underscore.humanize.downcase}"
+    json.type "on your entry"
   elsif notification.action == "comment"
-    json.type "on your #{notification.action.class.to_s.underscore.humanize.downcase}"
+    json.type "on your entry"
   else
-    json.type "your #{notification.notifiable.class.to_s.underscore.humanize.downcase} "
+    json.type "your log entry"
     end
   end
   json.url wiki_path(notification)
