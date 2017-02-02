@@ -15,10 +15,6 @@
   box-shadow: 0 0 2px;
 }
 
-.profile-image {
-  padding-bottom: 10px;
-}
-
 .profile-image-form {
   text-align: center;
 }
@@ -27,15 +23,20 @@
   margin-left: 481px;
 }
 
-.profile-image img {
-  width: 200px;
-	height: 200px;
-	border-radius: 150px;
-	-webkit-border-radius: 150px;
-	-moz-border-radius: 150px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+.profile-image {
+    padding-bottom: 10px;
+    text-align: center;
+
+  img {
+    width: 200px;
+  	height: 200px;
+  	border-radius: 150px;
+  	-webkit-border-radius: 150px;
+  	-moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
 }
 
 .user-data {
@@ -110,11 +111,11 @@
     .slick-next {
       margin-right: -23px;
     }
-}
 
-.user-posts-slick img {
-  height: 180px;
-  width: 310px;
+    img {
+      height: 180px;
+      width: 310px;
+    }
 }
 
 .follow-button {
@@ -146,7 +147,6 @@
 }
 
 .slick-index {
-
     a {
       color: rgba(1,1,1,.6);
       text-decoration: none;

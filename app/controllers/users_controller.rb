@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
+
+before_action :require_sign_in
+
   def show
      @user = User.find(params[:id])
-     @wiki = current_user.wikis
-     @vote = current_user.votes
+     @wiki = @user.wikis
+     @vote = @user.votes
    end
 
    def edit

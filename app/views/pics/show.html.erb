@@ -1,18 +1,18 @@
-<div class="container main pic-show">
+<div class="container main">
   <h1 class="container title-all"><%= @wiki.title %> Posted Images <%= link_to "back to log", wiki_path(@wiki), class: "pull-right" %></h1>
   <% if @wiki.pics.empty? %>
    <p> No Images Posted<p>
   <% else %>
+  <div class="row">
     <% @wiki.pics.each do |pic| %>
       <div class="pic-each col-md-4">
-        <%=link_to (image_tag (pic.image.url(:album))), pic.image.url(:album), data: {lightbox: "eaxmple-set", title: pic.caption }%>
+        <%=link_to (image_tag (pic.image.url(:medium))), pic.image.url(:album), data: {lightbox: "eaxmple-set", title: pic.caption }%>
         <% if user_is_authorized_for_pic? %>
-        <div class="pic-delete">
-          <%= link_to "Delete", [pic.wiki, pic], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this image?'} %>
-        </div>
-          <p><%= pic.caption %></p>
+        <%= link_to "Delete", [pic.wiki, pic], method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete this image?'} %>
         <% end %>
+        <p><%= pic.caption %></p>
       </div>
     <% end %>
   <% end %>
+</div>
 </div>

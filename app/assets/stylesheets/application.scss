@@ -214,8 +214,6 @@ body {
   letter-spacing: -1px;
 }
 
-
-
 .scroller {
   div {
     text-align: center;
@@ -274,7 +272,6 @@ body {
 .dropdown-menu {
   letter-spacing: .5px;
   background-color: darkorange;
-  width: 280px;
   font-size: 20px;
 
     li {
@@ -291,6 +288,10 @@ body {
     i {
       color: white;
     }
+}
+
+.dropdown-user {
+  width: 250px;
 }
 
 .presentation {

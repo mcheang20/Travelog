@@ -10,7 +10,7 @@ class VotesController < ApplicationController
     if @vote.save
         @vote.update_attribute(:value, 1)
       else
-        Notification.create(recipient: @wiki.user , actor: current_user, action: "Liked", notifiable: @wiki )
+        Notification.create(recipient: @wiki.user , actor: current_user, action: "like", notifiable: @wiki )
         @vote = current_user.votes.create(value: 1, wiki: @wiki)
     end
       redirect_to wikis_path

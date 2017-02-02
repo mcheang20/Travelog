@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
        if @wiki.user == current_user
          redirect_to [@wiki]
        else
-        Notification.create(recipient: @wiki.user, actor: current_user, action: "Commented", notifiable: @wiki)
+        Notification.create(recipient: @wiki.user, actor: current_user, action: "comment", notifiable: @wiki)
         redirect_to [@wiki]
       end
     end

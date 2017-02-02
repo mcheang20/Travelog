@@ -1,6 +1,12 @@
-<div class="all-images-btn"><%= link_to "View All Images", wiki_pic_path(@wiki.pics, @wiki),class: 'btn btn-default' %></div>
-<div class="all-videos-btn"><%= link_to "View All Videos", wiki_clip_path(@wiki.clips, @wiki), class: 'btn btn-default' %></div>
-<div class="wiki-image-top"><%= image_tag(@wiki.image.url(:large))%></div>
+<div class="wiki-image-top">
+  <%= image_tag(@wiki.image.url(:large))%>
+</div>
+<section class="wiki-media">
+  <div class="all-images-btn">
+  <%= link_to "View All Images", wiki_pic_path(@wiki.pics, @wiki),class: 'btn btn-default' %>
+  <%= link_to "View All Videos", wiki_clip_path(@wiki.clips, @wiki), class: 'btn btn-default' %>
+  </div>
+</section>
   <div class="container wiki-show-body">
     <div class="row col-md-10 wiki-body">
       <section class="wiki-info">
@@ -14,26 +20,30 @@
         <h1 id="show-title"><%= @wiki.title %></h1>
         <h4 class="small-text"><%= @wiki.description %></h4>
         <h4 class="small-text"><%= @wiki.category.name %></h4>
-        <%= link_to @wiki.user.username, user_path(@wiki.user) %>
+        <p>by <%= link_to @wiki.user.username, user_path(@wiki.user) %></p>
       </section>
-      <div class="wiki-icons">
-        <p class="glyphicon glyphicon-heart"></p>
-        <p class="glyphicon glyphicon-comment"></p>
-        <p class="glyphicon glyphicon-eye-open"></p>
-      </div>
-      <div class="wiki-icons-content">
-          <span class="wiki-icons-tag"><%= pluralize(@wiki.likes, 'like') %></span>
-          <span class="wiki-icons-tag"><%= pluralize(@wiki.comments.count, 'comment') %></span>
-          <span class="wiki-icons-tag"><%= pluralize(@wiki.impressionist_count, 'view') %></span>
-      </div>
+      <section class="wiki-icons row">
+        <div class="col-sm-4">
+          <p class="glyphicon glyphicon-heart"></p></br>
+          <span><%= pluralize(@wiki.likes, 'like') %></span>
+        </div>
+        <div class="col-sm-4">
+          <p class="glyphicon glyphicon-comment"></p></br>
+          <span><%= pluralize(@wiki.comments.count, 'comment') %></span>
+        </div>
+        <div class="col-sm-4">
+          <p class="glyphicon glyphicon-eye-open"></p></br>
+          <span><%= pluralize(@wiki.impressionist_count, 'view') %></span>
+        </div>
+      </section>
       <div class="side-images">
         <h4 class="side-images-top">Pictures</h4>
         <% if @wiki.pics.empty? %>
-        <p>No pictures</p>
+          <p>No pictures</p>
         <% else %>
-        <% @wiki.pics.take(6).each do |pic| %>
-          <div class="row col-sm-6"><%= link_to (image_tag(pic.image.url(:thumb))), pic.image.url(:album), data: {lightbox: "eaxmple-set"}  %></div>
-        <% end %>
+          <% @wiki.pics.take(6).each do |pic| %>
+            <div class="row col-sm-6"><%= link_to (image_tag(pic.image.url(:thumb))), pic.image.url(:album), data: {lightbox: "eaxmple-set"}  %></div>
+          <% end %>
         <% end %>
       </div>
       <div class="wiki-description">
@@ -41,15 +51,15 @@
         <p><%= markdown(@wiki.body)%></p>
       </div>
     <% if current_user %>
-    <div class="comment-form-div">
-      <h4>New Comment</h4>
-      <span><%= render 'comments/form', comment: Comment.new, wiki: @wiki %></span>
-    </div>
-        <div class="comments-list">
-          <h4 class="comment-title"><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%= @wiki.comments.count %> comments)</h4>
-          <%= render @wiki.comments %>
-        </div>
+      <div class="comment-form-div">
+        <h4>New Comment</h4>
+        <span><%= render 'comments/form', comment: Comment.new, wiki: @wiki %></span>
+      </div>
     <% end %>
+      <div class="comments-list">
+        <h4 class="comment-title"><i class="fa fa-comments fa-lg" aria-hidden="true"></i> Comments (<%= @wiki.comments.count %> comments)</h4>
+        <%= render @wiki.comments %>
+      </div>
     <% if user_is_authorized_for_wiki?(@wiki)%>
     <div class="wiki-media row col-md-10">
       <h3><i class="fa fa-picture-o" aria-hidden="true"></i> Add Images</h3>

@@ -3,19 +3,22 @@
     <div class="user-heading">
       <div class="profile-image">
         <%= image_tag(@user.image.url(:medium)) %>
+        <% if @user.role == 'premium' %>
+          <h4>Premium Account</h4>
+        <% end %>
       </div>
       <div class="user-data">
-        <h1> <%= @user.username %> </h1>
+        <h1><%= @user.username %></h1>
         <h4> Posts: <%= @user.wikis.count %> </h4>
         <h4> Likes: <%= @user.votes.count %></h4>
         <h4> Comments: <%= @user.comments.count %></h4>
         <h4> Followers: <%= @user.followers.count %></h4>
         <% if user_is_authorized? %>
-          <p> <%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+          <p><%= link_to "Edit Profile", edit_user_path, class: 'btn btn-default'%><p>
+        <% else %>
+          <% if current_user_is_following(current_user.id, @user.id) %>
+            <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
           <% else %>
-            <% if current_user_is_following(current_user.id, @user.id) %>
-              <%= link_to 'Unfollow', unfollow_user_path(@user.username), remote: true,  class: 'btn unfollow-button', id: 'unfollow-button', method: :post %>
-            <% else %>
             <div class="follow-tag pull-right"><%= link_to 'Follow', follow_user_path(@user.username), remote: true, class: 'btn follow-button', id: 'follow-button', method: :post %></div>
           <% end %>
         <% end %>

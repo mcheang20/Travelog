@@ -1,26 +1,26 @@
 <div class="new-wiki-form">
   <h1 class="title-sub">Log Your Adventure</h1>
   <p>Record your most recent vacation, adventure, or event for memories or to share with others.</p>
-  <%= form_for @wiki, html: { multipart: true } do |f| %>
+  <%= form_for @wiki, html: { multipart: true }, :validate=>true do |f| %>
      <div class="form-all form-group">
        <%= f.label :title %>
-       <%= f.text_field :title, class: 'form-control', placeholder: "Log Title"  %>
+       <%= f.text_field :title, class: 'form-control', placeholder: "Log Title", required: true  %>
      </div>
      <div class="form-all form-group">
        <%= f.label "Tell your story" %>
-       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Where did you go? What did you do?" %>
+       <%= f.text_area :body, rows: 8, class: 'form-control', placeholder: "Where did you go? What did you do? It's your story to tell.", required: true %>
      </div>
      <div class="form-all form-group">
        <%= f.label :location %>
-       <%= f.text_area :description, rows: 1, class: 'form-control', placeholder: "Ex. San Francsico, CA, USA." %>
+       <%= f.text_area :description, rows: 1, class: 'form-control', placeholder: "Ex. San Francsico, CA, USA", required: true %>
      </div>
      <div class=" form-all form-group">
        <%= f.label "Add a thumbnail" %>
-       <%= f.file_field :image %>
+       <%= f.file_field :image, required: true %>
      </div>
      <div class="form-all form-group">
      <%= f.label "Select a region" %>
-     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!") %>
+     <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select one!", required: true) %>
     </div>
      <% if current_user && (current_user.admin? ||  current_user.premium?) %>
        <div class="form-group">
@@ -33,6 +33,6 @@
      </div>
     <% end %>
     <small>Please make sure your post follows Travelog guidelines. <%= link_to "Learn more", welcome_guidelines_path %></small> </br>
-    <small>Want to increase posts limit? <%= link_to "Subscribe", new_charge_path %> to Travelog premium.</small>
+    <small>Want to increase posts limit or make your posts private? <%= link_to "Subscribe", new_charge_path %> to Travelog premium.</small>
   </div>
 </div>
