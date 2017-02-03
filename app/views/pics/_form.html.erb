@@ -5,7 +5,7 @@
    </div>
    <div class="form-all form-group">
      <%= f.label :image %>
-     <%= f.file_field :image%>
+     <%= f.file_field :image, required: true %>
    </div>
    <%= f.submit "Submit", class: 'btn btn-default pull-right' %>
  <% end %>
