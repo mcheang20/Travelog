@@ -1,5 +1,5 @@
 <div class=" container main">
-  <h1 class="title-all">Explore <%= @wikis.count %> adventures</h1>
+  <h1 class="title-all">Explore <%= pluralize(@wikis.count, 'adventure') %></h1>
   <p class="wiki-sub-title"> Most Recent <%= link_to "See All", most_recent_path(@wikis)%></p>
   <div class="row">
     <%= render 'wikis/showrecent' %>
