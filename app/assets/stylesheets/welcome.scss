@@ -142,7 +142,8 @@
   text-align: center;
   margin-top: 50px;
   height: 600px;
-  background-image: url("http://www.planwallpaper.com/static/images/cool-background.jpg");
+  background-color: lightseagreen;
+  //background-image: url("http://www.planwallpaper.com/static/images/cool-background.jpg");
 }
 
 .how-title {
@@ -153,21 +154,16 @@
 }
 
 .info-group {
-  margin-left: 100px;
-  max-width: 300px;
   margin-top: 10px;
   padding-left: 30px;
   padding-right: 30px;
-  background-color: tomato;
 }
 
 .info-row {
-  display: -webkit-box;
-  margin-left: 56px;
 
   .glyphicon {
     font-size: 100px;
-    color: white;
+    color: darkorange;
     padding: 15px;
     margin: 10px;
     }
@@ -180,17 +176,17 @@
 }
 
 .how-text {
+  font-size: 32px;
+  font-weight: 100;
   color: white;
-  font-size: 30px;
-  font-weight: 200;
-  border-bottom: 3px solid;
+  text-align: left;
 }
 
 .how-desc {
+  font-size: 18px;
+  font-weight: 200;
+  text-align: left;
   color: white;
-  font-weight: 100;
-  font-size: 16px;
-  letter-spacing: 1px;
 }
 
 .cap-one {
