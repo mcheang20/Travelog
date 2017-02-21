@@ -58,3 +58,8 @@ $(document).ready(function() {
     uploadObj.startUpload();
   });
 });
+
+$('.carousel').carousel({
+  interval: false,
+  pause: "false"
+});

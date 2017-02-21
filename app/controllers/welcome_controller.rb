@@ -1,4 +1,8 @@
 class WelcomeController < ApplicationController
+
+  def home
+  end
+  
   def index
     @wikis = Wiki.all
   end

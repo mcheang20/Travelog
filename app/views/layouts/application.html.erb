@@ -8,64 +8,7 @@
       <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container-bar">
-    <ul class="nav nav-pills navbar-inverse navigation">
-      <li class="presentation nav-logo"> <%= link_to image_tag("travelog_logo.png"), welcome_index_path %></li>
-      <li class="presentation explore-btn"><%= link_to "Explore", all_wikis_path %></li>
-      <div class="btn-group btn-region">
-        <button type="button" class="btn btn-default btn-avatar"></button>
-        <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Regions
-          <span class="caret"></span>
-          <span class="sr-only">Toggle Dropdown</span>
-        </button>
-          <ul class="dropdown-menu">
-            <% category.each do |category| %>
-              <li><%= link_to category.name, category %></li>
-            <% end %>
-          </ul>
-      </div>
-        <div class="search-bar">
-          <%= form_tag(wikis_path, :method => "get", id: "search-form") do %>
-            <%= text_field_tag :search, params[:search], placeholder: "Search Logs" %>
-            <%= submit_tag "Search", :name => nil, class: 'btn btn-default' %>
-          <% end %>
-        </div>
-        <% if user_signed_in? %>
-        <li class="presentation share-btn"><%= link_to "New Log", new_wiki_path %></li>
-        <div class="avatar-button btn-group pull-right">
-          <button type="button" class="btn btn-default btn-avatar">  <%= link_to image_tag(current_user.image.url(:thumb)), user_path(current_user) %></button>
-          <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="caret"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-            <ul class="dropdown-user dropdown-menu">
-              <li><i class="fa fa-user-circle-o" aria-hidden="true"> <%= link_to current_user.username, user_path(current_user) %></i></li>
-              <li><i class="fa fa-pencil-square-o" aria-hidden="true"> <%= link_to 'Edit profile', edit_user_path(current_user) %></i></li>
-              <li><i class="fa fa-sign-out" aria-hidden="true"> <%= link_to "Log Out", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></i></li>
-              <li><i class="fa fa-user-plus" aria-hidden="true"> <%= link_to "Upgrade to premium", new_charge_path %></i></li>
-            </ul>
-        </div>
-        <div class="btn-group notification-btn pull-right" data-behavior="notifications">
-          <div class="glyphicon glyphicon-bell"></div>
-          <span data-behavior="unread-count"></span>
-          <button type="button" class="btn btn-default dropdown-toggle btn-avatar-notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-behavior="notifications-link">
-            <span class="caret"></span>
-            <span class="sr-only">Toggle Dropdown</span>
-          </button>
-          <ul class="dropdown-menu" data-behavior="notification-items"></ul>
-        </div>
-      <div class="message-btn pull-right">
-        <a href="/conversations"><i class="fa fa-commenting fa-lg" aria-hidden="true"></i></a>
-      </div>
-     <% else %>
-     <div class="user-session">
-        <li class="pull-right"> <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'  %> </li>
-        <li class="pull-right"> <%= link_to "Log In", new_user_session_path, class: 'btn btn-default'  %> </li>
-     </div>
-     <% end %>
-   </ul>
- </div>
+ <%= render 'layouts/header' unless current_page?(root_path) %>
  <%= render 'layouts/navbar' %>
 
     <% if flash[:notice] %>

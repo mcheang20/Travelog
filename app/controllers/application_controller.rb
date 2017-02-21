@@ -10,6 +10,10 @@ class ApplicationController < ActionController::Base
     flash[:alert] = "You must be logged in to do that"
     redirect_to root_path
   end
+
+  def disable_header
+    @disable_header = true
+  end 
 end
 
 private

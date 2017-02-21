@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   post ':username/follow_user', to: 'relationships#follow_user', as: :follow_user
   post ':username/unfollow_user', to: 'relationships#unfollow_user', as: :unfollow_user
 
-devise_for :views
 devise_for :users
 
 resources :wikis do
@@ -35,10 +34,14 @@ get "/your_likes" => 'wikis#your_likes', as: :likes
 get "/followed_users" => 'wikis#followed_users', as: :followed_users
 get "/all_wikisr" => 'wikis#all_wikis', as: :all_wikis
 
- get "welcome/index"
- get "welcome/about"
- get "welcome/guidelines"
- get "welcome/contact"
+get "welcome/index"
+get "welcome/about"
+get "welcome/guidelines"
+get "welcome/contact"
 
- root 'welcome#index'
+ authenticated :user do
+  root :to => 'welcome#index', as: :authenticated_root
+end
+
+ root 'welcome#home'
 end

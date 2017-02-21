@@ -1,10 +1,12 @@
-<nav class="nav-index">
-  <ul class="navlinks">
-    <%= link_to "Most Popular", most_popular_path(@wikis) %>
-    <%= link_to "Most Recent", most_recent_path(@wikis) %>
-  <% if user_signed_in? %>
-    <%= link_to "Likes", likes_path(@wikis) %>
-    <%= link_to "Followed", followed_users_path(@wikis) %>
-  <% end %>
-  </ul>
-</nav>
+<% if user_signed_in? %>
+  <nav class="nav-index">
+    <ul class="navlinks">
+      <%= link_to "Most Popular", most_popular_path(@wikis) %>
+      <%= link_to "Most Recent", most_recent_path(@wikis) %>
+    <% if user_signed_in? %>
+      <%= link_to "Likes", likes_path(@wikis) %>
+      <%= link_to "Followed", followed_users_path(@wikis) %>
+    <% end %>
+    </ul>
+  </nav>
+<% end %>
