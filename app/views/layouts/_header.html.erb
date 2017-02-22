@@ -1,11 +1,11 @@
 <ul class="nav nav-pills navbar-inverse navigation">
   <% if user_signed_in? %>
-    <li class="presentation nav-logo"> <%= link_to image_tag("travelog_logo.png"), welcome_index_path %></li>
+    <li class="presentation nav-logo"> <%= link_to image_tag("travelog_logo.png"), all_wikis_path %></li>
   <% else %>
     <li class="presentation nav-logo"> <%= link_to image_tag("travelog_logo.png"), root_path %></li>
   <% end %>
   <% if user_signed_in? %>
-    <li class="presentation explore-btn"><%= link_to "Explore", all_wikis_path %></li>
+    <li class="presentation explore-btn"><%= link_to "Learn More", welcome_learn_more_path %></li>
     <div class="btn-group btn-region">
       <button type="button" class="btn btn-default btn-avatar"></button>
       <button type="button" class="btn btn-default dropdown-toggle btn-avatar" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -53,8 +53,8 @@
     </div>
    <% else %>
    <div class="user-session">
-      <li class="pull-right"> <%= link_to "Sign Up", new_user_registration_path, class: 'btn btn-primary'  %> </li>
-      <li class="pull-right"> <%= link_to "Log In", new_user_session_path, class: 'btn btn-default'  %> </li>
+      <li class="pull-right"> <%= link_to "Sign Up", new_user_registration_path, class: 'btn'  %> </li>
+      <li class="pull-right"> <%= link_to "Log In", new_user_session_path, class: 'btn'  %> </li>
    </div>
  <% end %>
  </ul>

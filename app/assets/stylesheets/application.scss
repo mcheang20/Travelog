@@ -22,6 +22,21 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+*, *::before, *::after {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+   html { font-size: 112%; }
+}
+
+/* Large screens (1024px) */
+@media (min-width: 1024px) {
+     html { font-size: 120%; }
+}
+
 html {
   height: 100%;
   font-size: 16px;
@@ -38,12 +53,12 @@ body {
 .navigation {
   color: rgba(1,1,1,.4);
   background-color: #28363F;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   border-bottom: 2px solid rgba(1,1,1,.1);
   a {
     color: white;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 400;
     font-family: serif;
   }
@@ -88,13 +103,13 @@ body {
 }
 
 .sign-up-btn {
-   .btn {
-      padding-left: 20px;
-      padding-right: 20px;
-      font-size: 16px;
-      margin-right: 30px;
-      width: 300px;
-   }
+ .btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 16px;
+    margin-right: 30px;
+    width: 300px;
+ }
 }
 
 .collab input[type="text"]{
@@ -198,12 +213,11 @@ body {
   margin-right: -15px;
   margin-left: -14px;
   margin-top: -1px;
-
-    a {
-      color: white;
-      font-size: 16px;
-      margin-top: 20px;
-    }
+  a {
+    color: white;
+    font-size: 16px;
+    margin-top: 20px;
+  }
 }
 
 .title-sub {
@@ -309,18 +323,18 @@ body {
 footer {
   padding-top: 5px;
   border-top: 1px solid rgba(1,1,1,.3);
-  color: #777;
+  background-color: #28363F;
+  color: white;
+  margin-top: 100px;
   height: 50px;
-  position: absolute;
   width: 100%;
   bottom: 0;
-  margin-bottom: -50px;
   &.transparent-foot {
     display: none;
   }
 
   a {
-    color: #555;
+    color: white;
     font-weight: 800;
     &:hover {
       color: #222;
@@ -338,30 +352,25 @@ footer {
 }
 
 .nav-index {
-  height: 50px;
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
   padding-top: 10px;
   border-bottom: 1px solid rgba(1, 1, 1, .2);
   width: 100%;
   padding-right: 25px;
   background-color: #fafafa;
 
-    a {
-      color: rgba(1, 1, 1, .5);
-      margin-right: 40px;
-      text-decoration: none;
-        &:hover {
-          color: #222;
-          }
-        }
-    a:active {
-      border-bottom: 1px solid black;
+  a {
+    color: rgba(1, 1, 1, .5);
+    margin-right: 40px;
+    text-decoration: none;
+    &:hover {
+      color: #222;
     }
-
     ul {
       margin-right: 50px;
     }
+  }
 }
 
 .message-btn {
@@ -374,7 +383,6 @@ footer {
 }
 
 .form-all {
-
   label{
     font-size: 20px;
     font-weight: 200;
@@ -391,42 +399,42 @@ footer {
   margin-top: -27px;
   width: 390px;
 
-    input[type="text"] {
-      width: 300px;
-      font-weight: 300;
-    }
+  input[type="text"] {
+    width: 300px;
+    font-weight: 300;
+  }
 
-    .btn {
-      background-color: orange;
-      border: 1px solid orange;
-      color: white;
-    }
+  .btn {
+    background-color: orange;
+    border: 1px solid orange;
+    color: white;
+  }
 }
 
 .user-session {
-    margin-right: 10px;
-    margin-top: -28px;
-
-    a {
-      font-family: inherit;
-      }
-
-    li:nth-child(1) {
-      margin-left: 15px;
-
-      .btn {
-        color: white;
-      }
+  margin-right: 10px;
+  padding-top: 7px;
+  a {
+    font-family: inherit;
+    &:hover{
+      color: white;
     }
+  }
+  .btn {
+    border: 1px solid white;
+    &:hover{
+      background-color: #EA6624;
+      border: 1px solid #EA6624;
+    }
+  }
 }
 
 .wiki-sub-title {
   font-size: 24px;
   font-weight: 200;
-
-    a {
-      font-size: 14px;
-    }
+  a {
+    font-size: 14px;
+  }
 }
 
 .links-btn {
@@ -454,9 +462,8 @@ footer {
 }
 
 .share-btn {
-    text-align: center;
-    width: 100px;
-
+  text-align: center;
+  width: 100px;
   a{
     margin-left: -20px;
     padding-left: 20px;

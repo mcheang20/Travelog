@@ -13,7 +13,7 @@ class VotesController < ApplicationController
         Notification.create(recipient: @wiki.user , actor: current_user, action: "like", notifiable: @wiki )
         @vote = current_user.votes.create(value: 1, wiki: @wiki)
     end
-      redirect_to wikis_path
+      redirect_to all_wikis_path
   end
 
   def destroy

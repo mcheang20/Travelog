@@ -35,12 +35,13 @@ get "/followed_users" => 'wikis#followed_users', as: :followed_users
 get "/all_wikisr" => 'wikis#all_wikis', as: :all_wikis
 
 get "welcome/index"
+get "welcome/learn_more"
 get "welcome/about"
 get "welcome/guidelines"
 get "welcome/contact"
 
  authenticated :user do
-  root :to => 'welcome#index', as: :authenticated_root
+  root :to => 'wikis#all_wikis', as: :authenticated_root
 end
 
  root 'welcome#home'
