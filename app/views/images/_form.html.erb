@@ -1,7 +1,8 @@
 <%= form_for [wiki, image] do |f| %>
-   <div class="form-group">
-     <%= f.label :caption, class: 'sr-only' %>
-     <%= f.text_field :caption, class: 'form-control', placeholder: "Enter a new comment" %>
-   </div>
-     <%= f.submit "Submit Comment", class: 'btn btn-default pull-right' %>
- <% end %>
+ <div class="form-group">
+   <%= f.label :caption, class: 'sr-only' %>
+   <%= f.text_field :caption, class: 'form-control', placeholder: "Enter a new comment" %>
+ </div>
+
+  <%= f.submit "Submit Comment", class: 'btn btn-default pull-right' %>
+<% end %>

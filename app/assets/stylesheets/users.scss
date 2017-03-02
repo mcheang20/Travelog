@@ -21,18 +21,17 @@
 }
 
 .profile-image {
-    padding-bottom: 10px;
-    text-align: center;
-
+  padding-bottom: 10px;
+  text-align: center;
   img {
     width: 200px;
-  	height: 200px;
-  	border-radius: 150px;
-  	-webkit-border-radius: 150px;
-  	-moz-border-radius: 150px;
+    height: 200px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
     box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-  	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   }
 }
 
@@ -41,16 +40,14 @@
   margin-top: -10px;
   border-left: 2px solid rgba(255,255,255,.5);
   margin-left: 22px;
-
-    h1 {
-      color: white;
-      font-weight: 200;
-      }
-
-    h4 {
-      color: white;
-      font-weight: 100;
-    }
+  h1 {
+    color: white;
+    font-weight: 200;
+  }
+  h4 {
+    color: white;
+    font-weight: 100;
+  }
 }
 
 .edit-user-page {
@@ -72,44 +69,38 @@
   border: 1px solid rgba(1,1,1,.1);
   padding: 10px;
   background-color: rgba(1,1,1,.1);
-
-    p:nth-child(1) {
-      font-size: 26px;
-      font-weight: 200;
-      color: rgba(1,1,1,.6);
-    }
-
-    p:nth-child(2) {
-      color: rgba(1,1,1,.5);
-    }
+  p:nth-child(1) {
+    font-size: 26px;
+    font-weight: 200;
+    color: rgba(1,1,1,.6);
+  }
+  p:nth-child(2) {
+    color: rgba(1,1,1,.5);
+  }
 }
 
 .user-posts-slick {
-    background-color: rgba(1,1,1,.1);
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    border: 1px solid rgba(1, 0, 1, .1);
-
-    section{
-      background-color: white;
-      text-align: -webkit-center;
-      padding: 10px;
-      margin: 10px;
-    }
-
-    button:nth-child(1) {
-      margin-left: 15px;
-    }
-
-    .slick-next {
-      margin-right: -23px;
-    }
-
-    img {
-      height: 180px;
-      width: 310px;
-    }
+  background-color: rgba(1,1,1,.1);
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  border: 1px solid rgba(1, 0, 1, .1);
+  section{
+    background-color: white;
+    text-align: -webkit-center;
+    padding: 10px;
+    margin: 10px;
+  }
+  button:nth-child(1) {
+    margin-left: 15px;
+  }
+  .slick-next {
+    margin-right: -23px;
+  }
+  img {
+    height: 180px;
+    width: 310px;
+  }
 }
 
 .follow-button {
@@ -141,25 +132,25 @@
 }
 
 .slick-index {
-    a {
-      color: rgba(1,1,1,.6);
-      text-decoration: none;
-      float: left;
-      clear: left;
-      margin-bottom: 0px;
-      margin-left: 10px;
-      font-size: 22px;
-      font-weight: 300;
-      }
+  a {
+    color: rgba(1,1,1,.6);
+    text-decoration: none;
+    float: left;
+    clear: left;
+    margin-bottom: 0px;
+    margin-left: 10px;
+    font-size: 22px;
+    font-weight: 300;
+    }
 
-   p {
-     font-size: 12px;
-     float: left;
-     clear: left;
-     margin-bottom: 0px;
-     font-weight: 400;
-     margin-left: 10px;
-   }
+  p {
+   font-size: 12px;
+   float: left;
+   clear: left;
+   margin-bottom: 0px;
+   font-weight: 400;
+   margin-left: 10px;
+  }
 }
 
 .user-followers {
@@ -172,7 +163,6 @@
   padding-top: 10px;
   margin: 10px;
   box-shadow: 1px 1px 8px rgba(1,1,1,.5);
-
   img {
     width: 100px;
     height: 100px;
@@ -183,11 +173,9 @@
     -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
     -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
   }
-
   a {
     font-size: 16px;
   }
-
   p {
     margin-bottom: -1px;
   }

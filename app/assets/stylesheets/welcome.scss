@@ -231,7 +231,7 @@
   color: white;
 }
 
-.cap-one {
+#capOne, #capTwo, #capThree{
   margin: 0 auto;
   padding-bottom: 250px;
   h1 {
@@ -244,65 +244,40 @@
     font-size: 1.8rem;
     color: white;
   }
+  .btn {
+    padding-left: 26px;
+    padding-right: 26px;
+    transition: .5s;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+#capOne {
   .btn {
     border: 2px solid teal;
     background-color: teal;
-    padding-left: 26px;
-    padding-right: 26px;
-    transition: .5s;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 }
 
-.cap-two {
-  margin: 0 auto;
-  padding-bottom: 250px;
-  h1 {
-    font-size: 4.5rem;
-  }
-  p{
-    font-size: 1.8rem;
-  }
-  a {
-    font-size: 1.8rem;
-    color: white;
-  }
+#capTwo {
   .btn {
     border: 2px solid #F98825;
     background-color: #F98825;
-    padding-left: 26px;
-    padding-right: 26px;
-    transition: .5s;
-    &:hover {
-      transform: scale(1.2);
-    }
   }
 }
 
-.cap-three {
-  margin: 0 auto;
-  padding-bottom: 250px;
-  h1 {
-    font-size: 4.5rem;
-  }
-  p{
-    font-size: 1.8rem;
-  }
-  a {
-    font-size: 1.8rem;
-    color: white;
-  }
+#capThree {
   .btn {
     border: 2px solid #098CE3;
     background-color: #098CE3;
-    padding-left: 26px;
-    padding-right: 26px;
-    transition: .5s;
-    &:hover {
-      transform: scale(1.2);
-    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #capOne, #capTwo, #capThree {
+    padding-bottom: 150px;
   }
 }
 

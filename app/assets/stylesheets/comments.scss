@@ -10,16 +10,15 @@
 .comment-img {
   float: left;
   margin-right: 5px;
-
-    img {
-      height: 40px;
-      margin-right: 5px;
-      -webkit-border-radius: 150px;
-      -moz-border-radius: 150px;
-      box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-      -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-      -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
-    }
+  img {
+    height: 40px;
+    margin-right: 5px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+  }
 }
 
 .comments-list {

@@ -8,39 +8,46 @@
         <%= f.file_field :image %>
       </div>
     </div>
+
+    <div class="form-all form-group">
+      <%= f.label 'About You' %>
+      <%= f.text_area :description, rows: 6, class: 'form-control', placeholder: "Tell us about yourself." %>
+    </div>
+
+    <div class="edit-user-inputs">
       <div class="form-all form-group">
-        <%= f.label 'About You' %>
-        <%= f.text_area :description, rows: 6, class: 'form-control', placeholder: "Tell us about yourself." %>
+        <%= f.label 'Current username' %><br />
+        <%= f.text_field :username, class: 'form-control', autofocus: true %>
       </div>
-      <div class="edit-user-inputs">
-        <div class="form-all form-group">
-          <%= f.label 'Current username' %><br />
-          <%= f.text_field :username, class: 'form-control', autofocus: true %>
-        </div>
-        <div class="form-all form-group">
-          <%= f.label 'Current Email'%><br />
-          <%= f.email_field :email, class: 'form-control', autofocus: true %>
-        </div>
-        <div class="form-all form-group">
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
-        </div>
-        <div class="form-all form-group">
-          <%= f.label :password_confirmation %><br />
-          <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
-        </div>
-        <div class="form-all form-group">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, class: 'form-control', autocomplete: "off" %>
-        </div>
+
+      <div class="form-all form-group">
+        <%= f.label 'Current Email'%><br />
+        <%= f.email_field :email, class: 'form-control', autofocus: true %>
       </div>
-      <%= f.submit "Submit", class: 'btn btn-default' %>
-    <% end %>
-    <% if current_user.premium? %>
-    <h3>Cancel Premuim</h3>
-      <p><%= link_to "Cancel Premium", charge_path(@user), data: {confirm: "Are you sure you want to cancel premium?"}, method: :delete, :class=>'btn btn-danger' %></p>
-    <% end %>
-    <h3>Cancel my account</h3>
-      <p>Unhappy? <%= button_to "Cancel my account",  registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class=>'btn btn-danger' %></p>
-    <%= link_to "Back", :back %>
+
+      <div class="form-all form-group">
+        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+        <%= f.password_field :password, class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-all form-group">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, class: 'form-control', autocomplete: "off" %>
+      </div>
+
+      <div class="form-all form-group">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, class: 'form-control', autocomplete: "off" %>
+      </div>
+    </div>
+    <%= f.submit "Submit", class: 'btn btn-default' %>
+  <% end %>
+  
+  <% if current_user.premium? %>
+  <h3>Cancel Premuim</h3>
+    <p><%= link_to "Cancel Premium", charge_path(@user), data: {confirm: "Are you sure you want to cancel premium?"}, method: :delete, :class=>'btn btn-danger' %></p>
+  <% end %>
+  <h3>Cancel my account</h3>
+    <p>Unhappy? <%= button_to "Cancel my account",  registration_path(@user), data: { confirm: "Are you sure?" }, method: :delete, :class=>'btn btn-danger' %></p>
+  <%= link_to "Back", :back %>
 </div>

@@ -16,7 +16,7 @@
     <div class="item active">
       <%= image_tag("pic1.jpg") %>
       <div class="carousel-caption">
-        <div class="cap-one">
+        <div id="capOne">
          <h1>Welcome to Travelog</h1>
          <p>Travel, share, and explore</p>
          <%= link_to "Sign Up", new_user_registration_path, class: 'btn'  %>
@@ -26,7 +26,7 @@
    <div class="item">
       <%= image_tag("pic2.jpg") %>
       <div class="carousel-caption">
-        <div class="cap-two">
+        <div id="capTwo">
           <h1>Explore the World</h1>
           <p>Find your next adventure</p>
           <%= link_to "Start Exploring", all_wikis_path, class: 'btn'%>
@@ -36,7 +36,7 @@
     <div class="item">
        <%= image_tag("pic3.jpg") %>
        <div class="carousel-caption">
-         <div class="cap-three">
+         <div id="capThree">
            <h1>Log Your Adventures</h1>
            <p>A diary for events, vacations, and adventures</p>
            <%= link_to "Learn More", welcome_learn_more_path, class: 'btn' %>
